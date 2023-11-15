@@ -488,9 +488,9 @@
         </div>
     </section >
 
-    <section>
+    <section style="margin: 0 auto" class="text-center">
     
-    <div class="wrapper">
+    <div style="margin: 0 auto" class="wrapper">
       <div class="icon"><i id="left" class="fa-solid fa-angle-left"></i></div>
       <ul class="tabs-box">
         <li class="tab">Coding</li>
@@ -511,6 +511,16 @@
       </ul>
       <div class="icon"><i id="right" class="fa-solid fa-angle-right"></i></div>
     </div>
+
+
+    <div style="margin: 0 auto" class="wrapperr">
+         <nav style="margin 0 auto">
+         
+                    
+
+         </nav>
+      </div>
+
 
     </section>
 
