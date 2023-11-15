@@ -488,7 +488,7 @@
     <!-- copyright --> 
     <section>
         <div class="copyright">
-            <p>&#169;Creative Mehedi Art By Raisa All Rights Reserved.</p>
+            <p>&#169; <?=date("Y")?> Creative Mehedi Art By Raisa. All Rights Reserved.</p>
 
         </div>
     </section>
