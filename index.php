@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.css"  rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
     <link rel="stylesheet" href="page.css">  
+    <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -485,6 +487,33 @@
             </form>
         </div>
     </section >
+
+    <section>
+    
+    <div class="wrapper">
+      <div class="icon"><i id="left" class="fa-solid fa-angle-left"></i></div>
+      <ul class="tabs-box">
+        <li class="tab">Coding</li>
+        <li class="tab active">JavaScript</li>
+        <li class="tab">Podcasts</li>
+        <li class="tab">Databases</li>
+        <li class="tab">Web Development</li>
+        <li class="tab">Unboxing</li>
+        <li class="tab">History</li>
+        <li class="tab">Programming</li>
+        <li class="tab">Gadgets</li>
+        <li class="tab">Algorithms</li>
+        <li class="tab">Comedy</li>
+        <li class="tab">Gaming</li>
+        <li class="tab">Share Market</li>
+        <li class="tab">Smartphones</li>
+        <li class="tab">Data Structure</li>
+      </ul>
+      <div class="icon"><i id="right" class="fa-solid fa-angle-right"></i></div>
+    </div>
+
+    </section>
+
     <!-- copyright --> 
     <section>
         <div class="copyright">
