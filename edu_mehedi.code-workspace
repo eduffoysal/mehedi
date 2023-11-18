@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../edu"
+		},
+		{
+			"path": "../secondhomeApp"
+		}
+	],
+	"settings": {}
+}
