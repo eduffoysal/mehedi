@@ -1617,6 +1617,10 @@ input[type="range"]:active::-webkit-slider-thumb {
   margin-bottom: 1rem;
 }
 
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
 .mb-8 {
   margin-bottom: 2rem;
 }
@@ -1629,8 +1633,8 @@ input[type="range"]:active::-webkit-slider-thumb {
   margin-bottom: 10px;
 }
 
-.me-1 {
-  margin-inline-end: 0.25rem;
+.me-0 {
+  margin-inline-end: 0px;
 }
 
 .ml-1 {
@@ -3874,9 +3878,9 @@ input[type="range"]:active::-webkit-slider-thumb {
   background-color: rgb(17 24 39 / 0.5);
 }
 
-.bg-green-700 {
+.bg-green-300 {
   --tw-bg-opacity: 1;
-  background-color: rgb(4 108 78 / var(--tw-bg-opacity));
+  background-color: rgb(132 225 188 / var(--tw-bg-opacity));
 }
 
 .bg-inherit {
@@ -3952,26 +3956,6 @@ input[type="range"]:active::-webkit-slider-thumb {
 .bg-zinc-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(63 63 70 / var(--tw-bg-opacity));
-}
-
-.bg-green-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(1 71 55 / var(--tw-bg-opacity));
-}
-
-.bg-green-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(14 159 110 / var(--tw-bg-opacity));
-}
-
-.bg-green-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(188 240 218 / var(--tw-bg-opacity));
-}
-
-.bg-green-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(132 225 188 / var(--tw-bg-opacity));
 }
 
 .decoration-slice {
@@ -4220,6 +4204,11 @@ input[type="range"]:active::-webkit-slider-thumb {
 .py-0 {
   padding-top: 0px;
   padding-bottom: 0px;
+}
+
+.py-0\.5 {
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
 }
 
 .py-1 {
@@ -4853,6 +4842,11 @@ input[type="range"]:active::-webkit-slider-thumb {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-amber-800 {
+  --tw-text-opacity: 1;
+  color: rgb(146 64 14 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -7312,17 +7306,16 @@ input[type="range"]:active::-webkit-slider-thumb {
     margin-bottom: 0px;
   }
 
-  .md\:mx-auto {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .md\:mb-0 {
     margin-bottom: 0px;
   }
 
   .md\:me-0 {
     margin-inline-end: 0px;
+  }
+
+  .md\:mr-3 {
+    margin-right: 0.75rem;
   }
 
   .md\:mt-0 {
@@ -7384,6 +7377,10 @@ input[type="range"]:active::-webkit-slider-thumb {
 
   .md\:pr-\[17px\] {
     padding-right: 17px;
+  }
+
+  .md\:text-left {
+    text-align: left;
   }
 
   .md\:text-blue-700 {
