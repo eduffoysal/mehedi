@@ -11,6 +11,8 @@ scroll-padding-top: 2rem;
 scroll-behavior: smooth;
 }
 :root{
+    --maroon-color:#7f0707;
+    --light-maroon-color:#c26060;
     --green-color: #3cb815;
     --light-green-color: #c0eb7b;
     --orange-color: #ff7e00;
@@ -21,12 +23,12 @@ scroll-behavior: smooth;
 }
 ::-webkit-scrollbar{
     width: 0.5rem;
-    background: var(--light-green-color);
+    background: var(--light-maroon-color);
     border-radius: 5rem;
 }
 ::-webkit-scrollbar-thumb{
     width: 0.5rem;
-    background: var(--green-color);
+    background: var(--maroon-color);
 }section{
     padding: 4.5rem 0 1.5rem;
 }
@@ -93,7 +95,7 @@ header{
 }
 .navbar a:hover,
 .navbar .home-active{
-    background: var(--green-color);
+    background: var(--maroon-color);
     border-radius:5rem ;
     color: var(--bg-color);
     transition: background 0.5s;
@@ -130,7 +132,7 @@ header{
 .home-text span{
     font-weight: 400;
     text-transform: uppercase;
-    color:var(--green-color)
+    color:var(--maroon-color)
 }
 .home-text h1{
     font-size:2.4rem;
@@ -139,7 +141,7 @@ header{
 }
 .btn{
     padding: 0.6rem 1rem;
-    background: var(--green-color);
+    background: var(--maroon-color);
     color:var(--bg-color);
     font-weight: 400;
     border-radius: 5rem;
@@ -191,7 +193,7 @@ header{
     font-weight: 600;
 }
 .heading span{
-    color:var(--green-color)
+    color:var(--maroon-color)
 }
 .packages{
     max-width: 968px;
@@ -232,7 +234,7 @@ header{
 }
 .packages-container .box .bx{
     padding: 10px;
-    background: var(--green-color);
+    background: var(--maroon-color);
     color: var(--bg-color);
     border-radius: 5rem;
     margin-top: 2rem;
@@ -308,7 +310,7 @@ header{
     right: 0;
     bottom: 0;
     padding: 10px;
-    background: var(--green-color);
+    background: var(--maroon-color);
     color:var(--bg-color);
     font-size: 20px;
     border-radius: 0.5rem 0 0.5rem 0;
@@ -337,7 +339,7 @@ bx-heart
 .about-text span{
     font-weight: 600;
     text-transform:uppercase;
-    color: var(--green-color);
+    color: var(--maroon-color);
 }
 .about-text p{
     margin: 0.5rem 0 1rem;
@@ -364,7 +366,7 @@ bx-heart
     padding: 20px;
     box-shadow: 1px 2px 11px 4px rgba(14 55 54/15%);
     border-radius: 0.5rem;
-    border-bottom: 7px solid var(--green-color);
+    border-bottom: 7px solid var(--maroon-color);
 }
 .review-container .box:hover{
     transform: translateY(10px);
@@ -372,7 +374,7 @@ bx-heart
 }
 .review-container .box .bx{
     font-size: 24px;
-    color: var(--green-color);
+    color: var(--maroon-color);
 }
 .review-container .box .stars .bx{
     font-size: 1rem;
@@ -431,12 +433,12 @@ margin: 00.5rem 0 1rem;
 .social .bx{
     padding: 10px;
     background: var(--bg-color);
-    color: var(--green-color);
+    color: var(--maroon-color);
     border-radius: 5rem;
     font-size: 20px;
 }
 .social .bx:hover{
-    background: var(--green-color);
+    background: var(--maroon-color);
     color: var(--bg-color);
     transition: 0.2s all linear;
 }
@@ -471,7 +473,7 @@ margin: 00.5rem 0 1rem;
     cursor: pointer;
 }
 .footer-box form .bxs-envelope{
-    color: var(--green-color);   
+    color: var(--maroon-color);   
 }
 .copyright{
     text-align: center;
@@ -722,4 +724,214 @@ margin: 00.5rem 0 1rem;
   .wrapperr nav{
     position: relative;
     display: flex;
+  }
+
+
+
+  
+::selection{
+    background: rgb(131, 3, 3);
+    color: #fff;
+  }
+  .wrapperLogin{
+    overflow: hidden;
+    max-width: 390px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+  }
+  .wrapperLogin .title-text{
+    display: flex;
+    width: 200%;
+  }
+  .wrapperLogin .title{
+    width: 50%;
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+  }
+  .wrapperLogin .slide-controls{
+    position: relative;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    overflow: hidden;
+    margin: 30px 0 10px 0;
+    justify-content: space-between;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+  }
+  .slide-controls .slide{
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 48px;
+    cursor: pointer;
+    z-index: 1;
+    transition: all 0.6s ease;
+  }
+  .slide-controls label.signup{
+    color: #000;
+  }
+  .slide-controls .slider-tab{
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    left: 0;
+    z-index: 0;
+    border-radius: 5px;
+    background: -webkit-linear-gradient(left, rgb(113, 5, 5), #ed2828);
+    transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+  }
+  input[type="radio"]{
+    display: none;
+  }
+  #signup:checked ~ .slider-tab{
+    left: 50%;
+  }
+  #signup:checked ~ label.signup{
+    color: #fff;
+    cursor: default;
+    user-select: none;
+  }
+  #signup:checked ~ label.login{
+    color: #000;
+  }
+  #login:checked ~ label.signup{
+    color: #000;
+  }
+  #login:checked ~ label.login{
+    cursor: default;
+    user-select: none;
+  }
+  .wrapperLogin .form-container{
+    width: 100%;
+    overflow: hidden;
+  }
+  .form-group {
+      margin-bottom: 15px;
+  }
+  
+  .form-group label {
+      margin-bottom: 5px;
+      display: flex;
+      justify-content: space-between;
+      border-bottom-width: 5px;
+         
+  }
+  .form-group input, .form-group select {
+      height: 40px;
+      width: 100%;
+      outline: none;
+      padding-left: 15px;
+      border-radius: 5px;
+      border: 1px solid lightgrey;
+      border-bottom-width: 2px;
+      font-size: 16px;
+      color: #999;
+  
+      transition: all 0.3s ease;
+  }
+  .form-group button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+  }
+  
+  .form-group button:hover {
+      background-color: #45a049;
+  }
+  
+  .form-container .form-inner{
+    display: flex;
+    width: 200%;
+  }
+  .form-container .form-inner form{
+    width: 50%;
+    transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+  }
+  .form-inner form .field{
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .form-inner form .field input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-left: 15px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    border-bottom-width: 2px;
+    font-size: 17px;
+    color: #999;
+    transition: all 0.3s ease;
+  }
+  .form-inner form .field input:focus{
+    border-color: rgb(166, 33, 33);
+    /* box-shadow: inset 0 0 3px #fb6aae; */
+  }
+  .form-inner form .field input::placeholder{
+    color: #999;
+    transition: all 0.3s ease;
+  }
+  form .field input:focus::placeholder{
+    color: #b3b3b3;
+  }
+  .form-inner form .pass-link{
+    margin-top: 5px;
+  }
+  .form-inner form .signup-link{
+    text-align: center;
+    margin-top: 30px;
+  }
+  .form-inner form .pass-link a,
+  .form-inner form .signup-link a{
+    color:  rgb(113, 5, 5);
+    text-decoration: none;
+  }
+  .form-inner form .pass-link a:hover,
+  .form-inner form .signup-link a:hover{
+    text-decoration: underline;
+  }
+  form .btn{
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+  }
+  form .btn .btn-layer{
+    height: 100%;
+    width: 300%;
+    position: absolute;
+    left: -100%;
+    background: -webkit-linear-gradient(right, #880505, rgb(113, 5, 5), #bb4f43, #ff6464);
+    border-radius: 5px;
+    transition: all 0.4s ease;;
+  }
+  form .btn:hover .btn-layer{
+    left: 0;
+  }
+  form .btn input[type="submit"]{
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    background: none;
+    border: none;
+    color: #fff;
+    padding-left: 0;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
   }
