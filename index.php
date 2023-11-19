@@ -29,6 +29,12 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
+    <script src="//cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
     <script src="jquery-3.5.1.min.js"></script>
 
     <link rel="shortcut icon" href="image/<?=$iiim?>" type="image/x-icon" />
@@ -40,6 +46,33 @@
 
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <link rel="stylesheet" href="icon/bootstrap-icons.css">
+
+
+
+
+
+
+<link rel="stylesheet" href="bootstrap.min.css">
+    <!-- <script src="bootstrap.budle.min.js"></script> -->
+    <link href="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
+
+<!-- <link rel="stylesheet" href="dist/styles.css"> -->
+
+<link rel="stylesheet" href="css/carousel_and_other.css">
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+
+<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
 
 </head>
 <body>
@@ -136,7 +169,7 @@
             <input type="text" id="search-navbar" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="       Search...">
           </div>
 
-      <ul class=" flex flex-col font-medium py-0.5 px-1 md:p-0 mt-1 align-items-center md:text-left  m-auto border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+      <ul class=" flex flex-col font-medium py-0.5 px-1 md:p-0 mt-1 md:align-items-left align-items-center md:text-left  m- border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
        
 
         <li style="" class="">
@@ -229,12 +262,11 @@
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+      <!-- <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-      </div>
+      </div> -->
       <div class="modal-body text-center align-items-center m-auto" >
         
 
@@ -256,7 +288,7 @@
                <div class="slider-tab"></div>
             </div>
             <div class="form-inner">
-               <form action="#" class="login">
+               <form action="#" class="login loginf">
                   <div class="field">
                      <input type="text" placeholder="Email Address" required>
                   </div>                                    
@@ -279,7 +311,7 @@
                   <div class="pass-link">
                      <a href="#">Forgot password?</a>
                   </div>
-                  <div class="field btn">
+                  <div class="field btn text-center m-auto">
                      <div class="btn-layer"></div>
                      <input type="submit" value="Login">
                   </div>
@@ -287,7 +319,7 @@
                      Not a member? <a href="">Signup now</a>
                   </div>
                </form>
-               <form action="#" class="signup">
+               <form action="#" class="signup signupf">
                   <div class="field">
                      <input type="text" placeholder="User Name" required>
                   </div>                  
@@ -304,9 +336,9 @@
                      <input type="password" placeholder="Confirm password" required>
                   </div>
                   
-                  <div class="field btn">
+                  <div class="field btn text-center mt-2">
                      <div class="btn-layer"></div>
-                     <input type="submit" value="Signup">
+                     <input type="submit" class="" value="Signup">
                   </div>
                </form>
             </div>
@@ -341,7 +373,7 @@
                     <h1>Choose The Best<br>Henna Design<br>For You</h1>
                     <a href="#" class="btn">Book Now<i class='bx bx-right-arrow-alt'></i></a>
                 </div>
-                <img src="https://scontent.fcgp7-1.fna.fbcdn.net/v/t39.30808-6/345326292_159918743710634_713008634911527586_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGd7nA9QmNP-9HRoJqb41esZrXnz26sXgVmtefPbqxeBQwTVLH5BP53Tn6mxx3mPSFURO3qU4dgnrXqVOAVQXt5&_nc_ohc=BFUJPn0DohoAX_psHdV&_nc_ht=scontent.fcgp7-1.fna&oh=00_AfBvk8rxxONk_DOG_jyHKD16-RIsU_oE8RJPcZeCunlsew&oe=6545FB81" alt="">
+                <img src="https://media.weddingz.in/images/1ea958433249d6461c2e845d9e0c3a14/tefVvEzTAgQsaIPayJtLdbMuPdb0DImz11cJ-MCB_yL9dlMSYEDyKLYDBDD85px42_6LDc1XQK02lMqJ4uatIMGuEeYuq1kCnNoNOF5plH7hf_3hQRR-egofVkidP999A-2VEbAk.jpg" alt="">
 
             </div>
             <!-- slide 2 -->
@@ -351,7 +383,7 @@
                     <h1>Choose The Best<br>Henna Design<br>For You</h1>
                     <a href="#" class="btn">Book Now<i class='bx bx-right-arrow-alt'></i></a>
                 </div>
-                <img src="https://scontent.fcgp7-1.fna.fbcdn.net/v/t39.30808-6/262116739_101779572363208_803259062128933498_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFgaWzHoZrMGKW52Wd-yqtfowvgv_EGtPWjC-C_8Qa09Vjb7a0H8sjIfZwAQwGhqOLRHmoVLpJMNdiYB-m0rEVK&_nc_ohc=rVXkny54WF0AX8Is6Jo&_nc_ht=scontent.fcgp7-1.fna&oh=00_AfAi6QVKrEATZIie0E_zeA74o--lWf4uwsbtxYWYJ3OBCg&oe=65459EFE" alt="">
+                <img src="https://media.weddingz.in/images/576046d62de7fa295fce36c13211d403/50-simple-mehndi-design-ideas-to-save-for-weddings-and-other-occasions.jpg" alt="">
 
             </div>
             <!-- slide 3 -->
@@ -361,7 +393,7 @@
                     <h1>Choose The Best<br>Henna Design<br>For You</h1>
                     <a href="#" class="btn">Book Now<i class='bx bx-right-arrow-alt'></i></a>
                 </div>
-                <img src="https://scontent.fcgp7-1.fna.fbcdn.net/v/t39.30808-6/272046111_121356507072181_7365458321280483888_n.jpg?stp=c0.168.1538.1538a_dst-jpg_s851x315&_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=9y0wPt812nwAX97Q3wc&_nc_ht=scontent.fcgp7-1.fna&oh=00_AfDJ6A4HBG7PDkC99TwybWU9fqS2F8pzcKA6jbktVj2bcg&oe=654585A9" alt="">
+                <img src="https://media.weddingz.in/images/576046d62de7fa295fce36c13211d403/50-simple-mehndi-design-ideas-to-save-for-weddings-and-other-occasions.jpg" alt="">
 
             </div>     
 
@@ -683,3 +715,24 @@
     <script src="page.js"></script>
 </body>
 </html>
+<script>
+
+  $(document).ready(function(){
+
+      $(document).on('click','#login', function(){
+
+        $('.signupf').addClass('hidden');
+        $('.loginf').removeClass('hidden');
+
+      });
+
+      $(document).on('click','#signup', function(){
+
+        $('.loginf').addClass('hidden');
+        $('.signupf').removeClass('hidden');
+
+      });
+
+  });
+
+</script> 
