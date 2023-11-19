@@ -3,28 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Appointment Booking</title>
     <link rel="stylesheet" href="booking.css">
-
+    <title>Booking</title>
 </head>
 <body>
-
-<div class="appointment-container">
-    <div class="picture"></div>
-    <div class="booking-details">
-        <h2>Book an Appointment</h2>
-        <div class="calendar">
-            <!-- Add your calendar here -->
-            <!-- You can use a datepicker library or create a custom calendar -->
+    <h1 >Booking Page</h1>
+    <form>
+        <div class="part" id="date">
+            <input type="date" id="bookNow" name="calender" value="" >    
         </div>
-        <div class="options">
-            <!-- Add your appointment options here -->
-            <!-- For example, select dropdowns, checkboxes, etc. -->
+        <div class="pic" id="pic">
+            <img src="https://scontent.fcgp7-1.fna.fbcdn.net/v/t39.30808-6/351014823_819530036260093_1798909119652641483_n.jpg?stp=dst-jpg_s960x960&_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGFGuxINMNrdM_C0bdgk10YjlWAoCy0HtiOVYCgLLQe2OAWE_dVzkXeNAptWB_Yj8wIibehcQq41IgrI9aZIEPA&_nc_ohc=ha23vPzPKMUAX_8dO-P&_nc_ht=scontent.fcgp7-1.fna&oh=00_AfAnLj905iN3rg0XfSdpRa-_6_tQatZDcRTBEHsLaiM-EA&oe=655D9CE5" alt="placeholder" /> 
         </div>
-        <button class="confirm-button" type="button">Confirm Appointment</button>
-        <div class="message-box" id="messageBox"></div>
-    </div>
-</div>
-
+        <br>
+        <div class="part" id="bill">
+           Total Bill : <input type="text"  >
+        </div>
+        <br>
+        <div class="part" id="handSide">
+            Number Of Hand Side :<br> <input type="radio" name="HowManySide"  >1 Side  <input type="radio" name="HowManySide"  > One Hand Both Side(Any Two Side) <input type="radio" name="HowManySide"  >Both Hand Both Side(Four Side) 
+        </div>
+        <br>
+        <div class="part" id="msg">
+            Please enter any extra messages below.<br>
+            <textarea name="additionalMessages" id="additionalMessages" rows="10" cols="100"></textarea> 
+        </div>
+        <br>
+        <div class="part" id="btn">
+            <input type="submit" value="Submit Now">
+        </div>
+    </form>
 </body>
 </html>
