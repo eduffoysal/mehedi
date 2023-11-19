@@ -34,21 +34,21 @@ body {
   justify-content: space-between;
   /* align-items: flex-start; */
 }
-h1{
+h1 {
   color: rgb(108, 0, 0);
   text-align: center;
   margin-top: 60px;
 }
-form {
-  /* flex: 1;  */
-  /* max-width: 400px;   Adjust the maximum width of the form as needed */
-}
-.part{
+/* form {
+  flex: 1; 
+   max-width: 400px;   Adjust the maximum width of the form as needed 
+} */
+.part {
   display: inline-block;
   /* border: 4px solid blueviolet ; */
   justify-content: space-between;
-  width: 536px; 
-  height : 100%;
+  width: 536px;
+  height: 100%;
   margin: 8px 60px;
 }
 /* .pic{
@@ -68,37 +68,45 @@ img {
   /* margin-top: 10px; */
   /* margin-left: 70%; */
 }
-#pic{
+#pic {
   position: relative;
   top: -26px;
-  left:70%;
+  left: 70%;
 }
-#bill{
+#bill {
+  /* border: 4px solid blueviolet; */
+  width: 24%;
   position: relative;
   top: -17px;
-  left:65%;
+  left: 65%;
 }
-#handSide{
+#handSide {
+  /* border: 4px solid blueviolet; */
+  width: 45%;
   position: relative;
   top: -465px;
 }
-#msg{
+#msg {
+  /* border: 4px solid blueviolet; */
+  width: 45%;
   position: relative;
   top: -465px;
 }
-#btn{
+#btn {
+  width: 45%;
+  /* border: 4px solid blueviolet; */
   position: relative;
   top: -465px;
 }
-#totalBill {
-  /* justify-content: space-between; */
-  /* margin-left: 70%;  */
-  /* width: 50%; */
-  /* margin: auto; */
+/* #totalBill{
+  justify-content: space-between;
+  margin-left: 70%; 
+  width: 50%;
+  margin: auto;
 
-  /* width: 80%; */
-  /* padding: 6px 200px; */
-}
+  width: 80%;
+  padding: 6px 200px;
+} */
 
 textarea {
   /* align-items: first baseline; */
