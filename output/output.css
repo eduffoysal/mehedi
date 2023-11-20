@@ -4711,6 +4711,11 @@ input[type="range"]:active::-webkit-slider-thumb {
   color: rgb(220 76 100 / var(--tw-text-opacity));
 }
 
+.text-amber-800 {
+  --tw-text-opacity: 1;
+  color: rgb(146 64 14 / var(--tw-text-opacity));
+}
+
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -4842,11 +4847,6 @@ input[type="range"]:active::-webkit-slider-thumb {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-amber-800 {
-  --tw-text-opacity: 1;
-  color: rgb(146 64 14 / var(--tw-text-opacity));
 }
 
 .underline {
