@@ -40,6 +40,7 @@ if(isset($_POST['melogin'])){
 			$_SESSION['user_id']=$row['user_id'];
 			$_SESSION['unique_id']=$row['unique_id'];
 			$_SESSION['user_phone']=$row['phone'];
+            $_SESSION['b_id'] = $row['b_id'];
             echo 1;
 		}
 		else{
