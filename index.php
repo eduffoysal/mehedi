@@ -166,6 +166,9 @@
               <li>
                 <a href="#" data-toggle="modal" data-target="#exampleModalCenter" class="block text-decoration-none px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign In</a>
               </li>
+              <li>
+                <a href="admin/" data-toggle="modall" data-target="#exampleModalCenterr" class="block text-decoration-none px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Admin</a>
+              </li>
           </ul>
         </div>
         <button data-collapse-toggle="navbar-user" type="button" class="inline-flex items-center p-1 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-user" aria-expanded="false">
