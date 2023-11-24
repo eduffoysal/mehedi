@@ -221,3 +221,17 @@ form .btn input[type="submit"]{
   font-weight: 500;
   cursor: pointer;
 }
+form .btn input[type="button"]{
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  background: none;
+  border: none;
+  color: #fff;
+  padding-left: 0;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
