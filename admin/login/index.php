@@ -16,7 +16,12 @@ if(isset($_SESSION['user'])){
       <link rel="stylesheet" href="../../css/login_style.css">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
-   <body>
+   <body onload="myFunction()">
+
+   <div id="loader">
+      <?php include('.../../preload/pre.php');?>
+   </div>
+
       <div class="wrapper">
          <div class="title-text">
             <div class="title login">
@@ -112,3 +117,26 @@ if(isset($_SESSION['user'])){
       </script>
    </body>
 </html>
+<script>
+    var preloader = document.getElementById('loader');
+    function myFunction(){
+        preloader.style.display = 'none';
+    }
+</script>
+
+<script>
+    var preload = document.getElementById('loader');
+    var content = document.getElementById('content');
+    window.onload=function() {
+            
+            preload.style.display = 'none';
+            content.style.display = 'block';
+    }
+</script>
+
+<script>
+    $(window).on('load',function(){
+        $('#loader').fadeOut(1000);
+        $('#content').fadeIn(1000);
+    });
+</script>
