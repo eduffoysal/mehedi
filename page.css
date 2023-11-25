@@ -30,7 +30,7 @@ scroll-behavior: smooth;
     width: 0.5rem;
     background: var(--maroon-color);
 }section{
-    padding: 4.5rem 0 1.5rem;
+    padding: 2rem 0 1.5rem;
 }
 img{
     width: 100%;
@@ -163,7 +163,7 @@ header{
     background: var(--light-orange-color);
     transition: 0.2s  ease;
 }
-.swiper-button-next{
+/* .swiper-button-next{
     background: url(img/right-arrow.png) ;
     background-repeat: no-repeat;
     background-size: 100% auto;
@@ -182,7 +182,7 @@ header{
 } 
 .swiper-button-prev::after{
     display: none;
-}
+} */
 .heading{
     display: flex;
     justify-content: space-between;
@@ -497,7 +497,7 @@ margin: 00.5rem 0 1rem;
         padding: 18px 4%;
     }
     section{
-        padding: 50px 4%;
+        padding: 28px 4%;
     }
     .home-text h1{
         font-size: 2rem;
@@ -922,6 +922,20 @@ margin: 00.5rem 0 1rem;
     left: 0;
   }
   form .btn input[type="submit"]{
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    background: none;
+    border: none;
+    color: #fff;
+    padding-left: 0;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  form .btn input[type="button"]{
     height: 100%;
     width: 100%;
     z-index: 1;
@@ -1381,5 +1395,3 @@ margin: 00.5rem 0 1rem;
   top: -4px;
   width: 17px;
 }
-
-

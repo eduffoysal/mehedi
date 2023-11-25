@@ -11,13 +11,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creative Mehedi Art By <?php echo "Raisa"?></title>
      <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" href="./output/output.css">
 
     <link rel="stylesheet" href="page.css">
+    <link rel="stylesheet" href="css/slider_style.css">
+
     <script src="script.js" defer></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="node_modules/tw-elements/dist/css/index.min.css" />
@@ -80,6 +81,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 
 <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
 
 
 </head>
@@ -313,15 +321,11 @@
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <!-- <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div> -->
+
       <div class="modal-body text-center align-items-center m-auto" >
-        
 
       <div class="wrapperLogin">
+
          <div class="title-text">
             <div class="title login">
                Login Form
@@ -339,18 +343,20 @@
                <div class="slider-tab"></div>
             </div>
             <div class="form-inner">
-               <form action="#" class="login loginf">
+               <form action="#" class="login loginf" role="form" id="logform">
                   <div class="field">
-                     <input type="text" placeholder="Email Address" required>
+                      <input placeholder="Phone Number" name="username" id="username" type="phone" autofocus required>
+                      <input class="form-control" placeholder="Phone/User ID" name="melogin" id="melogin" type="hidden">
                   </div>                                    
                   <div class="field">
-                     <input type="password" placeholder="Password" required>
+                    <input type="password" placeholder="Password" name="password" id="password" required>
                   </div>                                 
                  <div class="form-group">
                     <label for="userType">Login As :</label>
                         <select id="userType" name="userType" required>
-                        <option value="admin">Admin</option>
                         <option value="user">User</option>
+                        <option value="admin">Admin</option>
+
                     </select>
                 </div>                 
                   
@@ -364,43 +370,52 @@
                   </div>
                   <div class="field btn text-center m-auto">
                      <div class="btn-layer"></div>
-                     <input type="submit" value="Login">
+                     <input type="button" id="loginbutton" value="Login">
                   </div>
                   <div class="signup-link">
                      Not a member? <a href="">Signup now</a>
                   </div>
                </form>
-               <form action="#" class="signup signupf">
-                  <div class="field">
-                     <input type="text" placeholder="User Name" required>
-                  </div>                  
-                  <div class="field">
-                     <input type="text" placeholder="Email Address" required>
-                  </div>
+               <form action="#" class="signup" role="form" id="signform">
                 <div class="field">
-                    <input type="number" placeholder="Phone Number" required>
-                 </div>                  
+                    <input placeholder="Phone Number" name="phone" id="sphone" type="phone" required>
+                 </div>
                   <div class="field">
-                     <input type="password" placeholder="Password" required>
+                     <input type="text" placeholder="Email Address" name="semail" id="semail">
                   </div>
                   <div class="field">
-                     <input type="password" placeholder="Confirm password" required>
+                    <input type="text" placeholder="User Name" name="susername" id="susername" type="text" required>
+                 </div>
+                  <div class="field">
+                     <input placeholder="Password" name="spassword" id="spassword" type="number" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Confirm password" name="scpassword" id="scpassword" required>
                   </div>
                   
-                  <div class="field btn text-center mt-2">
+                  <div class="field btn">
                      <div class="btn-layer"></div>
-                     <input type="submit" class="" value="Signup">
+                     <input class="form-control" placeholder="Phone/Student ID" name="mesignup" id="mesignup" type="hidden">
+                     <input type="button" id="signupbutton" value="Signup">
+                     <!-- <button type="button" id="signupbutton" class="btn btn-block"><span class="glyphicon glyphicon-check"></span> <span id="signtext">Sign Up</span></button> -->
+
+
                   </div>
+                  
                </form>
             </div>
          </div>
       </div>
 
-
-
-      
-
-
+      <div class="container-fluid text-center m-auto">
+      <div id="myalert" style="display:none;">
+            <div class="col-md col-md-offset-4">
+               <div class="alert alert-info text-center">
+                  <center><span id="alerttext">Hlw</span></center>
+               </div>
+            </div>
+        </div>
+      </div>
 
       </div>
       <div class="modal-footer">
@@ -413,46 +428,203 @@
 
 
 
-
  <!-- home -->
     <section class="home" id="home" >
-        <div class="swiper-wrapper">
-             <!-- slide 1 -->
-            <div class="swiper-slide container">
-                <div class="home-text">
-                    <span>Spread Happiness</span>
-                    <h1>Choose The Best<br>Henna Design<br>For You</h1>
-                    <a href="#" class="btn">Book Now<i class='bx bx-right-arrow-alt'></i></a>
-                </div>
-                <img src="https://media.weddingz.in/images/1ea958433249d6461c2e845d9e0c3a14/tefVvEzTAgQsaIPayJtLdbMuPdb0DImz11cJ-MCB_yL9dlMSYEDyKLYDBDD85px42_6LDc1XQK02lMqJ4uatIMGuEeYuq1kCnNoNOF5plH7hf_3hQRR-egofVkidP999A-2VEbAk.jpg" alt="">
 
-            </div>
-            <!-- slide 2 -->
-            <div class="swiper-slide container">
-                <div class="home-text">
-                    <span>Spread Happiness</span>
-                    <h1>Choose The Best<br>Henna Design<br>For You</h1>
-                    <a href="#" class="btn">Book Now<i class='bx bx-right-arrow-alt'></i></a>
-                </div>
-                <img src="https://media.weddingz.in/images/576046d62de7fa295fce36c13211d403/50-simple-mehndi-design-ideas-to-save-for-weddings-and-other-occasions.jpg" alt="">
-
-            </div>
-            <!-- slide 3 -->
-            <div class="swiper-slide container">
-                <div class="home-text">
-                    <span>Spread Happiness</span>
-                    <h1>Choose The Best<br>Henna Design<br>For You</h1>
-                    <a href="#" class="btn">Book Now<i class='bx bx-right-arrow-alt'></i></a>
-                </div>
-                <img src="https://media.weddingz.in/images/576046d62de7fa295fce36c13211d403/50-simple-mehndi-design-ideas-to-save-for-weddings-and-other-occasions.jpg" alt="">
-
-            </div>     
-
+<!-- <section>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide swiper-slide--one">
+        <span>domestic</span>
+        <div>
+          <h2>Enjoy the exotic of sunny Hawaii</h2>
+          <p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            Maui, Hawaii
+          </p>
         </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>     
-         
+      </div>
+      <div class="swiper-slide swiper-slide--two">
+        <span>subtropical</span>
+        <div>
+          <h2>The Island of Eternal Spring</h2>
+          <p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            Lanzarote, Spanien
+          </p>
+        </div>
+      </div>
+
+      <div class="swiper-slide swiper-slide--three">
+        <span>history</span>
+        <div>
+          <h2>Awesome Eiffel Tower</h2>
+          <p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            Paris, France
+          </p>
+        </div>
+      </div>
+
+      <div class="swiper-slide swiper-slide--four">
+        <span>Mayans</span>
+        <div>
+          <h2>One of the safest states in Mexico</h2>
+          <p>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            The Yucatan, Mexico
+          </p>
+        </div>
+      </div>
+
+      <div class="swiper-slide swiper-slide--five">
+        <span>native</span>
+        <div>
+          <h2>The most popular yachting destination</h2>
+          <p>
+
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            Whitsunday Islands, Australia
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section> -->
+
+  <div class="swiper">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide swiper-slide--one">
+
+      <div class="px-3 py-5 bg-neutral-100 lg:py-10">
+    <div class="grid lg:grid-cols-2 items-center justify-items-center gap-5">
+        <div class="order-2 lg:order-1 flex flex-col justify-center items-center">
+        <p class="text-4xl font-bold md:text-7xl text-orange-600">25% OFF</p>
+        <p class="text-4xl font-bold md:text-7xl">SUMMER SALE</p>
+        <p class="mt-2 text-sm md:text-lg">For limited time only!</p>
+        <button class="text-lg md:text-2xl bg-black text-white py-2 px-5 mt-10 hover:bg-zinc-800">Shop Now</button>
+        </div>
+        <div class="order-1 lg:order-2">
+        <img class="h-80 w-80 object-cover lg:w-[500px] lg:h-[500px]" src="https://images.unsplash.com/photo-1615397349754-cfa2066a298e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80" alt="">
+        </div>
+    </div>
+      </div>
+
+      </div>
+
+      <div class="swiper-slide swiper-slide--two">
+      <div class="px-3 py-5 bg-neutral-100 lg:py-10">
+    <div class="grid lg:grid-cols-2 items-center justify-items-center gap-5">
+        <div class="order-2 lg:order-1 flex flex-col justify-center items-center">
+        <p class="text-4xl font-bold md:text-7xl text-orange-600">25% OFF</p>
+        <p class="text-4xl font-bold md:text-7xl">SUMMER SALE</p>
+        <p class="mt-2 text-sm md:text-lg">For limited time only!</p>
+        <button class="text-lg md:text-2xl bg-black text-white py-2 px-5 mt-10 hover:bg-zinc-800">Shop Now</button>
+        </div>
+        <div class="order-1 lg:order-2">
+        <img class="h-80 w-80 object-cover lg:w-[500px] lg:h-[500px]" src="https://images.unsplash.com/photo-1615397349754-cfa2066a298e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80" alt="">
+        </div>
+    </div>
+      </div>
+      </div>
+
+      <div class="swiper-slide swiper-slide--three">
+
+      <div class="px-3 py-5 bg-neutral-100 lg:py-10">
+    <div class="grid lg:grid-cols-2 items-center justify-items-center gap-5">
+        <div class="order-2 lg:order-1 flex flex-col justify-center items-center">
+        <p class="text-4xl font-bold md:text-7xl text-orange-600">25% OFF</p>
+        <p class="text-4xl font-bold md:text-7xl">SUMMER SALE</p>
+        <p class="mt-2 text-sm md:text-lg">For limited time only!</p>
+        <button class="text-lg md:text-2xl bg-black text-white py-2 px-5 mt-10 hover:bg-zinc-800">Shop Now</button>
+        </div>
+        <div class="order-1 lg:order-2">
+        <img class="h-80 w-80 object-cover lg:w-[500px] lg:h-[500px]" src="https://images.unsplash.com/photo-1615397349754-cfa2066a298e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80" alt="">
+        </div>
+    </div>
+      </div>
+
+      </div>
+
+      <div class="swiper-slide swiper-slide--four">
+
+      <div class="px-3 py-5 bg-neutral-100 lg:py-10">
+    <div class="grid lg:grid-cols-2 items-center justify-items-center gap-5">
+        <div class="order-2 lg:order-1 flex flex-col justify-center items-center">
+        <p class="text-4xl font-bold md:text-7xl text-orange-600">25% OFF</p>
+        <p class="text-4xl font-bold md:text-7xl">SUMMER SALE</p>
+        <p class="mt-2 text-sm md:text-lg">For limited time only!</p>
+        <button class="text-lg md:text-2xl bg-black text-white py-2 px-5 mt-10 hover:bg-zinc-800">Shop Now</button>
+        </div>
+        <div class="order-1 lg:order-2">
+        <img class="h-80 w-80 object-cover lg:w-[500px] lg:h-[500px]" src="https://images.unsplash.com/photo-1615397349754-cfa2066a298e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80" alt="">
+        </div>
+    </div>
+      </div>
+
+      </div>
+
+      <div class="swiper-slide swiper-slide--five">
+       
+      <div class="px-3 py-5 bg-neutral-100 lg:py-10">
+    <div class="grid lg:grid-cols-2 items-center justify-items-center gap-5">
+        <div class="order-2 lg:order-1 flex flex-col justify-center items-center">
+        <p class="text-4xl font-bold md:text-7xl text-orange-600">25% OFF</p>
+        <p class="text-4xl font-bold md:text-7xl">SUMMER SALE</p>
+        <p class="mt-2 text-sm md:text-lg">For limited time only!</p>
+        <button class="text-lg md:text-2xl bg-black text-white py-2 px-5 mt-10 hover:bg-zinc-800">Shop Now</button>
+        </div>
+        <div class="order-1 lg:order-2">
+        <img class="h-80 w-80 object-cover lg:w-[500px] lg:h-[500px]" src="https://images.unsplash.com/photo-1615397349754-cfa2066a298e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80" alt="">
+        </div>
+    </div>
+      </div>
+
+      </div>
+
+
+      <div class="swiper-slide swiper-slide--five">
+       
+      <div class="px-3 py-5 bg-neutral-100 lg:py-10">
+    <div class="grid lg:grid-cols-2 items-center justify-items-center gap-5">
+        <div class="order-2 lg:order-1 flex flex-col justify-center items-center">
+        <p class="text-4xl font-bold md:text-7xl text-orange-600">25% OFF</p>
+        <p class="text-4xl font-bold md:text-7xl">SUMMER SALE</p>
+        <p class="mt-2 text-sm md:text-lg">For limited time only!</p>
+        <button class="text-lg md:text-2xl bg-black text-white py-2 px-5 mt-10 hover:bg-zinc-800">Shop Now</button>
+        </div>
+        <div class="order-1 lg:order-2">
+        <img class="h-80 w-80 object-cover lg:w-[500px] lg:h-[500px]" src="https://images.unsplash.com/photo-1615397349754-cfa2066a298e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80" alt="">
+        </div>
+    </div>
+      </div>      
+
+      </div>
+
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+  
     </section>
+
     <!-- packages -->
     <section class="packages" id="packages">
         <div class="heading">
@@ -754,8 +926,6 @@
         </div>
     </section>
 
-    <!-- Swiper JS -->
-    
 
     <!-- Swiper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
@@ -802,4 +972,135 @@
 
   });
 
-</script> 
+</script>
+
+<script>
+    var preloader = document.getElementById('loader');
+    function myFunction(){
+        preloader.style.display = 'none';
+    }
+</script>
+
+<script>
+    var preload = document.getElementById('loader');
+    var content = document.getElementById('content');
+    window.onload=function() {
+            
+            preload.style.display = 'none';
+            content.style.display = 'block';
+    }
+</script>
+
+<script>
+    $(window).on('load',function(){
+        $('#loader').fadeOut(1000);
+        $('#content').fadeIn(1000);
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/platform/1.3.6/platform.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+
+<script src="../jsnav/bootstrap.bundle.js"></script>
+    <script src="../jquery-3.4.1.min.js"></script>
+    <script src="../sweetalert.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" ></script>
+  <script src="//cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
+
+
+<script>
+    $(document).ready(function(){
+	//bind enter key to click button
+	$(document).keypress(function(e){
+    	if (e.which == 13){
+    		if($('#loginform').is(":visible")){
+    			$("#loginbutton").click();
+    		}
+        	else if($('#signupform').is(":visible")){
+        		$("#signupbutton").click();
+        	}
+    	}
+	});
+
+	$('#signup').click(function(){
+		$('#loginform').slideUp();
+		$('#signupform').slideDown();
+		$('#myalert').slideUp();
+		$('#signform')[0].reset();
+	});
+
+	$('#login').click(function(){
+		$('#loginform').slideDown();
+		$('#signupform').slideUp();
+		$('#myalert').slideUp();
+		$('#logform')[0].reset();
+	});
+
+	$(document).on('click', '#signupbutton', function(){
+		if($('#susername').val()!='' && $('#spassword').val()!=''){
+			$('#signupbutton').val('Signing up...');
+			$('#myalert').slideUp();
+			var signform = $('#signform').serialize();
+			$.ajax({
+				method: 'POST',
+				url: 'user/login.php',
+				data: signform,
+
+				success:function(data){
+					setTimeout(function(){
+					$('#myalert').slideDown();
+					$('#alerttext').html(data);
+					$('#signupbutton').val('Sign up');
+					$('#signform')[0].reset();
+              //  alert(data);
+					}, 2000);
+				}
+			});
+		}
+		else{
+			alert('Please input all fields to Sign Up');
+		}
+	});
+
+	$(document).on('click', '#loginbutton', function(){
+		if($('#username').val()!=''){
+			$('#loginbutton').val('Logging in...');
+			$('#myalert').slideUp();
+			var logform = $('#logform').serialize();
+			setTimeout(function(){
+				$.ajax({
+					method: 'POST',
+					url: 'user/login.php',
+					data: logform,
+					success:function(data){
+						if(data==1){
+							$('#myalert').slideDown();
+							$('#alerttext').text('Login Successful. User Verified!');
+							$('#loginbutton').val('Thank You!');
+							$('#logform')[0].reset();
+							setTimeout(function(){
+								// location.reload();
+                window.location.href = 'user/';
+							}, 2000);
+						}
+						else{
+							$('#myalert').slideDown();
+							$('#alerttext').html(data);
+							$('#loginbutton').val('Try Again!');
+							$('#logform')[0].reset();
+						}
+					}
+				});
+			}, 2000);
+		}
+		else{
+			alert('Please input Phone fields to Login');
+		}
+	});
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js'></script>
+  <script src="dist/js/scriptc.js"></script>

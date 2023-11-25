@@ -1,5 +1,5 @@
 <?php
-	include('../../db/db.php');
+	include('../db/db.php');
 	session_start();
 
 if(isset($_POST['melogin'])){
@@ -28,7 +28,7 @@ if(isset($_POST['melogin'])){
 
 
 
-		$query="SELECT * FROM users WHERE phone='$username' OR user_id='$username' AND (phone_pass='$password' OR password='$password') AND u_type=0 ";
+		$query="SELECT * FROM users WHERE phone='$username' OR u_name='$username' OR user_id='$username' AND (phone_pass='$password' OR password='$password') AND u_type=1 ";
 
         $queryr=mysqli_query($con,$query);
 
@@ -41,7 +41,7 @@ if(isset($_POST['melogin'])){
 			$_SESSION['unique_id']=$row['unique_id'];
 			$_SESSION['user_phone']=$row['phone'];
             $_SESSION['b_id'] = $row['b_id'];
-			$_SESSION['role'] = 'admin';
+			$_SESSION['role'] = 'customer';
             echo 1;
 		}
 		else{
@@ -135,7 +135,7 @@ if(isset($_POST['mesignup'])){
 
 			$phoneId=$phone.''.$referr;
 			$unique_id= $number.'-'.$phone;
-			$user_type=0;
+			$user_type=1;
 
 			$con->query("INSERT INTO users (u_name, phone, password, user_id, unique_id, u_type, phone_pass, email) values ('$username', '$phone', '$password', '$number', '$unique_id', '$user_type', '$phoneId', '$email')");
 

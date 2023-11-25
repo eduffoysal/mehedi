@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "../secondhomeApp"
+		},
+		{
+			"path": "../ecomFrontEnd"
 		}
 	],
 	"settings": {}
