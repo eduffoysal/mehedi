@@ -1581,6 +1581,10 @@ input[type="range"]:active::-webkit-slider-thumb {
   margin-bottom: 5px;
 }
 
+.-mb-px {
+  margin-bottom: -1px;
+}
+
 .-ml-1 {
   margin-left: -0.25rem;
 }
@@ -1635,6 +1639,10 @@ input[type="range"]:active::-webkit-slider-thumb {
 
 .me-0 {
   margin-inline-end: 0px;
+}
+
+.me-2 {
+  margin-inline-end: 0.5rem;
 }
 
 .ml-1 {
@@ -6361,6 +6369,11 @@ input[type="range"]:active::-webkit-slider-thumb {
   text-align: center;
 }
 
+.active\:border-blue-600:active {
+  --tw-border-opacity: 1;
+  border-color: rgb(28 100 242 / var(--tw-border-opacity));
+}
+
 .active\:bg-\[\#cacfd1\]:active {
   --tw-bg-opacity: 1;
   background-color: rgb(202 207 209 / var(--tw-bg-opacity));
@@ -6444,6 +6457,11 @@ input[type="range"]:active::-webkit-slider-thumb {
 
 .group\/post:hover .group-hover\/post\:bg-\[length\:100\%_6\%\] {
   background-size: 100% 6%;
+}
+
+.group:hover .group-hover\:text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
 .group\/ps:hover .group-hover\/ps\:opacity-100 {
@@ -7170,6 +7188,11 @@ input[type="range"]:active::-webkit-slider-thumb {
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
+:is(.dark .dark\:text-gray-500) {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
 :is(.dark .dark\:text-neutral-100) {
   --tw-text-opacity: 1;
   color: rgb(245 245 245 / var(--tw-text-opacity));
@@ -7424,6 +7447,11 @@ input[type="range"]:active::-webkit-slider-thumb {
   background-color: transparent;
 }
 
+:is(.dark .group:hover .dark\:group-hover\:text-gray-300) {
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity));
+}
+
 :is(.dark .group[data-te-datepicker-cell-current] .dark\:group-\[\[data-te-datepicker-cell-current\]\]\:border-white) {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
@@ -7659,16 +7687,8 @@ input[type="range"]:active::-webkit-slider-thumb {
     order: 2;
   }
 
-  .lg\:h-\[120px\] {
-    height: 120px;
-  }
-
   .lg\:h-\[500px\] {
     height: 500px;
-  }
-
-  .lg\:w-\[120px\] {
-    width: 120px;
   }
 
   .lg\:w-\[500px\] {
@@ -7686,6 +7706,16 @@ input[type="range"]:active::-webkit-slider-thumb {
   .lg\:py-10 {
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
+  }
+
+  .lg\:px-1 {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
+  .lg\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   :is(.dark .dark\:lg\:hover\:\[paint-order\:markers\]:hover) {
