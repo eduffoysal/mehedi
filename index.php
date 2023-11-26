@@ -292,9 +292,30 @@
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
   <div class="offcanvas-header">
     <h5 id="offcanvasRightLabel">Cart</h5>
-    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    
+  <div class="border-b border-gray-200 dark:border-gray-700">
+    <ul class="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
+
+        <li class="me-2">
+            <a href="#" class="inline-flex active items-center justify-center p-1 text-blue-600 border-b-2  rounded-t-lg active:border-blue-600 dark:text-blue-500 dark:border-blue-500 group" aria-current="page">
+            01 <i class="bi bi-cart"></i>Order
+            </a>
+        </li>
+        <li class="me-2">
+            <a href="#" class="inline-flex items-center justify-center p-1 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 active:border-blue-600 hover:border-gray-300 dark:hover:text-gray-300 group">
+            01 <i class="bi bi-cart"></i>Booking 
+            </a>
+        </li>
+    </ul>
+</div>
+
+<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+
   </div>
   <div class="offcanvas-body">
+
+
+
 
   </div>
 </div>
@@ -309,6 +330,27 @@
   </div>
   <div class="offcanvas-body">
 
+
+
+  <div class="border-b border-gray-200 dark:border-gray-700">
+    <ul class="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
+        <li class="me-2">
+            <a href="#" class="inline-flex items-center justify-center p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 group">
+                <svg class="w-4 h-4 me-2 text-gray-400 group-hover:text-gray-500 dark:text-gray-500 dark:group-hover:text-gray-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z"/>
+                </svg>Profile
+            </a>
+        </li>
+        <li class="me-2">
+            <a href="#" class="inline-flex items-center justify-center p-4 text-blue-600 border-b-2 border-blue-600 rounded-t-lg active dark:text-blue-500 dark:border-blue-500 group" aria-current="page">
+                <svg class="w-4 h-4 me-2 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
+                    <path d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z"/>
+                </svg>Dashboard
+            </a>
+        </li>
+       
+    </ul>
+</div>
 
 
   </div>
@@ -761,6 +803,136 @@
         </div>
     </section>
 
+    <section style="margin: 0 auto" class="product_category" id="product_category">
+        <div class="heading">
+            <h1>Products Categories </h1>
+            <a href="#" class="btn">Choose<i class='bx bx-right-arrow-alt'></i></a>
+        </div> 
+    <div style="margin: 0 auto" class="wrapper">
+      <div class="icon"><i id="left" class="fa-solid fa-angle-left"></i></div>
+      <ul class="tabs-box">
+        <li class="tab active">All</li>
+        <li class="tab">JavaScript</li>
+        <li class="tab">Podcasts</li>
+        <li class="tab">Databases</li>
+        <li class="tab">Web Development</li>
+        <li class="tab">Unboxing</li>
+        <li class="tab">History</li>
+        <li class="tab">Programming</li>
+        <li class="tab">Gadgets</li>
+        <li class="tab">Algorithms</li>
+        <li class="tab">Comedy</li>
+        <li class="tab">Gaming</li>
+        <li class="tab">Share Market</li>
+        <li class="tab">Smartphones</li>
+        <li class="tab">Data Structure</li>
+      </ul>
+      <div class="icon"><i id="right" class="fa-solid fa-angle-right"></i></div>
+    </div>
+
+
+
+    <div style="margin: 0 auto" class="wrapper">
+         <nav style="margin 0 auto">
+         
+         
+
+         </nav>
+        <div id="products" class="products px-0 m-auto">
+        <div class="heading m-auto">
+            <h1>Products Details </h1>
+            <a href="#" class="btn">Add Cart<i class='bx bx-right-arrow-alt'></i></a>
+        </div> 
+
+
+
+        <div class="container-fluid">
+
+
+      
+        <div class="bg-gray-100 w-full min-h-screen gap-4 flex-wrap flex justify-center items-center">
+
+  <!-- Card -->
+  <div class="w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
+    <!-- Image -->
+    <img class="h-40 object-cover rounded-xl" h-40 object-cover rounded-xl" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
+    <div class="p-2">
+    <!-- Heading -->
+    <h2 class="font-bold text-lg mb-2 ">Heading</h2>
+    <!-- Description -->
+    <p class="text-sm text-gray-600">Simple Yet Beautiful Card Design with TaiwlindCss. Subscribe to our Youtube channel for more ...</p>
+    </div>
+    <!-- CTA -->
+    <div class="m-2">
+    <a role='button' href='#' class="text-white bg-purple-600 px-3 py-1 rounded-md hover:bg-purple-700">Learn More</a>
+    </div>
+  </div>
+    <!-- Card -->
+  <div class="w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
+    <!-- Image -->
+    <img class="h-40 object-cover rounded-xl" h-40 object-cover rounded-xl" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
+    <div class="p-2">
+    <!-- Heading -->
+    <h2 class="font-bold text-lg mb-2 ">Heading</h2>
+    <!-- Description -->
+    <p class="text-sm text-gray-600">Simple Yet Beautiful Card Design with TaiwlindCss. Subscribe to our Youtube channel for more ...</p>
+    </div>
+    <!-- CTA -->
+    <div class="m-2">
+    <a role='button' href='#' class="text-white bg-sky-500 px-3 py-1 rounded-md hover:bg-purple-700">Learn More</a>
+    </div>
+  </div>
+  
+    <!-- Card -->
+  <div class="w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
+    <!-- Image -->
+    <img class="h-40 object-cover rounded-xl" h-40 object-cover rounded-xl" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
+    <div class="p-2">
+    <!-- Heading -->
+    <h2 class="font-bold text-lg mb-2 ">Heading</h2>
+    <!-- Description -->
+    <p class="text-sm text-gray-600">Simple Yet Beautiful Card Design with TaiwlindCss. Subscribe to our Youtube channel for more ...</p>
+    </div>
+    <!-- CTA -->
+    <div class="m-2">
+    <a role='button' href='#' class="text-white bg-green-500 px-3 py-1 rounded-md hover:bg-purple-700">Learn More</a>
+    </div>
+  </div>
+      <!-- Card -->
+  <div class="w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
+    <!-- Image -->
+    <img class="h-40 object-cover rounded-xl" h-40 object-cover rounded-xl" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
+    <div class="p-2">
+    <!-- Heading -->
+    <h2 class="font-bold text-lg mb-2 ">Heading</h2>
+    <!-- Description -->
+    <p class="text-sm text-gray-600">Simple Yet Beautiful Card Design with TaiwlindCss. Subscribe to our Youtube channel for more ...</p>
+    </div>
+    <!-- CTA -->
+    <div class="m-2">
+    <a role='button' href='#' class="text-white bg-yellow-500 px-3 py-1 rounded-md hover:bg-purple-700">Learn More</a>
+    </div>
+  </div>
+  
+  
+  
+
+</div>
+
+
+
+        </div>
+
+
+
+        </div>
+
+      </div>
+
+
+    </section>
+
+
     <!-- About -->
     <section class="about" id="about">
         <img src="https://scontent.fcgp7-1.fna.fbcdn.net/v/t39.30808-6/265267077_101779855696513_1761739230786580597_n.jpg?stp=c438.0.1173.1173a_dst-jpg_s851x315&_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGDUshTWcFCNfkJlWcQN10DjckzmklLdQ2NyTOaSUt1Dd_meBzEAw3TWHNMOqJTFd6j1xbK7-OcQzIqvzOymNOi&_nc_ohc=uCm5MuXXf3EAX-v2zkM&_nc_ht=scontent.fcgp7-1.fna&oh=00_AfDsew3iGL3TWy3KCgH9UJvdVLNuOhm5m0t9V7mUo32Viw&oe=6545752B" alt="">
@@ -882,41 +1054,7 @@
         </div>
     </section >
 
-    <section style="margin: 0 auto" class="text-center">
-    
-    <div style="margin: 0 auto" class="wrapper">
-      <div class="icon"><i id="left" class="fa-solid fa-angle-left"></i></div>
-      <ul class="tabs-box">
-        <li class="tab">Coding</li>
-        <li class="tab active">JavaScript</li>
-        <li class="tab">Podcasts</li>
-        <li class="tab">Databases</li>
-        <li class="tab">Web Development</li>
-        <li class="tab">Unboxing</li>
-        <li class="tab">History</li>
-        <li class="tab">Programming</li>
-        <li class="tab">Gadgets</li>
-        <li class="tab">Algorithms</li>
-        <li class="tab">Comedy</li>
-        <li class="tab">Gaming</li>
-        <li class="tab">Share Market</li>
-        <li class="tab">Smartphones</li>
-        <li class="tab">Data Structure</li>
-      </ul>
-      <div class="icon"><i id="right" class="fa-solid fa-angle-right"></i></div>
-    </div>
 
-
-    <div style="margin: 0 auto" class="wrapperr">
-         <nav style="margin 0 auto">
-         
-                    
-
-         </nav>
-      </div>
-
-
-    </section>
 
     <!-- copyright --> 
     <section>
