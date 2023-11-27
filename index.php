@@ -57,7 +57,7 @@
 <link rel="stylesheet" href="icon/bootstrap-icons.css">
 
 
-
+<link rel="stylesheet" href="css/tailwindcss-colors.css">
 
 
 
@@ -470,6 +470,8 @@
 
 
 
+
+
  <!-- home -->
     <section class="home" id="home" >
 
@@ -830,7 +832,34 @@
       <div class="icon"><i id="right" class="fa-solid fa-angle-right"></i></div>
     </div>
 
-
+<div class="category-section">
+        <div class="">
+            <div class="category-wrapper">
+                <button type="button" class="category-arrow prev hidden"><i class="ri-arrow-left-s-line"></i></button>
+                <button type="button" class="category-arrow next"><i class="ri-arrow-right-s-line"></i></button>
+                <div class="category-link">
+                    <a href="#">Clothing</a>
+                    <a href="#">Electronics</a>
+                    <a href="#">Home & Garden</a>
+                    <a href="#">Health & Beauty</a>
+                    <a href="#">Sports & Outdoors</a>
+                    <a href="#">Toys & Games</a>
+                    <a href="#">Pet Supplies</a>
+                    <a href="#">Office & School Supplies</a>
+                    <a href="#">Automotive</a>
+                    <a href="#">Clothing</a>
+                    <a href="#">Electronics</a>
+                    <a href="#">Home & Garden</a>
+                    <a href="#">Health & Beauty</a>
+                    <a href="#">Sports & Outdoors</a>
+                    <a href="#">Toys & Games</a>
+                    <a href="#">Pet Supplies</a>
+                    <a href="#">Office & School Supplies</a>
+                    <a href="#">Automotive</a>
+                </div>
+            </div>
+        </div>
+</div>
 
     <div style="margin: 0 auto" class="wrapper">
          <nav style="margin 0 auto">
@@ -1071,7 +1100,7 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   
     <!-- Link to js --> 
-    <script src="page.js"></script>
+
 </body>
 </html>
 <script>
@@ -1242,3 +1271,5 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js'></script>
   <script src="dist/js/scriptc.js"></script>
+  <script src="page.js"></script>
+  <script src="dist/js/scriptp.js"></script>
