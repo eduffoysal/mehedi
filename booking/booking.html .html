@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Henna Booking Page</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div id="booking-container">
+    <div id="package-details">
+        <h2>Package Name: Non-Bridal Henna</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit voluptatem rem dolor, ea labore alias in accusamus cum soluta, vel ad corporis nobis accusantium.</p>
+        <label for="quantity">Select Quantity:</label>
+        <select id="quantity">
+            <option value="1">1 side (30 minutes)</option>
+            <option value="2">2 side (1 hour)</option>
+            <option value="3">3 side (1 hour 30 minutes)</option>
+            <option value="4">4 side (2 hours)</option>
+        </select>
+        <label for="total-persons">Total Persons:</label>
+        <select id="total-persons">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+    </div>
+
+    <div>
+        <img id="package-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTae6U2Vo10NUSwJlw0Ht6W7rBc2hIkRgNYjGwgDDJF&s" alt="Package Image">
+        <p id="total-price">Total Price: 250tk</p>
+    </div>
+
+    <div id="calendar">
+        <!-- Insert calendar code here -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+        <input type="text" id="datepicker" class="form-control" placeholder="Select Date">
+        <script>
+            $(document).ready(function(){
+                $('#datepicker').datepicker();
+            });
+        </script>
+    </div>
+
+    <button id="add-package-btn">Add Package</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
