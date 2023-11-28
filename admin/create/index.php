@@ -199,20 +199,20 @@ if(!isset($_SESSION['user'])){
               success: function(response){
                 $('#status_add').html(response);
                 // alert(response);
-            Swal.fire({
-              type: 'success',
-              title: "Business Form Successfully added!",
-              text: "THank you admin saheb!",
-              icon: "success",
-              button: false,
-              dangerMode: true,
-              timer: 3000,
-              
-            });
+                Swal.fire({
+                  type: 'success',
+                  title: "Business Form Successfully added!",
+                  text: "THank you admin saheb!",
+                  icon: "success",
+                  button: false,
+                  dangerMode: true,
+                  timer: 3000,
+                  
+                });
 
                 setTimeout(function(){
-					location.reload();
-				}, 3000);
+                  location.reload();
+                }, 3000);
 
               }
             });
@@ -221,3 +221,5 @@ if(!isset($_SESSION['user'])){
     });
   });
 </script>
+<script src="../../js/sweetalert.min.js"></script>
+<script src="../../js/sweetalert2.all.min.js"></script>
