@@ -137,12 +137,32 @@ if(isset($_POST['mesignup'])){
 			$unique_id= $number.'-'.$phone;
 			$user_type=0;
 
-			$con->query("INSERT INTO users (u_name, phone, password, user_id, unique_id, u_type, phone_pass, email) values ('$username', '$phone', '$password', '$number', '$unique_id', '$user_type', '$phoneId', '$email')");
+			// $con->query("INSERT INTO users (u_name, phone, password, user_id, unique_id, u_type, phone_pass, email) values ('$username', '$phone', '$password', '$number', '$unique_id', '$user_type', '$phoneId', '$email')");
 
-			echo $phoneId.' <br> <code>'.$referr.' এই নম্বরটি মনে রাখুন~ধন্যবাদ</code> <br>';
-			?>
-  				<span> ~ Sign up Successful.</span>
-  			<?php
+			$sql = "INSERT INTO users (u_name, phone, password, user_id, unique_id, u_type, phone_pass, email) values ('$username', '$phone', '$password', '$number', '$unique_id', '$user_type', '$phoneId', '$email')";
+
+			if($con->query($sql)){
+
+				$p_sql = "INSERT INTO users_profile (user_phone, uId, unique_id, user_type, user_email) values ('$phone', '$number', '$unique_id', '$user_type', '$email')";
+
+				if($con->query($p_sql)){
+					echo $phoneId.' <br> <code>'.$referr.' এই নম্বরটি মনে রাখুন~ধন্যবাদ</code> <br>';
+					?>
+						  <span> ~ Sign up Successful.</span>
+					  <?php
+				}else{
+					echo $phoneId.' <br> <code>'.$referr.' এই নম্বরটি মনে রাখুন~ধন্যবাদ</code> <br>';
+					?>
+						  <span> ~ Sign up Successful. But Profile Not Created</span>
+					  <?php
+				}
+
+			}else{
+				echo $phoneId.' <br> <code>'.$referr.'Please, Try Again!</code> <br>';
+				?>
+					  <span> ~ Try Again! Not User Not Added .</span>
+				  <?php
+			}
 		}
 	}
 
