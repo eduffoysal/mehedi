@@ -296,7 +296,7 @@ if(isset($_SESSION['user'])){
 							}, 2000);
 						}
 						else{
-                     alert(data);
+                     // alert(data);
 							$('#myalert').slideDown();
 							$('#alerttext').html(data);
 							$('#loginbutton').val('Try Again!');

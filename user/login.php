@@ -28,8 +28,7 @@ if(isset($_POST['melogin'])){
 
 
 
-		$query="SELECT * FROM users WHERE phone='$username' OR u_name='$username' OR user_id='$username' AND (phone_pass='$password' OR password='$password') AND u_type='1' ";
-
+		$query = "SELECT * FROM users WHERE (phone='$username' OR u_name='$username' OR user_id='$username') AND u_type='1' AND (phone_pass='$password' OR password='$password')";
         $queryr=mysqli_query($con,$query);
 
 
