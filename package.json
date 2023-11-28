@@ -1,0 +1,19 @@
+{
+  "name": "edu_mehedi",
+  "version": "1.0.0",
+  "description": "<<<<<<< HEAD\r # mehedi\r =======\r <<<<<<< HEAD\r # mehedi\r rais_rafi_avijit web project\r =======\r # Page\r >>>>>>> main\r >>>>>>> master",
+  "main": "page.js",
+  "scripts": {
+    "build": "npx tailwindcss -i ./src/input.css -o ./output/output.css -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.5"
+  },
+  "dependencies": {
+    "flowbite": "^2.1.1",
+    "tw-elements": "^1.0.0"
+  }
+}

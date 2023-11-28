@@ -1,13 +1,13 @@
 //swiper
-var swiper = new Swiper(".home", {
-    spaceBetween: 30,
-    centeredSlides: true,
+// var swiper = new Swiper(".home", {
+//     spaceBetween: 30,
+//     centeredSlides: true,
    
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
+//     navigation: {
+//       nextEl: ".swiper-button-next",
+//       prevEl: ".swiper-button-prev",
+//     },
+//   });
 
   let menu=document.querySelector('#menu-icon');
   let navbar=document.querySelector('.navbar');
@@ -69,3 +69,21 @@ var swiper = new Swiper(".home", {
   // tabsBox.addEventListener("mousedown", () => isDragging = true);
   // tabsBox.addEventListener("mousemove", dragging);
   // document.addEventListener("mouseup", dragStop);
+
+  
+// start: Category
+document.querySelector('.category-arrow.prev').addEventListener('click', function(e) {
+  e.preventDefault()
+  const scroller = document.querySelector('.category-link')
+  scroller.scrollLeft -= scroller.offsetWidth
+});
+document.querySelector('.category-arrow.next').addEventListener('click', function(e) {
+  e.preventDefault()
+  const scroller = document.querySelector('.category-link')
+  scroller.scrollLeft += scroller.offsetWidth
+});
+document.querySelector('.category-link').addEventListener('scroll', function() {
+  document.querySelector('.category-arrow.prev').classList.toggle('hidden', this.scrollLeft < 24)
+  document.querySelector('.category-arrow.next').classList.toggle('hidden', this.scrollLeft > this.scrollWidth - this.offsetWidth - 24)
+});
+// end: Category
