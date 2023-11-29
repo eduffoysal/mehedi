@@ -11,6 +11,12 @@
 		},
 		{
 			"path": "../ecomFrontEnd"
+		},
+		{
+			"path": "../curl"
+		},
+		{
+			"path": "../oop"
 		}
 	],
 	"settings": {}

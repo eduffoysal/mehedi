@@ -1,6 +1,33 @@
 <?php
-    // include(db/database/data.php);
-    // include(db/db.php);
+    include('db/db.php');
+    // include('database/data.php');
+    session_start();
+
+    spl_autoload_register(function ($class) {
+        include $class . '.php';
+        // echo $class;
+    }); 
+    // print_r($_SERVER);
+
+    $router = new Router();
+
+    $router->get('/edu_mehedi/:id',function($params){
+        echo $params['id'];
+    });
+    $router->get('/edu_mehedi/id/:id/:me',function($params){
+        echo $params['me'];
+    });
+
+    // $router->get('/edu_mehedi/id/:id/:me',function($params){
+    //     echo $params['me'];
+    // });
+
+    $router->get('/edu_mehedi/profile/:phone',function($params){
+        echo $params['phone'];
+    });
+
+    $router->listen();
+
 
 
 ?>
