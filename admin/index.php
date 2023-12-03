@@ -638,7 +638,7 @@ if(!isset($_SESSION['user'])){
 		 <footer class="footer">
 		    <div class="container-fluid">
 			   <div class="footer-in">
-			      <p class="mb-0">&copy 2021 Vishweb Design . All Rights Reserved.</p>
+			      <p class="mb-0">&copy 2021 Creative Mehedi Art By Raisa . All Rights Reserved.</p>
 			   </div>
 			</div>
 		 </footer>
