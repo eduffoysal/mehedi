@@ -2,6 +2,8 @@
 include('../db/db.php');
 session_start();
 
+$rootUrl = getRootUrl();
+
 if(isset($_SESSION['user'])){
     $_SESSION['visitor_id']=$_SESSION['user'];
     $_SESSION['unique_id']=$_SESSION['user'];
