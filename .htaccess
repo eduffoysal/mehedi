@@ -23,6 +23,8 @@ RewriteRule ^a(.*)$ admin/index.php?id=$1 [QSA,L]
 
 RewriteRule ^seller(.*)$ home.php?id=$1 [QSA,L]
 
+RewriteRule ^id(.*)$ home.php?id=$1 [QSA,L]
+
 RewriteRule ^ur/(.+)/(.+)$ url?u_id=$1&action=$2 [QSA,L]
 RewriteRule ^u/(.+)/(.+)$ url?u_id=$1&action=$2 [QSA,L]
 RewriteRule ^url.php/(.+)/(.+)$ url?u_id=$1&action=$2 [QSA,L]
