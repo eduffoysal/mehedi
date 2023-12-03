@@ -1,44 +1,43 @@
 php_flag display_errors on
 php_value error_reporting 9999
+Options -Indexes
 
 RewriteEngine On
 
-# RewriteBase /
-
-# RewriteCond %{REQUEST_FILENAME}\.php -f
-RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php !-f
 
-RewriteRule . index.php [L]
 
-# RewriteRule ^(.*)$ home?u_id=$id  [QSA,L]
 
 #Return 404 if orginal request is .php
-#RewriteCond %{THE_REQUEST} "^[^ ]* .*?\.php[? ].*$"
-#RewriteRule .* - [L,R=404]
+# RewriteCond %{THE_REQUEST} "^[^ ]* .*?\.php[? ].*$"
+# RewriteRule .* - [L,R=404]
 
-# RewriteCond %{REQUEST_FILENAME} !-d
-# RewriteCond %{REQUEST_FILENAME} !-f
-# RewriteCond %{REQUEST_FILENAME} !-l
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
 
-#RewriteRule ^(.*)$ index?u_id=$id [QSA,L]
 
-# RewriteCond %{REQUEST_FILENAME} !-d
-# RewriteCond %{REQUEST_FILENAME} !-f
-# RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule ^h(.*)$ preload/home.php?id=$1 [QSA,L]
+RewriteRule ^a(.*)$ admin/index.php?id=$1 [QSA,L]
 
-# RewriteRule ^ur/(.+)/(.+)$ url?u_id=$1&action=$2 [QSA,L]
-# RewriteRule ^u/(.+)/(.+)$ url?u_id=$1&action=$2 [QSA,L]
-# RewriteRule ^url.php/(.+)/(.+)$ url?u_id=$1&action=$2 [QSA,L]
-# RewriteRule ^url/(.+)/(.+)$ url.php?u_id=$1&action=$2 [QSA,L]
+RewriteRule ^seller(.*)$ home.php?id=$1 [QSA,L]
 
-# RewriteRule ^mr/(.+)/(.+)$ mrl?u_id=$1&action=$2 [QSA,L]
-# RewriteRule ^mess/(.+)/(.+)$ mrl?u_id=$1&action=$2 [QSA,L]
-# RewriteRule ^me/(.+)/(.+)$ mrl?u_id=$1&action=$2 [QSA,L]
-# RewriteRule ^m/(.+)/(.+)$ mrl?u_id=$1&action=$2 [QSA,L]
-# RewriteRule ^mrl.php/(.+)/(.+)$ mrl?u_id=$1&action=$2 [QSA,L]
-# RewriteRule ^mrl/(.+)/(.+)$ mrl.php?u_id=$1&action=$2 [QSA,L]
+RewriteRule ^ur/(.+)/(.+)$ url?u_id=$1&action=$2 [QSA,L]
+RewriteRule ^u/(.+)/(.+)$ url?u_id=$1&action=$2 [QSA,L]
+RewriteRule ^url.php/(.+)/(.+)$ url?u_id=$1&action=$2 [QSA,L]
+RewriteRule ^url/(.+)/(.+)$ url.php?u_id=$1&action=$2 [QSA,L]
 
-# RewriteRule ^uu/(.+)/(.+)/(.+)$ urll?u_id=$1&action=$2&name=$3 [QSA,L]
-# RewriteRule ^urll.php/(.+)/(.+)/(.+)$ urll?u_id=$1&action=$2&name=$3 [QSA,L]
-# RewriteRule ^urll/(.+)/(.+)/(.+)$ urll.php?u_id=$1&action=$2&name=$3 [QSA,L]
+RewriteRule ^mr/(.+)/(.+)$ mrl?u_id=$1&action=$2 [QSA,L]
+RewriteRule ^mess/(.+)/(.+)$ mrl?u_id=$1&action=$2 [QSA,L]
+RewriteRule ^me/(.+)/(.+)$ mrl?u_id=$1&action=$2 [QSA,L]
+RewriteRule ^m/(.+)/(.+)$ mrl?u_id=$1&action=$2 [QSA,L]
+RewriteRule ^mrl.php/(.+)/(.+)$ mrl?u_id=$1&action=$2 [QSA,L]
+RewriteRule ^mrl/(.+)/(.+)$ mrl.php?u_id=$1&action=$2 [QSA,L]
+
+RewriteRule ^uu/(.+)/(.+)/(.+)$ urll?u_id=$1&action=$2&name=$3 [QSA,L]
+RewriteRule ^urll.php/(.+)/(.+)/(.+)$ urll?u_id=$1&action=$2&name=$3 [QSA,L]
+RewriteRule ^urll/(.+)/(.+)/(.+)$ urll.php?u_id=$1&action=$2&name=$3 [QSA,L]
+
+# ErrorDocument 404 page_not_found
+ErrorDocument 404 /edu_mehedi/404.php

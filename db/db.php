@@ -57,4 +57,18 @@ function base(){
 // }else{
     // require_once("404.php");
 // }
+
+
+function validateInput($con, $input){
+    return mysqli_real_escape_string($con,$input);          
+}
+
+function getRootUrl() {
+    $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
+    $host = $_SERVER['HTTP_HOST'];
+    $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/');
+    
+    return "$protocol://$host$uri";
+}
+
 ?>

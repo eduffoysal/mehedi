@@ -41,6 +41,8 @@ if(isset($_POST['melogin'])){
 			$_SESSION['user_phone']=$row['phone'];
             $_SESSION['b_id'] = $row['b_id'];
 			$_SESSION['role'] = 'customer';
+			$_SESSION['logged_in'] = true;
+			$_SESSION['row'] = $row;
             echo 1;
 		}
 		else{
