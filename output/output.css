@@ -1853,10 +1853,6 @@ input[type="range"]:active::-webkit-slider-thumb {
   margin-top: 200px;
 }
 
-.mr-3 {
-  margin-right: 0.75rem;
-}
-
 .box-border {
   box-sizing: border-box;
 }
@@ -3965,11 +3961,6 @@ input[type="range"]:active::-webkit-slider-thumb {
   border-top-color: transparent;
 }
 
-.border-b-gray-800 {
-  --tw-border-opacity: 1;
-  border-bottom-color: rgb(31 41 55 / var(--tw-border-opacity));
-}
-
 .\!bg-\[\#858585\] {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(133 133 133 / var(--tw-bg-opacity)) !important;
@@ -4230,15 +4221,6 @@ input[type="range"]:active::-webkit-slider-thumb {
 .bg-zinc-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(63 63 70 / var(--tw-bg-opacity));
-}
-
-.bg-black\/50 {
-  background-color: rgb(0 0 0 / 0.5);
-}
-
-.bg-gray-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 
 .decoration-slice {
@@ -4674,18 +4656,6 @@ input[type="range"]:active::-webkit-slider-thumb {
 
 .pt-\[6px\] {
   padding-top: 6px;
-}
-
-.pb-4 {
-  padding-bottom: 1rem;
-}
-
-.pl-7 {
-  padding-left: 1.75rem;
-}
-
-.pe-2 {
-  padding-inline-end: 0.5rem;
 }
 
 .text-left {
@@ -5216,6 +5186,11 @@ input[type="range"]:active::-webkit-slider-thumb {
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(240 82 82 / var(--tw-text-opacity));
+}
+
+.text-warning {
+  --tw-text-opacity: 1;
+  color: rgb(228 161 27 / var(--tw-text-opacity));
 }
 
 .text-white {
@@ -5918,11 +5893,6 @@ input[type="range"]:active::-webkit-slider-thumb {
   margin-right: 0.5rem;
 }
 
-.before\:mr-3::before {
-  content: var(--tw-content);
-  margin-right: 0.75rem;
-}
-
 .before\:inline-block::before {
   content: var(--tw-content);
   display: inline-block;
@@ -5979,12 +5949,6 @@ input[type="range"]:active::-webkit-slider-thumb {
 .before\:bg-transparent::before {
   content: var(--tw-content);
   background-color: transparent;
-}
-
-.before\:bg-gray-300::before {
-  content: var(--tw-content);
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 
 .before\:bg-gradient-to-b::before {
@@ -6249,11 +6213,6 @@ input[type="range"]:active::-webkit-slider-thumb {
   background-color: rgb(39 39 42 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-gray-950:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(3 7 18 / var(--tw-bg-opacity));
-}
-
 .hover\:fill-\[\#8b8b8b\]:hover {
   fill: #8b8b8b;
 }
@@ -6305,11 +6264,6 @@ input[type="range"]:active::-webkit-slider-thumb {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.hover\:text-gray-100:hover {
-  --tw-text-opacity: 1;
-  color: rgb(243 244 246 / var(--tw-text-opacity));
 }
 
 .hover\:\!opacity-90:hover {
@@ -6869,21 +6823,12 @@ input[type="range"]:active::-webkit-slider-thumb {
   display: block;
 }
 
-.group.selected .group-\[\.selected\]\:block {
-  display: block;
-}
-
 .group\/x.ps--clicking .group-\[\&\.ps--clicking\]\/x\:h-\[11px\] {
   height: 11px;
 }
 
 .group\/y.ps--clicking .group-\[\&\.ps--clicking\]\/y\:w-\[11px\] {
   width: 11px;
-}
-
-.group.selected .group-\[\.selected\]\:rotate-90 {
-  --tw-rotate: 90deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .group[data-te-datepicker-cell-current] .group-\[\[data-te-datepicker-cell-current\]\]\:border {
@@ -6932,29 +6877,9 @@ input[type="range"]:active::-webkit-slider-thumb {
   background-color: rgb(59 113 202 / var(--tw-bg-opacity));
 }
 
-.group.active .group-\[\.active\]\:bg-gray-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
-}
-
-.group.selected .group-\[\.selected\]\:bg-gray-950 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(3 7 18 / var(--tw-bg-opacity));
-}
-
 .group[data-te-datepicker-cell-selected] .group-\[\[data-te-datepicker-cell-selected\]\]\:text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.group.active .group-\[\.active\]\:text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.group.selected .group-\[\.selected\]\:text-gray-100 {
-  --tw-text-opacity: 1;
-  color: rgb(243 244 246 / var(--tw-text-opacity));
 }
 
 .group\/ps.ps--scrolling-x .group-\[\&\.ps--scrolling-x\]\/ps\:opacity-60 {

@@ -45,6 +45,7 @@
 
     <link rel="stylesheet" href="page.css">
     <link rel="stylesheet" href="css/slider_style.css">
+    <link rel="stylesheet" href="css/service_c.css">
 
     <script src="script.js" defer></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -115,6 +116,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+
+
 
 
 </head>
@@ -703,17 +706,17 @@
             <a href="#" class="btn">See All<i class='bx bx-right-arrow-alt'></i></a>
             
         </div>
-        <!-- container -->
+
         <div class="packages-container">
-            <!-- box 1 -->
-            <div class="box box1">
+
+            <!-- <div class="box box1">
                 <img src="https://scontent.fcgp7-1.fna.fbcdn.net/v/t39.30808-6/387157835_336316975579631_2239034539631206761_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=FfYOnBAj2LcAX-M6ezE&_nc_ht=scontent.fcgp7-1.fna&oh=00_AfCP-J9t8-LCcX4Lv69dj7zoUv-PIiq_VWlaB69VWfWhHw&oe=6546C017" alt="">
                 <h2>Non Bridal Henna Design</h2>
                 <span>Multiple types</span>
                 <i class='bx bx-right-arrow-alt'></i>
 
             </div>
-            <!-- box 2 -->
+
             <div class="box box2">
                 <img src="https://scontent.fcgp7-1.fna.fbcdn.net/v/t39.30808-6/322723982_670009237950697_2905543374317797598_n.jpg?stp=c0.105.641.641a_dst-jpg_s851x315&_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=A3nUjLlgmMkAX9NFAqS&_nc_ht=scontent.fcgp7-1.fna&oh=00_AfBk3gFDmdPU1RKwuJskqfAHpvjNnUcWQxNX8MQ0R4Xqlg&oe=65450F7E" alt="">
                 <h2>Semi Bridal Henna Design</h2>
@@ -721,14 +724,131 @@
                 <i class='bx bx-right-arrow-alt'></i>
 
             </div>
-            <!-- box 3 -->
+
             <div class="box box3">
                 <img src="https://scontent.fcgp7-1.fna.fbcdn.net/v/t39.30808-6/265655639_102284962312669_608108835019162989_n.jpg?stp=c0.157.1573.1573a_dst-jpg_s851x315&_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=CsQo1TS3F9YAX_wse7j&_nc_ht=scontent.fcgp7-1.fna&oh=00_AfAb2Eb_yOPt33AMHv3239Mnn4CCoUjjH2vbFUzTvDO9OQ&oe=6546D993" alt="">
                 <h2>Bridal Henna Design</h2>
                 <span>4 types</span>
                 <i class='bx bx-right-arrow-alt'></i>
-            </div>
+            </div> -->
+
+
+
+
+
+              <div class="wrapper_c">
+                  <button class="arrow prev"><i class="ri-arrow-left-s-line"></i></button>
+                  <button class="arrow next"><i class="ri-arrow-right-s-line"></i></button>
+                  <div class="card-wrapper">
+
+                      <!-- <div class="card-item">
+                          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                          <div class="card-info">
+                              <a href="#" class="card-title">Cooked dish on gray bowl</a>
+                              <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, beatae?</p>
+                          </div>
+                      </div>
+                      <div class="card-item">
+                          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                          <div class="card-info">
+                              <a href="#" class="card-title">Cooked dish on gray bowl</a>
+                              <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, beatae?</p>
+                          </div>
+                      </div>
+                      <div class="card-item">
+                          <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                          <div class="card-info">
+                              <a href="#" class="card-title">Cooked dish on gray bowl</a>
+                              <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, beatae?</p>
+                          </div>
+                      </div>
+                      <div class="card-item">
+                          <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                          <div class="card-info">
+                              <a href="#" class="card-title">Cooked dish on gray bowl</a>
+                              <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, beatae?</p>
+                          </div>
+                      </div>
+                      <div class="card-item">
+                          <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                          <div class="card-info">
+                              <a href="#" class="card-title">Cooked dish on gray bowl</a>
+                              <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, beatae?</p>
+                          </div>
+                      </div>
+                      <div class="card-item">
+                          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
+                          <div class="card-info">
+                              <a href="#" class="card-title">Cooked dish on gray bowl</a>
+                              <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, beatae?</p>
+                          </div>
+                      </div> -->
+
+
+
+                      <div class="box box1">
+                          <img src="https://scontent.fcgp7-1.fna.fbcdn.net/v/t39.30808-6/387157835_336316975579631_2239034539631206761_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=FfYOnBAj2LcAX-M6ezE&_nc_ht=scontent.fcgp7-1.fna&oh=00_AfCP-J9t8-LCcX4Lv69dj7zoUv-PIiq_VWlaB69VWfWhHw&oe=6546C017" alt="">
+                          <h2>Non Bridal Henna Design</h2>
+                          <span>Multiple types</span>
+                          <i class='bx bx-right-arrow-alt'></i>
+
+                      </div>
+
+                      <div class="box box2">
+                          <img src="https://scontent.fcgp7-1.fna.fbcdn.net/v/t39.30808-6/322723982_670009237950697_2905543374317797598_n.jpg?stp=c0.105.641.641a_dst-jpg_s851x315&_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=A3nUjLlgmMkAX9NFAqS&_nc_ht=scontent.fcgp7-1.fna&oh=00_AfBk3gFDmdPU1RKwuJskqfAHpvjNnUcWQxNX8MQ0R4Xqlg&oe=65450F7E" alt="">
+                          <h2>Semi Bridal Henna Design</h2>
+                          <span>2 types</span>
+                          <i class='bx bx-right-arrow-alt'></i>
+
+                      </div>
+
+                      <div class="box box3">
+                          <img src="https://scontent.fcgp7-1.fna.fbcdn.net/v/t39.30808-6/265655639_102284962312669_608108835019162989_n.jpg?stp=c0.157.1573.1573a_dst-jpg_s851x315&_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=CsQo1TS3F9YAX_wse7j&_nc_ht=scontent.fcgp7-1.fna&oh=00_AfAb2Eb_yOPt33AMHv3239Mnn4CCoUjjH2vbFUzTvDO9OQ&oe=6546D993" alt="">
+                          <h2>Bridal Henna Design</h2>
+                          <span>4 types</span>
+                          <i class='bx bx-right-arrow-alt'></i>
+                      </div>
+
+
+
+
+                  </div>
+              </div>
+
+
+
+
+
+
+
         </div>
+
+        <div class="pagination_container p-1">
+        
+        <nav aria-label="Page nvigation">
+          <ul class="pagination">
+              <li class=""><a href="" class="page-link  prev" ><span aria-hidden="true">&laquo;</span></a></li>
+              
+              <?php
+              $pagi = 10;
+              $current_page = 10;
+               for($i=1;$i<=$pagi;$i++){
+                  $class='';
+                  if($current_page==$i){
+                      ?>
+                  <li class="page-item active"><a href="javascript:void(0)" class="page-link"><?php echo $i?></a></li>
+              <?php
+              }else{
+              ?>
+              <li class="page-item"><a href="?start=<?php echo $i ?>" class="page-link"><?php echo $i?></a></li>
+              <?php } ?>
+              <?php }?>
+              <li class=""><a href="" class="page-link  next" ><span aria-hidden="true">&raquo;</span></a></li>
+          </ul>
+        </nav>                      
+
+      </div>
+
     </section>
     <!-- Details -->
     <section class="details" id="details">
@@ -830,6 +950,33 @@
             </div>           
 
         </div>
+
+        <div class="pagination_container p-1">
+        
+        <nav aria-label="Page nvigation">
+          <ul class="pagination">
+              <li class=""><a href="" class="page-link  prev" ><span aria-hidden="true">&laquo;</span></a></li>
+              
+              <?php
+              $pagi = 10;
+              $current_page = 10;
+               for($i=1;$i<=$pagi;$i++){
+                  $class='';
+                  if($current_page==$i){
+                      ?>
+                  <li class="page-item active"><a href="javascript:void(0)" class="page-link"><?php echo $i?></a></li>
+              <?php
+              }else{
+              ?>
+              <li class="page-item"><a href="?start=<?php echo $i ?>" class="page-link"><?php echo $i?></a></li>
+              <?php } ?>
+              <?php }?>
+              <li class=""><a href="" class="page-link  next" ><span aria-hidden="true">&raquo;</span></a></li>
+          </ul>
+        </nav>                      
+
+      </div>
+
     </section>
 
     <section style="margin: 0 auto" class="product_category" id="product_category">
@@ -908,74 +1055,98 @@
       
         <div class="bg-gray-100 w-full min-h-screen gap-4 flex-wrap flex justify-center items-center">
 
-  <!-- Card -->
-  <div class="w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
-    <!-- Image -->
-    <img class="h-40 object-cover rounded-xl" h-40 object-cover rounded-xl" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
-    <div class="p-2">
-    <!-- Heading -->
-    <h2 class="font-bold text-lg mb-2 ">Heading</h2>
-    <!-- Description -->
-    <p class="text-sm text-gray-600">Simple Yet Beautiful Card Design with TaiwlindCss. Subscribe to our Youtube channel for more ...</p>
-    </div>
-    <!-- CTA -->
-    <div class="m-2">
-    <a role='button' href='#' class="text-white bg-purple-600 px-3 py-1 rounded-md hover:bg-purple-700">Learn More</a>
-    </div>
-  </div>
-    <!-- Card -->
-  <div class="w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
-    <!-- Image -->
-    <img class="h-40 object-cover rounded-xl" h-40 object-cover rounded-xl" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
-    <div class="p-2">
-    <!-- Heading -->
-    <h2 class="font-bold text-lg mb-2 ">Heading</h2>
-    <!-- Description -->
-    <p class="text-sm text-gray-600">Simple Yet Beautiful Card Design with TaiwlindCss. Subscribe to our Youtube channel for more ...</p>
-    </div>
-    <!-- CTA -->
-    <div class="m-2">
-    <a role='button' href='#' class="text-white bg-sky-500 px-3 py-1 rounded-md hover:bg-purple-700">Learn More</a>
-    </div>
-  </div>
-  
-    <!-- Card -->
-  <div class="w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
-    <!-- Image -->
-    <img class="h-40 object-cover rounded-xl" h-40 object-cover rounded-xl" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
-    <div class="p-2">
-    <!-- Heading -->
-    <h2 class="font-bold text-lg mb-2 ">Heading</h2>
-    <!-- Description -->
-    <p class="text-sm text-gray-600">Simple Yet Beautiful Card Design with TaiwlindCss. Subscribe to our Youtube channel for more ...</p>
-    </div>
-    <!-- CTA -->
-    <div class="m-2">
-    <a role='button' href='#' class="text-white bg-green-500 px-3 py-1 rounded-md hover:bg-purple-700">Learn More</a>
-    </div>
-  </div>
-      <!-- Card -->
-  <div class="w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
-    <!-- Image -->
-    <img class="h-40 object-cover rounded-xl" h-40 object-cover rounded-xl" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
-    <div class="p-2">
-    <!-- Heading -->
-    <h2 class="font-bold text-lg mb-2 ">Heading</h2>
-    <!-- Description -->
-    <p class="text-sm text-gray-600">Simple Yet Beautiful Card Design with TaiwlindCss. Subscribe to our Youtube channel for more ...</p>
-    </div>
-    <!-- CTA -->
-    <div class="m-2">
-    <a role='button' href='#' class="text-white bg-yellow-500 px-3 py-1 rounded-md hover:bg-purple-700">Learn More</a>
-    </div>
-  </div>
+        <!-- Card -->
+        <div class="w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
+          <!-- Image -->
+          <img class="h-40 object-cover rounded-xl" h-40 object-cover rounded-xl" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
+          <div class="p-2">
+          <!-- Heading -->
+          <h2 class="font-bold text-lg mb-2 ">Heading</h2>
+          <!-- Description -->
+          <p class="text-sm text-gray-600">Simple Yet Beautiful Card Design with TaiwlindCss. Subscribe to our Youtube channel for more ...</p>
+          </div>
+          <!-- CTA -->
+          <div class="m-2">
+          <a role='button' href='#' class="text-white bg-purple-600 px-3 py-1 rounded-md hover:bg-purple-700">Learn More</a>
+          </div>
+        </div>
+          <!-- Card -->
+        <div class="w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
+          <!-- Image -->
+          <img class="h-40 object-cover rounded-xl" h-40 object-cover rounded-xl" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
+          <div class="p-2">
+          <!-- Heading -->
+          <h2 class="font-bold text-lg mb-2 ">Heading</h2>
+          <!-- Description -->
+          <p class="text-sm text-gray-600">Simple Yet Beautiful Card Design with TaiwlindCss. Subscribe to our Youtube channel for more ...</p>
+          </div>
+          <!-- CTA -->
+          <div class="m-2">
+          <a role='button' href='#' class="text-white bg-sky-500 px-3 py-1 rounded-md hover:bg-purple-700">Learn More</a>
+          </div>
+        </div>
+        
+          <!-- Card -->
+        <div class="w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
+          <!-- Image -->
+          <img class="h-40 object-cover rounded-xl" h-40 object-cover rounded-xl" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
+          <div class="p-2">
+          <!-- Heading -->
+          <h2 class="font-bold text-lg mb-2 ">Heading</h2>
+          <!-- Description -->
+          <p class="text-sm text-gray-600">Simple Yet Beautiful Card Design with TaiwlindCss. Subscribe to our Youtube channel for more ...</p>
+          </div>
+          <!-- CTA -->
+          <div class="m-2">
+          <a role='button' href='#' class="text-white bg-green-500 px-3 py-1 rounded-md hover:bg-purple-700">Learn More</a>
+          </div>
+        </div>
+            <!-- Card -->
+        <div class="w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
+          <!-- Image -->
+          <img class="h-40 object-cover rounded-xl" h-40 object-cover rounded-xl" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
+          <div class="p-2">
+          <!-- Heading -->
+          <h2 class="font-bold text-lg mb-2 ">Heading</h2>
+          <!-- Description -->
+          <p class="text-sm text-gray-600">Simple Yet Beautiful Card Design with TaiwlindCss. Subscribe to our Youtube channel for more ...</p>
+          </div>
+          <!-- CTA -->
+          <div class="m-2">
+          <a role='button' href='#' class="text-white bg-yellow-500 px-3 py-1 rounded-md hover:bg-purple-700">Learn More</a>
+          </div>
+        </div>
   
   
   
 
-</div>
+        </div>
 
+        <div class="pagination_container p-1">
+        
+          <nav aria-label="Page nvigation">
+            <ul class="pagination">
+                <li class=""><a href="" class="page-link  prev" ><span aria-hidden="true">&laquo;</span></a></li>
+                
+                <?php
+                $pagi = 10;
+                $current_page = 10;
+                 for($i=1;$i<=$pagi;$i++){
+                    $class='';
+                    if($current_page==$i){
+                        ?>
+                    <li class="page-item active"><a href="javascript:void(0)" class="page-link"><?php echo $i?></a></li>
+                <?php
+                }else{
+                ?>
+                <li class="page-item"><a href="?start=<?php echo $i ?>" class="page-link"><?php echo $i?></a></li>
+                <?php } ?>
+                <?php }?>
+                <li class=""><a href="" class="page-link  next" ><span aria-hidden="true">&raquo;</span></a></li>
+            </ul>
+          </nav>                      
 
+        </div>
 
         </div>
 
@@ -1109,6 +1280,13 @@
             </form>
         </div>
     </section >
+
+
+
+
+
+
+
 
 
 
@@ -1300,3 +1478,4 @@
   <script src="dist/js/scriptc.js"></script>
   <script src="page.js"></script>
   <script src="dist/js/scriptp.js"></script>
+  <script src="dist/js/service_c.js"></script>
