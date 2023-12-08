@@ -80,18 +80,31 @@
 
     function design_pagination($pagi,$current_page){
       
-      for($i=1;$i<=$pagi;$i++){
-          $class='';
-          if($current_page==$i){
+        for($i=1;$i<=$pagi;$i++){
+            $class='';
+            if($current_page==$i){
+              ?>
+                <li class="page-item active"><a href="javascript:void(0)" class="page-link"><?php echo $i?></a></li>
+              <?php
+            }else{
             ?>
-              <li class="page-item active"><a href="javascript:void(0)" class="page-link"><?php echo $i?></a></li>
-            <?php
-          }else{
-          ?>
-              <li class="page-item design_pagi_btn" id="<?=$i?>"><a href="?start_d=<?php echo $i ?>" id="<?=$i?>" class="page-link"><?php echo $i?></a></li>
-          <?php }
-      }
-  }
+                <li class="page-item design_pagi_btn" id="<?=$i?>"><a href="?start_d=<?php echo $i ?>" id="<?=$i?>" class="page-link"><?php echo $i?></a></li>
+            <?php }
+        }
+
+    }
+
+// $start_d = 0;
+// $start_p = 0;
+if(isset($_GET['start_d'])){
+    $start_d = $_GET['start_d'];
+    $design->design_set_session($start_d);
+}
+if(isset($_GET['start_p'])){
+  $start_p = $_GET['start_p'];
+  $product->product_set_session($start_p);
+}
+
 
 ?>
 <!DOCTYPE html>
@@ -928,7 +941,7 @@
                   
                   $data = $design->design_fetch($design->start,"all");
                   
-
+                  // echo $design->current_page;
                   if($data!=null){
                     while($row = mysqli_fetch_assoc($data)){
                       $code = $design->design($row['id'],$row['unique_id'],$row['pro_name'],$row['pro_details'],$row['pro_type'],$row['b_id'],$row['service_id'],$row['status'],$row['price'],$row['type_id'],$row['available'],$row['dis_per'],$row['added_date'],$row['book_order'],$row['pro_image']);
@@ -1038,15 +1051,18 @@
         
         <nav aria-label="Page nvigation">
           <ul class="pagination">
-              <li class=""><a href="#" class="page-link  design_pagi_prev" ><span aria-hidden="true">&laquo;</span></a></li>
+              <li class=""><a href="?start_d=<?php ?>" class="page-link  design_pagi_prev" ><span aria-hidden="true">&laquo;</span></a></li>
               
               <?php
-                
-                  design_pagination($design->pagi,$design->current_page);
+                  if(isset($_GET['start_d'])){
+                    design_pagination($design->pagi,$design->current_page);
+                  }else{
+                    design_pagination($design->pagi,$design->current_page);
+                  }
                 
               ?>
 
-              <li class=""><a href="#" class="page-link  design_pagi_next" ><span aria-hidden="true">&raquo;</span></a></li>
+              <li class=""><a href="?start_d=<?php ?>" class="page-link  design_pagi_next" ><span aria-hidden="true">&raquo;</span></a></li>
           </ul>
         </nav>                      
 
@@ -1219,7 +1235,7 @@
         
           <nav aria-label="Page nvigation">
             <ul class="pagination">
-                <li class="#"><a href="" class="page-link  product_pagi_prev" ><span aria-hidden="true">&laquo;</span></a></li>
+                <li class="#"><a href="?start_p=<?php ?>" class="page-link  product_pagi_prev" ><span aria-hidden="true">&laquo;</span></a></li>
                 
                 <?php
                       
@@ -1228,7 +1244,7 @@
               
                             
                 ?>
-                <li class="#"><a href="" class="page-link  product_pagi_next" ><span aria-hidden="true">&raquo;</span></a></li>
+                <li class="#"><a href="?start_p=<?php ?>" class="page-link  product_pagi_next" ><span aria-hidden="true">&raquo;</span></a></li>
             </ul>
           </nav>                      
 

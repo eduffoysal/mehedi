@@ -27,7 +27,7 @@
 
         public function design_ini_session($start){
 
-
+            $this->start=$start;
 
             if($start<=0){
                 $this->start=0;
@@ -53,7 +53,7 @@
 
         public function design_set_session($start){
 
-
+                $this->start=$start;
 
                 if($start<=0){
                     $this->start=0;
@@ -82,15 +82,15 @@
 
         public function design_fetch($start,$category){
 
-
-                if($start<=0){
-                    $this->start=0;
-                    $this->current_page=1;
-                }else{
-                    $this->current_page=$start;
-                    $this->start--;
-                    $this->start=$this->start*$this->per_page;
-                }
+                // $this->start=$start;
+                // if($start<=0){
+                //     $this->start=0;
+                //     $this->current_page=1;
+                // }else{
+                //     $this->current_page=$start;
+                //     $this->start--;
+                //     $this->start=$this->start*$this->per_page;
+                // }
 
 
                 if($category== 'all'){
