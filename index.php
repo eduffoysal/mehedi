@@ -2,7 +2,9 @@
     include('db/db.php');
     // include('database/data.php');
     session_start();
-
+    function my_autoloader($class) {
+      require $class . '.php';
+  }
     spl_autoload_register(function ($class) {
         include $class . '.php';
         // echo $class;
@@ -11,22 +13,49 @@
 
     $router = new Router();
 
-    $router->get('/edu_mehedi/:id',function($params){
-        echo $params['id'];
-    });
-    $router->get('/edu_mehedi/id/:id/:me',function($params){
-        echo $params['me'];
-    });
+    // $router->get('/edu_mehedi/:id',function($params){
+    //     echo $params['id'];
+    // });
+    // $router->get('/edu_mehedi/id/:id/:me',function($params){
+    //     echo $params['me'];
+    // });
 
     // $router->get('/edu_mehedi/id/:id/:me',function($params){
     //     echo $params['me'];
     // });
 
-    $router->get('/edu_mehedi/profile/:phone',function($params){
-        echo $params['phone'];
-    });
+    // $router->get('/edu_mehedi/profile/:phone',function($params){
+    //     echo $params['phone'];
+    // });
 
-    $router->listen();
+    // $router->listen();
+
+    $user_id = session_id();
+
+    my_autoloader("product/product_fetch");
+    my_autoloader("product/design_fetch");
+    $product = new Product_fetch($con, $user_id);
+    $design = new Design_fetch($con, $user_id);
+
+    if (isset($_SESSION['product']) && $_SESSION['product']==true) {
+
+    }else{
+
+    }
+
+    if (isset($_SESSION['design']) && $_SESSION['design']==true) {
+
+    }else{
+
+    }
+
+    if (isset($_SESSION['product_cart']) && $_SESSION['product_cart']==true) {
+
+    }
+
+    if (isset($_SESSION['design_cart']) && $_SESSION['design_cart']==true) {
+
+    }
 
 
 
