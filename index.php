@@ -30,12 +30,17 @@
 
     // $router->listen();
 
-    $user_id = session_id();
+    $b_id = "7AABE1-1700896475-1188728145-806933517";
 
     my_autoloader("product/product_fetch");
     my_autoloader("product/design_fetch");
-    $product = new Product_fetch($con, $user_id);
-    $design = new Design_fetch($con, $user_id);
+    $product = new Product_fetch($con, $b_id);
+    $design = new Design_fetch($con, $b_id);
+
+
+
+    $jsonProduct = json_encode($product);
+    $jsonDesign = json_encode($design);
 
     if (isset($_SESSION['product']) && $_SESSION['product']==true) {
 
@@ -58,6 +63,35 @@
     }
 
 
+
+    function product_pagination($pagi,$current_page){
+        for($i=1;$i<=$pagi;$i++){
+            $class='';
+            if($current_page==$i){
+              ?>
+                <li class="page-item active"><a href="javascript:void(0)" class="page-link"><?php echo $i?></a></li>
+              <?php
+            }else{
+            ?>
+                <li class="page-item product_pagi_btn" id="<?=$i?>"><a href="?start_p=<?php echo $i ?>" class="page-link" id="<?=$i?>"><?php echo $i?></a></li>
+            <?php }
+        }
+    }
+
+    function design_pagination($pagi,$current_page){
+      
+      for($i=1;$i<=$pagi;$i++){
+          $class='';
+          if($current_page==$i){
+            ?>
+              <li class="page-item active"><a href="javascript:void(0)" class="page-link"><?php echo $i?></a></li>
+            <?php
+          }else{
+          ?>
+              <li class="page-item design_pagi_btn" id="<?=$i?>"><a href="?start_d=<?php echo $i ?>" id="<?=$i?>" class="page-link"><?php echo $i?></a></li>
+          <?php }
+      }
+  }
 
 ?>
 <!DOCTYPE html>
@@ -859,8 +893,8 @@
               <li class=""><a href="" class="page-link  prev" ><span aria-hidden="true">&laquo;</span></a></li>
               
               <?php
-              $pagi = 10;
-              $current_page = 10;
+              $pagi = 6;
+              $current_page = 4;
                for($i=1;$i<=$pagi;$i++){
                   $class='';
                   if($current_page==$i){
@@ -887,8 +921,28 @@
         </div> 
         <!-- price -->
         <div class="details-container">
-            <!-- box1 -->
-            <div class="box">
+
+
+
+                <?php
+                  
+                  $data = $design->design_fetch($design->start,"all");
+                  
+
+                  if($data!=null){
+                    while($row = mysqli_fetch_assoc($data)){
+                      $code = $design->design($row['id'],$row['unique_id'],$row['pro_name'],$row['pro_details'],$row['pro_type'],$row['b_id'],$row['service_id'],$row['status'],$row['price'],$row['type_id'],$row['available'],$row['dis_per'],$row['added_date'],$row['book_order'],$row['pro_image']);
+  
+                      echo $code;
+                    }
+                  }
+
+
+
+                ?>
+
+
+            <!-- <div class="box">
                 <img src="https://scontent.fcgp7-1.fna.fbcdn.net/v/t39.30808-6/387176596_336316922246303_7785728387409454287_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEpsZ4T-fz_5fSpcf0stsK-OqkHrNpkKGs6qQes2mQoa96QfK5NOPcCPCbu2NdpnTPvNNEU2oJh-iG-5pZV7fHI&_nc_ohc=yBC20U5PpFkAX8K_U4p&_nc_ht=scontent.fcgp7-1.fna&oh=00_AfCVWsOHn1CqZEZltc-F6GWGWPGyQwYKq_o1YxgJ0tZgpQ&oe=65472594" alt="">
                 <h2>Non-Bridal Henna Design</h2>
                 <span>Per Side</span>
@@ -897,7 +951,7 @@
                 <i class='bx bx-heart'></i>
             </div>
 
-            <!-- box2 -->
+
             <div class="box">
                 <img src="https://scontent.fcgp7-1.fna.fbcdn.net/v/t39.30808-6/305975223_175236538354343_7755819856223607081_n.jpg?stp=c0.67.960.960a_dst-jpg_s851x315&_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHJPix2bnSk5UMoqEmt5qyYCXVIhgnsl_AJdUiGCeyX8BTww7gk2oJpnGHbkdVDT0_rL5EtjC55uNKNAIgMIUoe&_nc_ohc=m7Gfv8D_czQAX-QwPqo&_nc_ht=scontent.fcgp7-1.fna&oh=00_AfCJO5-VQJG8FAgD16JtXg92sKf8Ym8tfRcA--IJv1o-Aw&oe=65464F0A" alt="">
                 <h2>Non-Bridal Henna Design</h2>
@@ -907,7 +961,7 @@
                 <i class='bx bx-heart'></i>
             </div>
 
-            <!-- box3 -->
+
             <div class="box">
                 <img src="https://scontent.fcgp7-1.fna.fbcdn.net/v/t39.30808-6/268345688_110911681449997_1989552157626476601_n.jpg?stp=c0.168.1538.1538a_dst-jpg_s851x315&_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGEUVtgMWkMBwkckipst-yunKJFykUlejOcokXKRSV6M32-fQIWRjVq4YQE4tKkYoQCv5So1-mhA3KVsX9Yx9Hb&_nc_ohc=Zvd_Gf-jHH0AX9Cx2NM&_nc_ht=scontent.fcgp7-1.fna&oh=00_AfANZVJth7yTAsNPreCsq8CH-mn-2xvZrsbgHTfv1yG82Q&oe=65454705" alt="">
                 <h2>Non-Bridal Henna Design</h2>
@@ -917,7 +971,7 @@
                 <i class='bx bx-heart'></i>
             </div>
 
-            <!-- box4 -->
+
             <div class="box">
                 <img src="https://scontent.fcgp7-1.fna.fbcdn.net/v/t39.30808-6/345182806_765398791853760_8933830384336602884_n.jpg?stp=c0.174.1520.1520a_dst-jpg_s851x315&_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGdNSjVWPavxvVe0QHE3C8FF5_fAeDW9pAXn98B4Nb2kCT55nOT4dY_nOj1Ufnn0UmQb0yably_jOFeBTUVHKuK&_nc_ohc=qO8blEq66UUAX_hwIy9&_nc_ht=scontent.fcgp7-1.fna&oh=00_AfAGB-cmom0LLvcKmJ0KeGCyQhKsXNj42VqKfev6hdvmMg&oe=65458477" alt="">
                 
@@ -928,7 +982,7 @@
                 <i class='bx bx-heart'></i>
             </div>
 
-            <!-- box5 -->
+
             <div class="box">
                 <img src="https://scontent.fcgp7-1.fna.fbcdn.net/v/t39.30808-6/278387149_144815434726288_6195508071813877757_n.jpg?stp=c144.0.1760.1760a_dst-jpg_s851x315&_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFoTgVrYdYgpjo-87XC6IjSqE4AMcKw6xOoTgAxwrDrE8AswDfmvfZhyrVLmtjebJi7a5PnzfcWeVt60rwcarJX&_nc_ohc=z44wg9ChbW8AX_PMY0o&_nc_ht=scontent.fcgp7-1.fna&oh=00_AfDUuH4RXN5AAE9jxBWIR_kPGdfFvwBpi7m6Vo-DmyVldg&oe=6545696F" alt="">
                 <h2>Semi-Bridal Henna Design</h2>
@@ -938,7 +992,7 @@
                 <i class='bx bx-heart'></i>
             </div>
 
-            <!-- box6 -->
+
             <div class="box">
                 <img src="https://scontent.fcgp7-1.fna.fbcdn.net/v/t39.30808-6/342562647_641247864496619_7856330520666561455_n.jpg?stp=c0.173.1525.1525a_dst-jpg_s851x315&_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeED0KXtc9QSHyM1smpFds0ryVXky6qblfjJVeTLqpuV-EKnRNhXoxCeDhKb2cb7es8n_-RFySO3Oxlxcr-k55FH&_nc_ohc=f-rUbU8ODQ4AX_qweS6&_nc_ht=scontent.fcgp7-1.fna&oh=00_AfD8gmRkSWEBQcIFr5MT9L1014U8LH5mSJ5a20vldeeK0w&oe=6546D13A" alt="">
                 <h2>Semi-Bridal Henna Design</h2>
@@ -948,7 +1002,7 @@
                 <i class='bx bx-heart'></i>
             </div>
 
-            <!-- box7 -->
+
             <div class="box">
                 <img src="https://scontent.fcgp7-1.fna.fbcdn.net/v/t39.30808-6/272856286_123757886832043_2236630308028798467_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEpmO_g4AC8RJPcrH3S25PYLkFrbdavnRIuQWtt1q-dEk94lUs4ca_QLIGJXctLmkvJVeubyuVn5Tazmg3EQNyo&_nc_ohc=KX1QfUcgkJoAX9VI_Zx&_nc_ht=scontent.fcgp7-1.fna&oh=00_AfCYLdOM5RrRx6grnGo7ff46Jm0VpWapc6SWH_sECT_sXA&oe=6546D630" alt="">
                 <h2>Bridal Henna Design</h2>
@@ -958,7 +1012,7 @@
                 <i class='bx bx-heart'></i>
             </div>
 
-            <!-- box8 -->
+
             <div class="box">
                 <img src="https://scontent.fcgp7-1.fna.fbcdn.net/v/t39.30808-6/346649205_206099511741590_5012580755534572707_n.jpg?stp=c0.79.720.720a_dst-jpg_s851x315&_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeG4s0ijT4aJ2TdL7ui8moaw0Tkmnv4PVIvROSae_g9UiwecMAs2gWjYPeiS98Y87UPxNDYSZTBpwWMsF-Y1d4o1&_nc_ohc=tTY6W2n-1xsAX9SbZoR&_nc_ht=scontent.fcgp7-1.fna&oh=00_AfATAaks4DoMSztS-L_GrCf5NuMgCkKBG3ecParR7ORMnw&oe=65469A38" alt="">
                 <h2>Bridal Henna Design</h2>
@@ -968,7 +1022,7 @@
                 <i class='bx bx-heart'></i>
             </div>
 
-            <!-- box9 -->
+
             <div class="box">
                 <img src="https://scontent.fcgp7-1.fna.fbcdn.net/v/t39.30808-6/264426883_102284992312666_8068556412498976810_n.jpg?stp=c0.111.1712.1712a_dst-jpg_s851x315&_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGsl1M1RG3aVRT6jMjnCHfNALl2FgqhwfkAuXYWCqHB-SxkhMssGNnisrvqBBdGVU2YEke32WG6hwAifdYGYtEe&_nc_ohc=EFqkbANTHTsAX98Nr7G&_nc_oc=AQnO1AuCzDKZGxeXZd42jtLjJscomP6DzJPpt5XUAxRyGXkeakBOO0Uu_pNrircBZ1E&_nc_ht=scontent.fcgp7-1.fna&oh=00_AfAUWOTo_rEE35ubvuUtuaTnIVV58ga2WfOod5r01wm_pQ&oe=6546532D" alt="">
                 <h2>Bridal Henna Design</h2>
@@ -976,7 +1030,7 @@
                 <h3 class="price">Upto elbow Gorgeous<br>5000TK</h3>
                 <i class='bx bxs-message-square-check'></i>
                 <i class='bx bx-heart'></i>
-            </div>           
+            </div>            -->
 
         </div>
 
@@ -984,23 +1038,15 @@
         
         <nav aria-label="Page nvigation">
           <ul class="pagination">
-              <li class=""><a href="" class="page-link  prev" ><span aria-hidden="true">&laquo;</span></a></li>
+              <li class=""><a href="#" class="page-link  design_pagi_prev" ><span aria-hidden="true">&laquo;</span></a></li>
               
               <?php
-              $pagi = 10;
-              $current_page = 10;
-               for($i=1;$i<=$pagi;$i++){
-                  $class='';
-                  if($current_page==$i){
-                      ?>
-                  <li class="page-item active"><a href="javascript:void(0)" class="page-link"><?php echo $i?></a></li>
-              <?php
-              }else{
+                
+                  design_pagination($design->pagi,$design->current_page);
+                
               ?>
-              <li class="page-item"><a href="?start=<?php echo $i ?>" class="page-link"><?php echo $i?></a></li>
-              <?php } ?>
-              <?php }?>
-              <li class=""><a href="" class="page-link  next" ><span aria-hidden="true">&raquo;</span></a></li>
+
+              <li class=""><a href="#" class="page-link  design_pagi_next" ><span aria-hidden="true">&raquo;</span></a></li>
           </ul>
         </nav>                      
 
@@ -1084,67 +1130,85 @@
       
         <div class="bg-gray-100 w-full min-h-screen gap-4 flex-wrap flex justify-center items-center">
 
-        <!-- Card -->
-        <div class="w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
-          <!-- Image -->
-          <img class="h-40 object-cover rounded-xl" h-40 object-cover rounded-xl" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
-          <div class="p-2">
-          <!-- Heading -->
-          <h2 class="font-bold text-lg mb-2 ">Heading</h2>
-          <!-- Description -->
-          <p class="text-sm text-gray-600">Simple Yet Beautiful Card Design with TaiwlindCss. Subscribe to our Youtube channel for more ...</p>
-          </div>
-          <!-- CTA -->
-          <div class="m-2">
-          <a role='button' href='#' class="text-white bg-purple-600 px-3 py-1 rounded-md hover:bg-purple-700">Learn More</a>
-          </div>
-        </div>
-          <!-- Card -->
-        <div class="w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
-          <!-- Image -->
-          <img class="h-40 object-cover rounded-xl" h-40 object-cover rounded-xl" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
-          <div class="p-2">
-          <!-- Heading -->
-          <h2 class="font-bold text-lg mb-2 ">Heading</h2>
-          <!-- Description -->
-          <p class="text-sm text-gray-600">Simple Yet Beautiful Card Design with TaiwlindCss. Subscribe to our Youtube channel for more ...</p>
-          </div>
-          <!-- CTA -->
-          <div class="m-2">
-          <a role='button' href='#' class="text-white bg-sky-500 px-3 py-1 rounded-md hover:bg-purple-700">Learn More</a>
-          </div>
-        </div>
-        
-          <!-- Card -->
-        <div class="w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
-          <!-- Image -->
-          <img class="h-40 object-cover rounded-xl" h-40 object-cover rounded-xl" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
-          <div class="p-2">
-          <!-- Heading -->
-          <h2 class="font-bold text-lg mb-2 ">Heading</h2>
-          <!-- Description -->
-          <p class="text-sm text-gray-600">Simple Yet Beautiful Card Design with TaiwlindCss. Subscribe to our Youtube channel for more ...</p>
-          </div>
-          <!-- CTA -->
-          <div class="m-2">
-          <a role='button' href='#' class="text-white bg-green-500 px-3 py-1 rounded-md hover:bg-purple-700">Learn More</a>
-          </div>
-        </div>
-            <!-- Card -->
-        <div class="w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
-          <!-- Image -->
-          <img class="h-40 object-cover rounded-xl" h-40 object-cover rounded-xl" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
-          <div class="p-2">
-          <!-- Heading -->
-          <h2 class="font-bold text-lg mb-2 ">Heading</h2>
-          <!-- Description -->
-          <p class="text-sm text-gray-600">Simple Yet Beautiful Card Design with TaiwlindCss. Subscribe to our Youtube channel for more ...</p>
-          </div>
-          <!-- CTA -->
-          <div class="m-2">
-          <a role='button' href='#' class="text-white bg-yellow-500 px-3 py-1 rounded-md hover:bg-purple-700">Learn More</a>
-          </div>
-        </div>
+
+
+
+            <?php
+
+                  $data = $product->product_fetch($product->start,'all');
+
+                  if($data!=null){
+                    while($row = mysqli_fetch_assoc($data)){
+                      $code = $product->product($row['id'],$row['unique_id'],$row['pro_name'],$row['pro_details'],$row['pro_type'],$row['b_id'],$row['service_id'],$row['status'],$row['price'],$row['type_id'],$row['available'],$row['dis_per'],$row['added_date'],$row['book_order'],$row['pro_image']);
+
+                      echo $code;
+                    }
+                  }
+
+            ?>
+
+
+<!-- 
+              <div class="w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
+
+                <img class="h-40 object-cover rounded-xl" h-40 object-cover rounded-xl" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
+                <div class="p-2">
+
+                <h2 class="font-bold text-lg mb-2 ">Heading</h2>
+              
+                <p class="text-sm text-gray-600">Simple Yet Beautiful Card Design with TaiwlindCss. Subscribe to our Youtube channel for more ...</p>
+                </div>
+      
+                <div class="m-2">
+                <a role='button' href='#' class="text-white bg-purple-600 px-3 py-1 rounded-md hover:bg-purple-700">Learn More</a>
+                </div>
+              </div>
+
+              <div class="w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
+
+                <img class="h-40 object-cover rounded-xl" h-40 object-cover rounded-xl" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
+                <div class="p-2">
+
+                <h2 class="font-bold text-lg mb-2 ">Heading</h2>
+
+                <p class="text-sm text-gray-600">Simple Yet Beautiful Card Design with TaiwlindCss. Subscribe to our Youtube channel for more ...</p>
+                </div>
+
+                <div class="m-2">
+                <a role='button' href='#' class="text-white bg-sky-500 px-3 py-1 rounded-md hover:bg-purple-700">Learn More</a>
+                </div>
+              </div>
+              
+
+              <div class="w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
+
+                <img class="h-40 object-cover rounded-xl" h-40 object-cover rounded-xl" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
+                <div class="p-2">
+
+                <h2 class="font-bold text-lg mb-2 ">Heading</h2>
+
+                <p class="text-sm text-gray-600">Simple Yet Beautiful Card Design with TaiwlindCss. Subscribe to our Youtube channel for more ...</p>
+                </div>
+
+                <div class="m-2">
+                <a role='button' href='#' class="text-white bg-green-500 px-3 py-1 rounded-md hover:bg-purple-700">Learn More</a>
+                </div>
+              </div>
+
+              <div class="w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
+
+                <img class="h-40 object-cover rounded-xl" h-40 object-cover rounded-xl" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
+                <div class="p-2">
+
+                <h2 class="font-bold text-lg mb-2 ">Heading</h2>
+
+                <p class="text-sm text-gray-600">Simple Yet Beautiful Card Design with TaiwlindCss. Subscribe to our Youtube channel for more ...</p>
+                </div>
+
+                <div class="m-2">
+                <a role='button' href='#' class="text-white bg-yellow-500 px-3 py-1 rounded-md hover:bg-purple-700">Learn More</a>
+                </div>
+              </div> -->
   
   
   
@@ -1155,23 +1219,16 @@
         
           <nav aria-label="Page nvigation">
             <ul class="pagination">
-                <li class=""><a href="" class="page-link  prev" ><span aria-hidden="true">&laquo;</span></a></li>
+                <li class="#"><a href="" class="page-link  product_pagi_prev" ><span aria-hidden="true">&laquo;</span></a></li>
                 
                 <?php
-                $pagi = 10;
-                $current_page = 10;
-                 for($i=1;$i<=$pagi;$i++){
-                    $class='';
-                    if($current_page==$i){
-                        ?>
-                    <li class="page-item active"><a href="javascript:void(0)" class="page-link"><?php echo $i?></a></li>
-                <?php
-                }else{
+                      
+            
+                      product_pagination($product->pagi,$product->current_page);
+              
+                            
                 ?>
-                <li class="page-item"><a href="?start=<?php echo $i ?>" class="page-link"><?php echo $i?></a></li>
-                <?php } ?>
-                <?php }?>
-                <li class=""><a href="" class="page-link  next" ><span aria-hidden="true">&raquo;</span></a></li>
+                <li class="#"><a href="" class="page-link  product_pagi_next" ><span aria-hidden="true">&raquo;</span></a></li>
             </ul>
           </nav>                      
 
