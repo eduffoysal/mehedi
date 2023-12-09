@@ -30,7 +30,26 @@
 
     // $router->listen();
 
-    $b_id = "7AABE1-1700896475-1188728145-806933517";
+$b_id = "7AABE1-1700896475-1188728145-806933517";
+
+if (!isset($_SESSION["super_b_id"])) {
+    $super_sql = "SELECT super_b_id as b_id FROM super_admin WHERE unique_id='1'";
+    $super_query=mysqli_query($con, $super_sql);
+    $super_query_num=mysqli_num_rows($super_query);
+    if ($super_query_num ==1 || $super_query_num > 0) {
+      $super = mysqli_fetch_assoc($super_query);
+
+      $b_id = $super['b_id'];
+
+      $_SESSION['super_b_id'] = $b_id;
+
+    }
+}else{
+  $b_id = $_SESSION['super_b_id'];
+}
+
+
+
 
     my_autoloader("product/product_fetch");
     my_autoloader("product/design_fetch");
@@ -96,11 +115,19 @@
 
 // $start_d = 0;
 // $start_p = 0;
+$dp = 1;
+$dn = 2;
+$pp = 1;
+$pn = 2;
 if(isset($_GET['start_d'])){
+    $dp = $_GET['start_d']-1;
+    $dn = $_GET['start_d']+1;
     $start_d = $_GET['start_d'];
     $design->design_set_session($start_d);
 }
 if(isset($_GET['start_p'])){
+  $pp = $_GET['start_p']-1;
+  $pn = $_GET['start_p']+1;
   $start_p = $_GET['start_p'];
   $product->product_set_session($start_p);
 }
@@ -815,7 +842,7 @@ if(isset($_GET['start_p'])){
               <div class="wrapper_c">
                   <button class="arrow prev"><i class="ri-arrow-left-s-line"></i></button>
                   <button class="arrow next"><i class="ri-arrow-right-s-line"></i></button>
-                  <div class="card-wrapper">
+                  <div class="card-wrapper" id="design_categories">
 
                       <!-- <div class="card-item">
                           <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="">
@@ -1051,7 +1078,7 @@ if(isset($_GET['start_p'])){
         
         <nav aria-label="Page nvigation">
           <ul class="pagination">
-              <li class=""><a href="?start_d=<?php ?>" class="page-link  design_pagi_prev" ><span aria-hidden="true">&laquo;</span></a></li>
+              <li class=""><a href="?start_d=<?=$dp?>" class="page-link  design_pagi_prev" ><span aria-hidden="true">&laquo;</span></a></li>
               
               <?php
                   if(isset($_GET['start_d'])){
@@ -1062,7 +1089,7 @@ if(isset($_GET['start_p'])){
                 
               ?>
 
-              <li class=""><a href="?start_d=<?php ?>" class="page-link  design_pagi_next" ><span aria-hidden="true">&raquo;</span></a></li>
+              <li class=""><a href="?start_d=<?=$dn?>" class="page-link  design_pagi_next" ><span aria-hidden="true">&raquo;</span></a></li>
           </ul>
         </nav>                      
 
@@ -1235,7 +1262,7 @@ if(isset($_GET['start_p'])){
         
           <nav aria-label="Page nvigation">
             <ul class="pagination">
-                <li class="#"><a href="?start_p=<?php ?>" class="page-link  product_pagi_prev" ><span aria-hidden="true">&laquo;</span></a></li>
+                <li class="#"><a href="?start_p=<?=$pp?>" class="page-link  product_pagi_prev" ><span aria-hidden="true">&laquo;</span></a></li>
                 
                 <?php
                       
@@ -1244,7 +1271,7 @@ if(isset($_GET['start_p'])){
               
                             
                 ?>
-                <li class="#"><a href="?start_p=<?php ?>" class="page-link  product_pagi_next" ><span aria-hidden="true">&raquo;</span></a></li>
+                <li class="#"><a href="?start_p=<?=$pn?>" class="page-link  product_pagi_next" ><span aria-hidden="true">&raquo;</span></a></li>
             </ul>
           </nav>                      
 
@@ -1413,6 +1440,52 @@ if(isset($_GET['start_p'])){
 <script>
 
   $(document).ready(function(){
+
+
+    
+$(document).on('click','.design_category_box', function(){
+
+var cat_id = $(this).attr('id');
+alert("box"+cat_id);
+        
+        $.ajax({
+          url:'category/category.php',
+          type:'post',
+          data: {
+            cat_id:cat_id,
+            my_daily_meal_dis: true
+          },
+          success: function(response){
+
+            // $('#my_meal_display_he').html(response);
+
+          }
+        });
+
+});
+
+    $('#design_categories').ready(function(){
+
+      $.ajax({
+          url:'category/category.php',
+          type:'post',
+          data: {
+            design_category: true
+          },
+          success: function(response){
+
+            if(response!=0){
+              $('#design_categories').html(response); 
+            }else{
+              $('#design_categories').html("Category Not Found");
+            }
+
+          }
+      });
+
+
+    });
+
 
       $(document).on('click','#login', function(){
 
