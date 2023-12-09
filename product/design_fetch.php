@@ -22,10 +22,10 @@
         {
             $this->con=$con;
             $this->user=$user_id;
-            $this->design_ini_session(0);
+            $this->design_ini_session(0,'all');
         }
 
-        public function design_ini_session($start){
+        public function design_ini_session($start,$cat){
 
             $this->start=$start;
 
@@ -38,7 +38,12 @@
                 $this->start=$this->start*$this->per_page;
             }
 
-            $this->sql = "SELECT * FROM product WHERE  b_id='$this->user' AND book_order='1'";
+            if($cat=='all'){
+                $this->sql = "SELECT * FROM product WHERE  b_id='$this->user' AND book_order='1'";
+            }else{
+                $this->sql = "SELECT * FROM product WHERE  b_id='$this->user' AND book_order='1' AND (pro_type='$cat' OR type_id='$cat') ";
+            }
+
 
             $this->record=mysqli_num_rows(mysqli_query($this->con,$this->sql));
     
@@ -51,7 +56,7 @@
             $_SESSION['d_p'] = $this->pagi;
         }
 
-        public function design_set_session($start){
+        public function design_set_session($start,$cat){
 
                 $this->start=$start;
 
@@ -64,8 +69,11 @@
                     $this->start=$this->start*$this->per_page;
                 }
             
-
-                $this->sql = "SELECT * FROM product WHERE  b_id='$this->user' AND book_order='1' ";
+                if($cat=='all'){
+                    $this->sql = "SELECT * FROM product WHERE  b_id='$this->user' AND book_order='1'";
+                }else{
+                    $this->sql = "SELECT * FROM product WHERE  b_id='$this->user' AND book_order='1' AND (pro_type='$cat' OR type_id='$cat') ";
+                }
 
                 $this->record=mysqli_num_rows(mysqli_query($this->con,$this->sql));
     

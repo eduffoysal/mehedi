@@ -83,7 +83,7 @@ if (!isset($_SESSION["super_b_id"])) {
 
 
 
-    function product_pagination($pagi,$current_page){
+    function product_pagination($pagi,$current_page,$cat){
         for($i=1;$i<=$pagi;$i++){
             $class='';
             if($current_page==$i){
@@ -92,12 +92,12 @@ if (!isset($_SESSION["super_b_id"])) {
               <?php
             }else{
             ?>
-                <li class="page-item product_pagi_btn" id="<?=$i?>"><a href="?start_p=<?php echo $i ?>" class="page-link" id="<?=$i?>"><?php echo $i?></a></li>
+                <li class="page-item product_pagi_btn" id="<?=$i?>"><a href="?start_p=<?php echo $i ?>&cat=<?=$cat?>" class="page-link" id="<?=$i?>"><?php echo $i?></a></li>
             <?php }
         }
     }
 
-    function design_pagination($pagi,$current_page){
+    function design_pagination($pagi,$current_page,$cat){
       
         for($i=1;$i<=$pagi;$i++){
             $class='';
@@ -107,7 +107,7 @@ if (!isset($_SESSION["super_b_id"])) {
               <?php
             }else{
             ?>
-                <li class="page-item design_pagi_btn" id="<?=$i?>"><a href="?start_d=<?php echo $i ?>" id="<?=$i?>" class="page-link"><?php echo $i?></a></li>
+                <li class="page-item design_pagi_btn" id="<?=$i?>"><a href="?start_d=<?php echo $i ?>&cat=<?=$cat?>" id="<?=$i?>" class="page-link"><?php echo $i?></a></li>
             <?php }
         }
 
@@ -119,17 +119,24 @@ $dp = 1;
 $dn = 2;
 $pp = 1;
 $pn = 2;
+$cat = 'all';
 if(isset($_GET['start_d'])){
+    if(isset($_GET['cat'])){
+      $cat = $_GET['cat'];
+    }
     $dp = $_GET['start_d']-1;
     $dn = $_GET['start_d']+1;
     $start_d = $_GET['start_d'];
-    $design->design_set_session($start_d);
+    $design->design_set_session($start_d,$cat);
 }
 if(isset($_GET['start_p'])){
+  if(isset($_GET['cat'])){
+    $cat = $_GET['cat'];
+  }
   $pp = $_GET['start_p']-1;
   $pn = $_GET['start_p']+1;
   $start_p = $_GET['start_p'];
-  $product->product_set_session($start_p);
+  $product->product_set_session($start_p,$cat);
 }
 
 
@@ -966,7 +973,7 @@ if(isset($_GET['start_p'])){
 
                 <?php
                   
-                  $data = $design->design_fetch($design->start,"all");
+                  $data = $design->design_fetch($design->start,$cat);
                   
                   // echo $design->current_page;
                   if($data!=null){
@@ -1078,18 +1085,18 @@ if(isset($_GET['start_p'])){
         
         <nav aria-label="Page nvigation">
           <ul class="pagination">
-              <li class=""><a href="?start_d=<?=$dp?>" class="page-link  design_pagi_prev" ><span aria-hidden="true">&laquo;</span></a></li>
+              <li class=""><a href="?start_d=<?=$dp?>&cat=<?=$cat?>" class="page-link  design_pagi_prev" ><span aria-hidden="true">&laquo;</span></a></li>
               
               <?php
                   if(isset($_GET['start_d'])){
-                    design_pagination($design->pagi,$design->current_page);
+                    design_pagination($design->pagi,$design->current_page,$cat);
                   }else{
-                    design_pagination($design->pagi,$design->current_page);
+                    design_pagination($design->pagi,$design->current_page,$cat);
                   }
                 
               ?>
 
-              <li class=""><a href="?start_d=<?=$dn?>" class="page-link  design_pagi_next" ><span aria-hidden="true">&raquo;</span></a></li>
+              <li class=""><a href="?start_d=<?=$dn?>&cat=<?=$cat?>" class="page-link  design_pagi_next" ><span aria-hidden="true">&raquo;</span></a></li>
           </ul>
         </nav>                      
 
@@ -1178,7 +1185,7 @@ if(isset($_GET['start_p'])){
 
             <?php
 
-                  $data = $product->product_fetch($product->start,'all');
+                  $data = $product->product_fetch($product->start,$cat);
 
                   if($data!=null){
                     while($row = mysqli_fetch_assoc($data)){
@@ -1262,16 +1269,16 @@ if(isset($_GET['start_p'])){
         
           <nav aria-label="Page nvigation">
             <ul class="pagination">
-                <li class="#"><a href="?start_p=<?=$pp?>" class="page-link  product_pagi_prev" ><span aria-hidden="true">&laquo;</span></a></li>
+                <li class="#"><a href="?start_p=<?=$pp?>&cat=<?=$cat?>" class="page-link  product_pagi_prev" ><span aria-hidden="true">&laquo;</span></a></li>
                 
                 <?php
                       
             
-                      product_pagination($product->pagi,$product->current_page);
+                      product_pagination($product->pagi,$product->current_page, $cat);
               
                             
                 ?>
-                <li class="#"><a href="?start_p=<?=$pn?>" class="page-link  product_pagi_next" ><span aria-hidden="true">&raquo;</span></a></li>
+                <li class="#"><a href="?start_p=<?=$pn?>&cat=<?=$cat?>" class="page-link  product_pagi_next" ><span aria-hidden="true">&raquo;</span></a></li>
             </ul>
           </nav>                      
 
