@@ -50,8 +50,79 @@
 
     }
 
-    if (isset($_POST["product_category"])) {
+    if (isset($_POST["design_categories"])) {
+        $cat_sql = "SELECT pt.*, COUNT(p.id) AS num
+        FROM product_type pt
+        LEFT JOIN product p ON pt.id = p.type_id
+        WHERE pt.b_id = '$b_id' AND pt.book_order = '1'
+        GROUP BY pt.id;";
         
+        $cat_query=mysqli_query($con, $cat_sql);
+        $cat_query_num=mysqli_num_rows($cat_query);
+        if ($cat_query_num > 0) {
+            $i=0;
+            while ($cat = mysqli_fetch_assoc($cat_query)) {
+                ?>
+                <a href="?start_d=0&cat=<?=$cat['id']?>" class="tab product_category_box tab<?=$i++?>" id="<?=$cat['id']?>"><?=$cat['category']?></a>
+                <?php
+            }
+
+        }else{
+
+            echo 0;
+
+        }
+
+    }
+
+    if (isset($_POST["product_category"])) {
+        $cat_sql = "SELECT pt.*, COUNT(p.id) AS num
+        FROM product_type pt
+        LEFT JOIN product p ON pt.id = p.type_id
+        WHERE pt.b_id = '$b_id' AND pt.book_order = '0'
+        GROUP BY pt.id;";
+        
+        $cat_query=mysqli_query($con, $cat_sql);
+        $cat_query_num=mysqli_num_rows($cat_query);
+        if ($cat_query_num > 0) {
+            $i=0;
+            while ($cat = mysqli_fetch_assoc($cat_query)) {
+                ?>
+                <li class="tab product_category_box tab<?=$i++?>" id="<?=$cat['id']?>"><?=$cat['category']?></li>
+                <?php
+            }
+
+        }else{
+
+            echo 0;
+
+        }
+
+    }
+
+    if (isset($_POST["product_categories"])) {
+        $cat_sql = "SELECT pt.*, COUNT(p.id) AS num
+        FROM product_type pt
+        LEFT JOIN product p ON pt.id = p.type_id
+        WHERE pt.b_id = '$b_id' AND pt.book_order = '0'
+        GROUP BY pt.id;";
+        
+        $cat_query=mysqli_query($con, $cat_sql);
+        $cat_query_num=mysqli_num_rows($cat_query);
+        if ($cat_query_num > 0) {
+            $i=0;
+            while ($cat = mysqli_fetch_assoc($cat_query)) {
+                ?>
+                <a href="?start_p=0&cat_p=<?=$cat['id']?>"class="tab product_category_box tab<?=$i++?>" id="<?=$cat['id']?>"><?=$cat['category']?></a>
+                <?php
+            }
+
+        }else{
+
+            echo 0;
+
+        }
+
     }
 
 ?>

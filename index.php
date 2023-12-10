@@ -120,6 +120,7 @@ $dn = 2;
 $pp = 1;
 $pn = 2;
 $cat = 'all';
+$cat_p = 'all';
 if(isset($_GET['start_d'])){
     if(isset($_GET['cat'])){
       $cat = $_GET['cat'];
@@ -130,13 +131,13 @@ if(isset($_GET['start_d'])){
     $design->design_set_session($start_d,$cat);
 }
 if(isset($_GET['start_p'])){
-  if(isset($_GET['cat'])){
-    $cat = $_GET['cat'];
+  if(isset($_GET['cat_p'])){
+    $cat_p = $_GET['cat_p'];
   }
   $pp = $_GET['start_p']-1;
   $pn = $_GET['start_p']+1;
   $start_p = $_GET['start_p'];
-  $product->product_set_session($start_p,$cat);
+  $product->product_set_session($start_p,$cat_p);
 }
 
 
@@ -959,6 +960,38 @@ if(isset($_GET['start_p'])){
 
       </div>
 
+
+      <div class="category-sectiond">
+              <div class="">
+                  <div class="category-wrapperd">
+                      <button type="button" class="category-arrowd prev prevvd hidden"><i class="ri-arrow-left-s-line"></i></button>
+                      <button type="button" class="category-arrowd next nexttd"><i class="ri-arrow-right-s-line"></i></button>
+                      <div class="category-linkd" id="design_categories_2">
+
+
+                          <!-- <a href="#">Electronics</a>
+                          <a href="#">Home & Garden</a>
+                          <a href="#">Health & Beauty</a>
+                          <a href="#">Sports & Outdoors</a>
+                          <a href="#">Toys & Games</a>
+                          <a href="#">Pet Supplies</a>
+                          <a href="#">Office & School Supplies</a>
+                          <a href="#">Automotive</a>
+                          <a href="#">Clothing</a>
+                          <a href="#">Electronics</a>
+                          <a href="#">Home & Garden</a>
+                          <a href="#">Health & Beauty</a>
+                          <a href="#">Sports & Outdoors</a>
+                          <a href="#">Toys & Games</a>
+                          <a href="#">Pet Supplies</a>
+                          <a href="#">Office & School Supplies</a>
+                          <a href="#">Automotive</a> -->
+                      </div>
+                  </div>
+              </div>
+      </div>
+
+
     </section>
     <!-- Details -->
     <section class="details" id="details">
@@ -1111,10 +1144,11 @@ if(isset($_GET['start_p'])){
         </div> 
     <div style="margin: 0 auto" class="wrapper">
       <div class="icon"><i id="left" class="fa-solid fa-angle-left"></i></div>
-      <ul class="tabs-box">
+      <ul class="tabs-box" id="product_categories">
         <li class="tab active">All</li>
-        <li class="tab">JavaScript</li>
-        <li class="tab">Podcasts</li>
+
+
+        <!-- <li class="tab">Podcasts</li>
         <li class="tab">Databases</li>
         <li class="tab">Web Development</li>
         <li class="tab">Unboxing</li>
@@ -1126,7 +1160,8 @@ if(isset($_GET['start_p'])){
         <li class="tab">Gaming</li>
         <li class="tab">Share Market</li>
         <li class="tab">Smartphones</li>
-        <li class="tab">Data Structure</li>
+        <li class="tab">Data Structure</li> -->
+
       </ul>
       <div class="icon"><i id="right" class="fa-solid fa-angle-right"></i></div>
     </div>
@@ -1134,11 +1169,12 @@ if(isset($_GET['start_p'])){
 <div class="category-section">
         <div class="">
             <div class="category-wrapper">
-                <button type="button" class="category-arrow prev hidden"><i class="ri-arrow-left-s-line"></i></button>
-                <button type="button" class="category-arrow next"><i class="ri-arrow-right-s-line"></i></button>
-                <div class="category-link">
-                    <a href="#">Clothing</a>
-                    <a href="#">Electronics</a>
+                <button type="button" class="category-arrow prev prevv hidden"><i class="ri-arrow-left-s-line"></i></button>
+                <button type="button" class="category-arrow next nextt"><i class="ri-arrow-right-s-line"></i></button>
+                <div class="category-link" id="product_categories_2">
+
+
+                    <!-- <a href="#">Electronics</a>
                     <a href="#">Home & Garden</a>
                     <a href="#">Health & Beauty</a>
                     <a href="#">Sports & Outdoors</a>
@@ -1154,7 +1190,7 @@ if(isset($_GET['start_p'])){
                     <a href="#">Toys & Games</a>
                     <a href="#">Pet Supplies</a>
                     <a href="#">Office & School Supplies</a>
-                    <a href="#">Automotive</a>
+                    <a href="#">Automotive</a> -->
                 </div>
             </div>
         </div>
@@ -1185,7 +1221,7 @@ if(isset($_GET['start_p'])){
 
             <?php
 
-                  $data = $product->product_fetch($product->start,$cat);
+                  $data = $product->product_fetch($product->start,$cat_p);
 
                   if($data!=null){
                     while($row = mysqli_fetch_assoc($data)){
@@ -1269,16 +1305,16 @@ if(isset($_GET['start_p'])){
         
           <nav aria-label="Page nvigation">
             <ul class="pagination">
-                <li class="#"><a href="?start_p=<?=$pp?>&cat=<?=$cat?>" class="page-link  product_pagi_prev" ><span aria-hidden="true">&laquo;</span></a></li>
+                <li class="#"><a href="?start_p=<?=$pp?>&cat_p=<?=$cat_p?>" class="page-link  product_pagi_prev" ><span aria-hidden="true">&laquo;</span></a></li>
                 
                 <?php
                       
             
-                      product_pagination($product->pagi,$product->current_page, $cat);
+                      product_pagination($product->pagi,$product->current_page, $cat_p);
               
                             
                 ?>
-                <li class="#"><a href="?start_p=<?=$pn?>&cat=<?=$cat?>" class="page-link  product_pagi_next" ><span aria-hidden="true">&raquo;</span></a></li>
+                <li class="#"><a href="?start_p=<?=$pn?>&cat_p=<?=$cat_p?>" class="page-link  product_pagi_next" ><span aria-hidden="true">&raquo;</span></a></li>
             </ul>
           </nav>                      
 
@@ -1494,6 +1530,74 @@ alert("box"+cat_id);
     });
 
 
+    $('#design_categories_2').ready(function(){
+
+    $.ajax({
+        url:'category/category.php',
+        type:'post',
+        data: {
+          design_categories: true
+        },
+        success: function(response){
+
+          if(response!=0){
+            $('#design_categories_2').html(response); 
+          }else{
+            $('#design_categories_2').html("Category Not Found");
+          }
+
+        }
+    });
+
+
+    });    
+
+
+    $('#product_categories').ready(function(){
+
+    $.ajax({
+        url:'category/category.php',
+        type:'post',
+        data: {
+          product_category: true
+        },
+        success: function(response){
+
+          if(response!=0){
+            $('#product_categories').html(response);
+          }else{
+            $('#product_categories').html("Category Not Found");
+          }
+
+        }
+    });
+
+
+});
+
+$('#product_categories_2').ready(function(){
+
+$.ajax({
+    url:'category/category.php',
+    type:'post',
+    data: {
+      product_categories: true
+    },
+    success: function(response){
+
+      if(response!=0){
+        $('#product_categories_2').html(response); 
+      }else{
+        $('#product_categories_2').html("Category Not Found");
+      }
+
+    }
+});
+
+
+});
+
+
       $(document).on('click','#login', function(){
 
         $('.signupf').addClass('hidden');
@@ -1660,4 +1764,5 @@ alert("box"+cat_id);
   <script src="dist/js/scriptc.js"></script>
   <script src="page.js"></script>
   <script src="dist/js/scriptp.js"></script>
+  <script type="text/javascript" src="dist/js/script_p_c.js"></script>
   <script src="dist/js/service_c.js"></script>
