@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 08, 2023 at 08:15 PM
+-- Generation Time: Dec 10, 2023 at 06:58 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -345,14 +345,14 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `unique_id`, `b_id`, `service_id`, `pro_name`, `pro_details`, `status`, `price`, `pro_image`, `pro_type`, `type_id`, `dis_per`, `user_id`, `added_date`, `available`, `book_order`) VALUES
-(1, '1234213434', '7AABE1-1700896475-1188728145-806933517', '23454', 'Huawei Nova 9', 'Huawei phone', '1', '500000', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'phone', '123', 5, 'U-FF-0000001-01585855075', '2023-12-08 14:47:23', '1', '1'),
-(2, '1234213434', '7AABE1-1700896475-1188728145-806933517', '23454', 'Huawei Nova 11', 'Huawei phone', '1', '500000', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'phone', '123', 5, 'U-FF-0000001-01585855075', '2023-12-08 19:14:23', '1', '0'),
+(1, '1234213434', '7AABE1-1700896475-1188728145-806933517', '23454', 'Huawei Nova 9', 'Huawei phone', '1', '500000', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'phone', '1', 5, 'U-FF-0000001-01585855075', '2023-12-09 09:27:22', '1', '1'),
+(2, '1234213434', '7AABE1-1700896475-1188728145-806933517', '23454', 'Huawei Nova 11', 'Huawei phone', '1', '500000', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'phone', '1', 5, 'U-FF-0000001-01585855075', '2023-12-09 09:27:26', '1', '1'),
 (3, '1234213434', '7AABE1-1700896475-1188728145-806933517', '23454', 'Huawei Nova 9', 'Huawei phone', '1', '500000', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'phone', '123', 5, 'U-FF-0000001-01585855075', '2023-12-08 14:47:23', '1', '1'),
-(4, '1234213434', '7AABE1-1700896475-1188728145-806933517', '23454', 'Huawei Nova 11', 'Huawei phone', '1', '500000', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'phone', '123', 5, 'U-FF-0000001-01585855075', '2023-12-08 14:47:23', '1', '1'),
-(5, '1234213434', '7AABE1-1700896475-1188728145-806933517', '23454', 'Huawei Nova 9', 'Huawei phone', '1', '500000', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'phone', '123', 5, 'U-FF-0000001-01585855075', '2023-12-08 14:47:23', '1', '1'),
-(6, '1234213434', '7AABE1-1700896475-1188728145-806933517', '23454', 'Huawei Nova 11', 'Huawei phone', '1', '500000', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'phone', '123', 5, 'U-FF-0000001-01585855075', '2023-12-08 19:14:29', '1', '0'),
-(7, '1234213434', '7AABE1-1700896475-1188728145-806933517', '23454', 'Huawei Nova 9', 'Huawei phone', '1', '500000', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'phone', '123', 5, 'U-FF-0000001-01585855075', '2023-12-08 19:14:32', '1', '0'),
-(8, '1234213434', '7AABE1-1700896475-1188728145-806933517', '23454', 'Huawei Nova 11', 'Huawei phone', '1', '500000', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'phone', '123', 5, 'U-FF-0000001-01585855075', '2023-12-08 14:47:23', '1', '1'),
+(4, '1234213434', '7AABE1-1700896475-1188728145-806933517', '23454', 'Huawei Nova 11', 'Huawei phone', '1', '500000', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'phone', '1', 5, 'U-FF-0000001-01585855075', '2023-12-09 09:27:31', '1', '1'),
+(5, '1234213434', '7AABE1-1700896475-1188728145-806933517', '23454', 'Huawei Nova 9', 'Huawei phone', '1', '500000', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'phone', '2', 5, 'U-FF-0000001-01585855075', '2023-12-09 09:27:34', '1', '1'),
+(6, '1234213434', '7AABE1-1700896475-1188728145-806933517', '23454', 'Huawei Nova 11', 'Huawei phone', '1', '500000', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'phone', '2', 5, 'U-FF-0000001-01585855075', '2023-12-09 09:27:35', '1', '0'),
+(7, '1234213434', '7AABE1-1700896475-1188728145-806933517', '23454', 'Huawei Nova 9', 'Huawei phone', '1', '500000', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'phone', '3', 5, 'U-FF-0000001-01585855075', '2023-12-09 09:27:38', '1', '0'),
+(8, '1234213434', '7AABE1-1700896475-1188728145-806933517', '23454', 'Huawei Nova 11', 'Huawei phone', '1', '500000', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'phone', '3', 5, 'U-FF-0000001-01585855075', '2023-12-09 09:27:40', '1', '1'),
 (9, '1234213434', '7AABE1-1700896475-1188728145-806933517', '23454', 'Huawei Nova 9', 'Huawei phone', '1', '500000', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'phone', '123', 5, 'U-FF-0000001-01585855075', '2023-12-08 19:14:37', '1', '0'),
 (10, '1234213434', '7AABE1-1700896475-1188728145-806933517', '23454', 'Huawei Nova 11', 'Huawei phone', '1', '500000', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'phone', '123', 5, 'U-FF-0000001-01585855075', '2023-12-08 14:47:23', '1', '1'),
 (11, '1234213434', '7AABE1-1700896475-1188728145-806933517', '23454', 'Huawei Nova 9', 'Huawei phone', '1', '500000', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'phone', '123', 5, 'U-FF-0000001-01585855075', '2023-12-08 14:47:23', '1', '1'),
@@ -395,14 +395,41 @@ CREATE TABLE `product_images` (
 
 CREATE TABLE `product_type` (
   `id` int(11) NOT NULL,
-  `unique_id` int(11) NOT NULL,
-  `b_id` int(11) NOT NULL,
-  `service_id` int(11) NOT NULL,
-  `category` int(11) NOT NULL,
-  `details` int(11) NOT NULL,
+  `unique_id` varchar(255) NOT NULL,
+  `b_id` varchar(255) NOT NULL,
+  `service_id` varchar(255) NOT NULL,
+  `category` varchar(255) NOT NULL,
+  `type_image` varchar(255) NOT NULL,
+  `details` varchar(255) NOT NULL,
   `pro_count` int(11) NOT NULL DEFAULT 0,
   `book_order` enum('0','1') NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `product_type`
+--
+
+INSERT INTO `product_type` (`id`, `unique_id`, `b_id`, `service_id`, `category`, `type_image`, `details`, `pro_count`, `book_order`) VALUES
+(1, '1', '7AABE1-1700896475-1188728145-806933517', '1', 'phone', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'huawei phone', 21, '1'),
+(2, '2', '7AABE1-1700896475-1188728145-806933517', '1', 'phone', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'huawei phone', 21, '0'),
+(3, '3', '7AABE1-1700896475-1188728145-806933517', '1', 'phone', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'huawei phone', 21, '1'),
+(4, '4', '7AABE1-1700896475-1188728145-806933517', '1', 'phone', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'huawei phone', 21, '0'),
+(5, '2', '7AABE1-1700896475-1188728145-806933517', '1', 'phone', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'huawei phone', 21, '0'),
+(6, '4', '7AABE1-1700896475-1188728145-806933517', '1', 'phone', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'huawei phone', 21, '0'),
+(7, '2', '7AABE1-1700896475-1188728145-806933517', '1', 'phone', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'huawei phone', 21, '0'),
+(8, '3', '7AABE1-1700896475-1188728145-806933517', '1', 'phone', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'huawei phone', 21, '1'),
+(9, '4', '7AABE1-1700896475-1188728145-806933517', '1', 'phone', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'huawei phone', 21, '0'),
+(10, '2', '7AABE1-1700896475-1188728145-806933517', '1', 'phone', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'huawei phone', 21, '0'),
+(11, '4', '7AABE1-1700896475-1188728145-806933517', '1', 'phone', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'huawei phone', 21, '0'),
+(12, '3', '7AABE1-1700896475-1188728145-806933517', '1', 'phone', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'huawei phone', 21, '1'),
+(13, '4', '7AABE1-1700896475-1188728145-806933517', '1', 'phone', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'huawei phone', 21, '0'),
+(14, '2', '7AABE1-1700896475-1188728145-806933517', '1', 'phone', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'huawei phone', 21, '0'),
+(15, '4', '7AABE1-1700896475-1188728145-806933517', '1', 'phone', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'huawei phone', 21, '0'),
+(16, '4', '7AABE1-1700896475-1188728145-806933517', '1', 'phone', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'huawei phone', 21, '0'),
+(17, '3', '7AABE1-1700896475-1188728145-806933517', '1', 'phone', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'huawei phone', 21, '1'),
+(18, '4', '7AABE1-1700896475-1188728145-806933517', '1', 'phone', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'huawei phone', 21, '0'),
+(19, '2', '7AABE1-1700896475-1188728145-806933517', '1', 'phone', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'huawei phone', 21, '0'),
+(20, '4', '7AABE1-1700896475-1188728145-806933517', '1', 'phone', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'huawei phone', 21, '0');
 
 -- --------------------------------------------------------
 
@@ -467,6 +494,7 @@ CREATE TABLE `service_type` (
   `id` int(11) NOT NULL,
   `unique_id` varchar(255) NOT NULL,
   `type` varchar(55) NOT NULL,
+  `type_image` varchar(255) NOT NULL,
   `details` varchar(255) NOT NULL,
   `b_id` varchar(255) NOT NULL,
   `status` enum('1','0') NOT NULL DEFAULT '1',
@@ -493,6 +521,30 @@ CREATE TABLE `shipping` (
   `date_time` datetime NOT NULL,
   `num_item` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `super_admin`
+--
+
+CREATE TABLE `super_admin` (
+  `id` int(11) NOT NULL,
+  `unique_id` varchar(255) NOT NULL,
+  `super_b_id` varchar(255) NOT NULL,
+  `super_name` varchar(255) NOT NULL,
+  `super_phone` varchar(20) NOT NULL,
+  `super_email` varchar(255) NOT NULL,
+  `otp` varchar(255) NOT NULL,
+  `last_login` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `super_admin`
+--
+
+INSERT INTO `super_admin` (`id`, `unique_id`, `super_b_id`, `super_name`, `super_phone`, `super_email`, `otp`, `last_login`) VALUES
+(1, '1', '7AABE1-1700896475-1188728145-806933517', 'Farhad Foysal', '01770627875', 'mff585855075@gmail.com', '', '2023-12-09 06:48:48');
 
 -- --------------------------------------------------------
 
@@ -3501,6 +3553,12 @@ ALTER TABLE `product_images`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `product_type`
+--
+ALTER TABLE `product_type`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `rating`
 --
 ALTER TABLE `rating`
@@ -3528,6 +3586,12 @@ ALTER TABLE `service_type`
 -- Indexes for table `shipping`
 --
 ALTER TABLE `shipping`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `super_admin`
+--
+ALTER TABLE `super_admin`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -3615,6 +3679,12 @@ ALTER TABLE `product_images`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `product_type`
+--
+ALTER TABLE `product_type`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
 -- AUTO_INCREMENT for table `rating`
 --
 ALTER TABLE `rating`
@@ -3643,6 +3713,12 @@ ALTER TABLE `service_type`
 --
 ALTER TABLE `shipping`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `super_admin`
+--
+ALTER TABLE `super_admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
