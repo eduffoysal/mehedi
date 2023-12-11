@@ -4,7 +4,7 @@
         private $con;
         private $user;
 
-        public $per_page=9;
+        public $per_page=8;
         public $start=0;
         public $current_page=1;
 

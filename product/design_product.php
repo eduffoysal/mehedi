@@ -136,4 +136,162 @@ if(isset($_POST['product_product'])) {
 
 }
 
+if(isset($_POST['design_pagination']) && $_POST['cat_id'] != ''){
+        $category = $_POST['cat_id'];
+        if(isset($_POST['start']) && $_POST['start'] != 0){
+            $start = $_POST['start'];
+        }else{
+            $start = 0;
+        }
+
+        if(isset($_POST['c_p']) && $_POST['c_p'] != 0){
+            $current_page = $_POST['c_p'];
+        }else{
+            $current_page = 1;
+        }
+        $per_page = 9;
+
+        if($start<=0){
+            $start=0;
+            $current_page=1;
+        }else{
+            $current_page=$start;
+            $start--;
+            $start=$start*$per_page;
+        }
+
+            if($category== 'all'){
+                $sql = "SELECT * FROM product WHERE  b_id='$b_id' AND book_order='1' ";
+            }else{
+                $sql = "SELECT * FROM product WHERE  b_id='$b_id' AND book_order='1' AND (pro_type='$category' OR type_id='$category') ";
+            }
+
+            $record=mysqli_num_rows(mysqli_query($con,$sql));
+
+            $pagi=ceil($record/$per_page);
+
+
+            $result=mysqli_query($con,$sql);
+            $num=mysqli_num_rows($result);
+
+        $_SESSION['design'] = true;
+        $_SESSION['d_s'] = $start;
+        $_SESSION['d_c'] = $current_page;
+        $_SESSION['d_p_p'] = $per_page;
+        $_SESSION['d_p'] = $pagi;
+
+        if($start==0){
+            $dp=1;
+        }else{
+            $dp = $start-1;
+        }
+
+        $dn = $start+1;
+
+        ?>
+        
+        <li class=""><a href="?start_d=<?=$dp?>&cat=<?=$category?>" class="page-link  design_pagi_prev" ><span aria-hidden="true">&laquo;</span></a></li>
+              
+              <?php
+                for($i=1;$i<=$pagi;$i++){
+                    $class='';
+                    if($current_page==$i){
+                    ?>
+                        <li class="page-item active"><a href="javascript:void(0)" class="page-link"><?php echo $i?></a></li>
+                    <?php
+                    }else{
+                    ?>
+                        <li class="page-item design_pagi_btn" id="<?=$i?>"><a href="?start_d=<?php echo $i ?>&cat=<?=$category?>" id="<?=$i?>" class="page-link"><?php echo $i?></a></li>
+                    <?php }
+                }
+              ?>
+
+        <li class=""><a href="?start_d=<?=$dn?>&cat=<?=$category?>" class="page-link  design_pagi_next" ><span aria-hidden="true">&raquo;</span></a></li>
+
+
+        <?php
+        
+
+}
+
+
+if(isset($_POST['product_pagination']) && $_POST['cat_id'] != ''){
+    $category = $_POST['cat_id'];
+    if(isset($_POST['start']) && $_POST['start'] != 0){
+        $start = $_POST['start'];
+    }else{
+        $start = 0;
+    }
+
+    if(isset($_POST['c_p']) && $_POST['c_p'] != 0){
+        $current_page = $_POST['c_p'];
+    }else{
+        $current_page = 1;
+    }
+    $per_page = 9;
+
+    if($start<=0){
+        $start=0;
+        $current_page=1;
+    }else{
+        $current_page=$start;
+        $start--;
+        $start=$start*$per_page;
+    }
+
+        if($category== 'all'){
+            $sql = "SELECT * FROM product WHERE  b_id='$b_id' AND book_order='0' ";
+        }else{
+            $sql = "SELECT * FROM product WHERE  b_id='$b_id' AND book_order='0' AND (pro_type='$category' OR type_id='$category') ";
+        }
+
+        $record=mysqli_num_rows(mysqli_query($con,$sql));
+
+        $pagi=ceil($record/$per_page);
+
+
+        $result=mysqli_query($con,$sql);
+        $num=mysqli_num_rows($result);
+
+    $_SESSION['design'] = true;
+    $_SESSION['d_s'] = $start;
+    $_SESSION['d_c'] = $current_page;
+    $_SESSION['d_p_p'] = $per_page;
+    $_SESSION['d_p'] = $pagi;
+
+    if($start==0){
+        $dp=1;
+    }else{
+        $dp = $start-1;
+    }
+
+    $dn = $start+1;
+
+    ?>
+    
+    <li class=""><a href="?start_p=<?=$dp?>&cat_p=<?=$category?>" class="page-link  design_pagi_prev" ><span aria-hidden="true">&laquo;</span></a></li>
+          
+          <?php
+            for($i=1;$i<=$pagi;$i++){
+                $class='';
+                if($current_page==$i){
+                ?>
+                    <li class="page-item active"><a href="javascript:void(0)" class="page-link"><?php echo $i?></a></li>
+                <?php
+                }else{
+                ?>
+                    <li class="page-item design_pagi_btn" id="<?=$i?>"><a href="?start_p=<?php echo $i ?>&cat_p=<?=$category?>" id="<?=$i?>" class="page-link"><?php echo $i?></a></li>
+                <?php }
+            }
+          ?>
+
+    <li class=""><a href="?start_p=<?=$dn?>&cat_p=<?=$category?>" class="page-link  design_pagi_next" ><span aria-hidden="true">&raquo;</span></a></li>
+
+
+    <?php
+    
+
+}
+
+
 ?>

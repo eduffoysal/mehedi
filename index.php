@@ -125,7 +125,14 @@ if(isset($_GET['start_d'])){
     if(isset($_GET['cat'])){
       $cat = $_GET['cat'];
     }
-    $dp = $_GET['start_d']-1;
+
+    if($_GET['start_d']==0){
+        $dp=1;
+    }else{
+        $dp = $_GET['start_d']-1;
+    }
+
+    // $dp = $_GET['start_d']-1;
     $dn = $_GET['start_d']+1;
     $start_d = $_GET['start_d'];
     $design->design_set_session($start_d,$cat);
@@ -134,7 +141,12 @@ if(isset($_GET['start_p'])){
   if(isset($_GET['cat_p'])){
     $cat_p = $_GET['cat_p'];
   }
-  $pp = $_GET['start_p']-1;
+  if($_GET['start_p']==0){
+    $pp=1;
+}else{
+    $pp = $_GET['start_p']-1;
+}
+  // $pp = $_GET['start_p']-1;
   $pn = $_GET['start_p']+1;
   $start_p = $_GET['start_p'];
   $product->product_set_session($start_p,$cat_p);
@@ -1654,6 +1666,20 @@ var cat_id = $(this).attr('id');
           }
         });
 
+        $.ajax({
+          url:'product/design_product.php',
+          type:'post',
+          data: {
+            cat_id:cat_id,
+            product_pagination: true
+          },
+          success: function(response){
+
+            $('#product_pagination').html(response);
+
+          }
+        });
+
 });
 
     
@@ -1672,6 +1698,20 @@ var cat_id = $(this).attr('id');
           success: function(response){
 
             $('#design_product').html(response);
+
+          }
+        });
+
+        $.ajax({
+          url:'product/design_product.php',
+          type:'post',
+          data: {
+            cat_id:cat_id,
+            design_pagination: true
+          },
+          success: function(response){
+
+            $('#design_pagination').html(response);
 
           }
         });
