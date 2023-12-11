@@ -171,15 +171,14 @@
         public function design($id,$unique_id,$pro_name,$pro_details,$pro_type,$b_id,$service_id,$status,$price,$type_id,$available,$dis_per,$added_date,$book_order,$image){
 
             $code ="
-                <div class=\"box\">
+                <div class=\"box\" id=\"$id\">
                     <img src=\"$image\" alt=\"\">
                     <h2>$pro_name</h2>
                     <span>$pro_type</span>
                     <h3 class=\"price\">$price</h3>
-                    <i class=\"bx bxs-message-square-check\"></i>
-                    <i class=\"bx bx-heart\"></i>
+                    <i class=\"bx bxs-message-square-check\" id=\"$id\"></i>
+                    <i class=\"bx bx-heart\" id=\"$id\"></i>
                 </div>
-            
             ";
 
             echo $code;

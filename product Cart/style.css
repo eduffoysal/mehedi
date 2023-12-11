@@ -92,8 +92,8 @@
 @media screen and (min-width: 601px) and (max-width: 767px) {
   .product-card .product-card-img img {
     
-    width: 50%;
-    max-width: 50%; /* Ensure images are responsive */
+    width: 100%;
+    max-width: 100%; /* Ensure images are responsive */
     height: 100%;
     max-height: 280px; /* Adjust height for tablet screens */
   }
@@ -101,7 +101,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    /* position: relative; */
     vertical-align: middle;
 
   }
@@ -112,14 +112,14 @@
   .product-card .product-card-img {
     justify-content: center;
 
-    width: 50%;
+    width: 100%;
     max-height: 280px; /* Adjust height for smaller screens */
   }
   .product-card-img img{
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    /* position: relative; */
     vertical-align: middle;
 
   }

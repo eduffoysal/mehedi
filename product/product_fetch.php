@@ -168,22 +168,38 @@
         }
 
         public function product($id,$unique_id,$pro_name,$pro_details,$pro_type,$b_id,$service_id,$status,$price,$type_id,$available,$dis_per,$added_date,$book_order,$image){
+            if($available==0){
+                $stock = "Stock Out";
+            }else{
+                $stock = "In Stock";
+            }
 
             $code ="
-                    <div class=\"w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl\">
-                    
-                    <img class=\"h-40 object-cover rounded-xl h-40 object-cover rounded-xl\" src=\"$image\" alt=\"\">
-                    <div class=\"p-2\">
-                    
-                    <h2 class=\"font-bold text-lg mb-2 \">Heading</h2>
-                    
-                    <p class=\"text-sm text-gray-600\">Simple Yet Beautiful Card Design with TaiwlindCss. Subscribe to our Youtube channel for more ...</p>
+            <div class=\"col-md-3 col-sm-6\" id=\"$id\">
+                <div class=\"product-card\">
+                    <div class=\"product-card-img\">
+                        <label class=\"stock bg-success\">$stock</label>
+                        <img src=\"$image\" alt=\"$pro_name\">
                     </div>
-                    
-                    <div class=\"m-2\">
-                    <a role=\"button\" href=\"\" class=\"text-white bg-purple-600 px-3 py-1 rounded-md hover:bg-purple-700\">Learn More</a>
+                    <div class=\"product-card-body\">
+                        <p class=\"product-brand\">$pro_type</p>
+                        <h5 class=\"product-name\">
+                        <a href=\"#\">
+                                $pro_name 
+                        </a>
+                        </h5>
+                        <div>
+                            <span class=\"selling-price\">$price TK</span>
+                            <span class=\"original-price\">$price TK</span>
+                        </div>
+                        <div class=\"mt-2 text-centerr\">
+                            <a href=\"javascript:void(0)\" class=\"btn btn1\" id=\"$id\">Add To Cart</a>
+                            <a href=\"javascript:void(0)\" class=\"btn btn1\" id=\"$id\"> <i class=\"fa fa-heart\" id=\"$id\"></i> </a>
+                            <a href=\"javascript:void(0)\" class=\"btn btn1\" id=\"$id\"> View </a>
+                        </div>
                     </div>
-                    </div>
+                </div>
+            </div>
             
             ";
 

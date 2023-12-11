@@ -155,6 +155,7 @@ if(isset($_GET['start_p'])){
     <link rel="stylesheet" href="./output/output.css">
 
     <link rel="stylesheet" href="page.css">
+    <link rel="stylesheet" href="css/product_card.css">
     <link rel="stylesheet" href="css/slider_style.css">
     <link rel="stylesheet" href="css/service_c.css">
 
@@ -938,7 +939,7 @@ if(isset($_GET['start_p'])){
         
         <nav aria-label="Page nvigation">
           <ul class="pagination">
-              <li class=""><a href="" class="page-link  prev" ><span aria-hidden="true">&laquo;</span></a></li>
+              <!-- <li class=""><a href="" class="page-link  prev" ><span aria-hidden="true">&laquo;</span></a></li> -->
               
               <?php
               $pagi = 6;
@@ -947,14 +948,14 @@ if(isset($_GET['start_p'])){
                   $class='';
                   if($current_page==$i){
                       ?>
-                  <li class="page-item active"><a href="javascript:void(0)" class="page-link"><?php echo $i?></a></li>
+                  <!-- <li class="page-item active"><a href="javascript:void(0)" class="page-link"><?php echo $i?></a></li> -->
               <?php
               }else{
               ?>
-              <li class="page-item"><a href="?start=<?php echo $i ?>" class="page-link"><?php echo $i?></a></li>
+              <!-- <li class="page-item"><a href="?start=<?php echo $i ?>" class="page-link"><?php echo $i?></a></li> -->
               <?php } ?>
               <?php }?>
-              <li class=""><a href="" class="page-link  next" ><span aria-hidden="true">&raquo;</span></a></li>
+              <!-- <li class=""><a href="" class="page-link  next" ><span aria-hidden="true">&raquo;</span></a></li> -->
           </ul>
         </nav>                      
 
@@ -1000,7 +1001,7 @@ if(isset($_GET['start_p'])){
             <a href="#" class="btn">Book Now<i class='bx bx-right-arrow-alt'></i></a>
         </div> 
         <!-- price -->
-        <div class="details-container">
+        <div class="details-container" id="design_product">
 
 
 
@@ -1117,7 +1118,7 @@ if(isset($_GET['start_p'])){
         <div class="pagination_container p-1">
         
         <nav aria-label="Page nvigation">
-          <ul class="pagination">
+          <ul class="pagination" id="design_pagination">
               <li class=""><a href="?start_d=<?=$dp?>&cat=<?=$cat?>" class="page-link  design_pagi_prev" ><span aria-hidden="true">&laquo;</span></a></li>
               
               <?php
@@ -1213,23 +1214,170 @@ if(isset($_GET['start_p'])){
         <div class="container-fluid">
 
 
+
+        <div class="row" id="product_product">
+
+
+                <?php
+
+                    $data = $product->product_fetch($product->start,$cat_p);
+
+                    if($data!=null){
+                      while($row = mysqli_fetch_assoc($data)){
+                        $code = $product->product($row['id'],$row['unique_id'],$row['pro_name'],$row['pro_details'],$row['pro_type'],$row['b_id'],$row['service_id'],$row['status'],$row['price'],$row['type_id'],$row['available'],$row['dis_per'],$row['added_date'],$row['book_order'],$row['pro_image']);
+
+                        echo $code;
+                      }
+                    }
+
+                ?>
+
+
+                <!-- <div class="col-md-3 col-sm-6">
+                    <div class="product-card">
+                        <div class="product-card-img">
+                            <label class="stock bg-success">In Stock</label>
+                            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="Non Bridal Design">
+                        </div>
+                        <div class="product-card-body">
+                            <p class="product-brand">HP</p>
+                            <h5 class="product-name">
+                               <a href="#">
+                                    HP Laptop 
+                               </a>
+                            </h5>
+                            <div>
+                                <span class="selling-price">$500</span>
+                                <span class="original-price">$799</span>
+                            </div>
+                            <div class="mt-2 text-center">
+                                <a href="#" class="btn btn1">Add To Cart</a>
+                                <a href="#" class="btn btn1"> <i class="fa fa-heart"></i> </a>
+                                <a href="#" class="btn btn1"> View </a>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="col-md-3 col-sm-6">
+                    <div class="product-card">
+                        <div class="product-card-img">
+                            <label class="stock bg-success">In Stock</label>
+                            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="Non Bridal Design">
+                        </div>
+                        <div class="product-card-body">
+                            <p class="product-brand">HP</p>
+                            <h5 class="product-name">
+                               <a href="#">
+                                    HP Laptop 
+                               </a>
+                            </h5>
+                            <div>
+                                <span class="selling-price">$500</span>
+                                <span class="original-price">$799</span>
+                            </div>
+                            <div class="mt-2 text-centerr">
+                                <a href="#" class="btn btn1">Add To Cart</a>
+                                <a href="#" class="btn btn1"> <i class="fa fa-heart"></i> </a>
+                                <a href="#" class="btn btn1"> View </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="product-card">
+                        <div class="product-card-img">
+                            <label class="stock bg-success">In Stock</label>
+                            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="Non Bridal Design">
+                        </div>
+                        <div class="product-card-body">
+                            <p class="product-brand">HP</p>
+                            <h5 class="product-name">
+                               <a href="#">
+                                    HP Laptop 
+                               </a>
+                            </h5>
+                            <div>
+                                <span class="selling-price">$500</span>
+                                <span class="original-price">$799</span>
+                            </div>
+                            <div class="mt-2 text-centerr">
+                                <a href="#" class="btn btn1">Add To Cart</a>
+                                <a href="#" class="btn btn1"> <i class="fa fa-heart"></i> </a>
+                                <a href="#" class="btn btn1"> View </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="product-card">
+                        <div class="product-card-img">
+                            <label class="stock bg-success">In Stock</label>
+                            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="Non Bridal Design">
+                        </div>
+                        <div class="product-card-body">
+                            <p class="product-brand">HP</p>
+                            <h5 class="product-name">
+                               <a href="#">
+                                    HP Laptop 
+                               </a>
+                            </h5>
+                            <div>
+                                <span class="selling-price">$500</span>
+                                <span class="original-price">$799</span>
+                            </div>
+                            <div class="mt-2 text-centerr">
+                                <a href="#" class="btn btn1">Add To Cart</a>
+                                <a href="#" class="btn btn1"> <i class="fa fa-heart"></i> </a>
+                                <a href="#" class="btn btn1"> View </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="product-card">
+                        <div class="product-card-img">
+                            <label class="stock bg-success">In Stock</label>
+                            <img class="card-img" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="Non Bridal Design">
+                        </div>
+                        <div class="product-card-body">
+                            <p class="product-brand">HP</p>
+                            <h5 class="product-name">
+                               <a href="#">
+                                    HP Laptop 
+                               </a>
+                            </h5>
+                            <div>
+                                <span class="selling-price">$500</span>
+                                <span class="original-price">$799</span>
+                            </div>
+                            <div class="mt-2 text-centerr">
+                                <a href="#" class="btn btn1">Add To Cart</a>
+                                <a href="#" class="btn btn1"> <i class="fa fa-heart"></i> </a>
+                                <a href="#" class="btn btn1"> View </a>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>        
+
       
-        <div class="bg-gray-100 w-full min-h-screen gap-4 flex-wrap flex justify-center items-center">
+        <div class="bg-gray-100 w-full min-h-screenn gap-4 flex-wrap flex justify-center items-center">
+
 
 
 
 
             <?php
 
-                  $data = $product->product_fetch($product->start,$cat_p);
+                  // $data = $product->product_fetch($product->start,$cat_p);
 
-                  if($data!=null){
-                    while($row = mysqli_fetch_assoc($data)){
-                      $code = $product->product($row['id'],$row['unique_id'],$row['pro_name'],$row['pro_details'],$row['pro_type'],$row['b_id'],$row['service_id'],$row['status'],$row['price'],$row['type_id'],$row['available'],$row['dis_per'],$row['added_date'],$row['book_order'],$row['pro_image']);
+                  // if($data!=null){
+                  //   while($row = mysqli_fetch_assoc($data)){
+                  //     $code = $product->product($row['id'],$row['unique_id'],$row['pro_name'],$row['pro_details'],$row['pro_type'],$row['b_id'],$row['service_id'],$row['status'],$row['price'],$row['type_id'],$row['available'],$row['dis_per'],$row['added_date'],$row['book_order'],$row['pro_image']);
 
-                      echo $code;
-                    }
-                  }
+                  //     echo $code;
+                  //   }
+                  // }
 
             ?>
 
@@ -1304,7 +1452,7 @@ if(isset($_GET['start_p'])){
         <div class="pagination_container p-1">
         
           <nav aria-label="Page nvigation">
-            <ul class="pagination">
+            <ul class="pagination" id="product_pagination">
                 <li class="#"><a href="?start_p=<?=$pp?>&cat_p=<?=$cat_p?>" class="page-link  product_pagi_prev" ><span aria-hidden="true">&laquo;</span></a></li>
                 
                 <?php
@@ -1485,22 +1633,45 @@ if(isset($_GET['start_p'])){
   $(document).ready(function(){
 
 
+
+    
+$(document).on('click','.product_category_box', function(){
+
+var cat_id = $(this).attr('id');
+// alert("box"+cat_id);
+        
+        $.ajax({
+          url:'product/design_product.php',
+          type:'post',
+          data: {
+            cat_id:cat_id,
+            product_product: true
+          },
+          success: function(response){
+
+            $('#product_product').html(response);
+
+          }
+        });
+
+});
+
     
 $(document).on('click','.design_category_box', function(){
 
 var cat_id = $(this).attr('id');
-alert("box"+cat_id);
+// alert("box"+cat_id);
         
         $.ajax({
-          url:'category/category.php',
+          url:'product/design_product.php',
           type:'post',
           data: {
             cat_id:cat_id,
-            my_daily_meal_dis: true
+            design_product: true
           },
           success: function(response){
 
-            // $('#my_meal_display_he').html(response);
+            $('#design_product').html(response);
 
           }
         });
