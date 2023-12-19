@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 16, 2023 at 08:23 AM
+-- Generation Time: Dec 19, 2023 at 08:52 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -31,7 +31,7 @@ CREATE TABLE `booking` (
   `id` int(11) NOT NULL,
   `unique_id` varchar(255) NOT NULL,
   `b_id` varchar(255) NOT NULL,
-  `pro_id` varchar(255) NOT NULL,
+  `total_quantity` int(11) NOT NULL,
   `booking_status` enum('1','0','2','3') NOT NULL DEFAULT '0',
   `status` enum('1','0') NOT NULL DEFAULT '1',
   `ref_code` int(11) NOT NULL,
@@ -273,8 +273,10 @@ CREATE TABLE `ordered_list` (
   `pro_id` varchar(255) NOT NULL,
   `b_id` varchar(255) NOT NULL,
   `user_id` varchar(255) NOT NULL,
-  `booking_order` enum('1','0') NOT NULL DEFAULT '1',
-  `price` varchar(255) NOT NULL
+  `book_order` enum('1','0') NOT NULL DEFAULT '1',
+  `price` varchar(255) NOT NULL,
+  `order_booked_id` varchar(255) NOT NULL,
+  `quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -410,8 +412,8 @@ CREATE TABLE `product_type` (
 --
 
 INSERT INTO `product_type` (`id`, `unique_id`, `b_id`, `service_id`, `category`, `type_image`, `details`, `pro_count`, `book_order`) VALUES
-(1, '1', '7AABE1-1700896475-1188728145-806933517', '1', 'phone', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'huawei phone', 21, '1'),
-(2, '2', '7AABE1-1700896475-1188728145-806933517', '1', 'phone', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'huawei phone', 21, '0'),
+(1, '1', '7AABE1-1700896475-1188728145-806933517', '1', 'design1', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'huawei phone', 21, '1'),
+(2, '2', '7AABE1-1700896475-1188728145-806933517', '1', 'phone2', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'huawei phone', 21, '0'),
 (3, '3', '7AABE1-1700896475-1188728145-806933517', '1', 'phone', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'huawei phone', 21, '1'),
 (4, '4', '7AABE1-1700896475-1188728145-806933517', '1', 'phone', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'huawei phone', 21, '0'),
 (5, '2', '7AABE1-1700896475-1188728145-806933517', '1', 'phone', 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80', 'huawei phone', 21, '0'),
