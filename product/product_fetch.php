@@ -176,7 +176,7 @@
 
             $code ="
             <div class=\"col-md-3 col-sm-6\" id=\"$id\">
-                <div class=\"product-card\">
+                <div class=\"product-card view_product_btn\">
                     <div class=\"product-card-img\">
                         <label class=\"stock bg-success\">$stock</label>
                         <img src=\"$image\" alt=\"$pro_name\">
@@ -193,9 +193,24 @@
                             <span class=\"original-price\">$price TK</span>
                         </div>
                         <div class=\"mt-2 text-centerr\">
-                            <a href=\"javascript:void(0)\" class=\"btn btn1\" id=\"$id\">Add To Cart</a>
-                            <a href=\"javascript:void(0)\" class=\"btn btn1\" id=\"$id\"> <i class=\"fa fa-heart\" id=\"$id\"></i> </a>
-                            <a href=\"javascript:void(0)\" class=\"btn btn1\" id=\"$id\"> View </a>
+                        <form action=\"#\" role=\"form\" id=\"product_$id\">
+                        <input type=\"hidden\" name=\"unique_id\" value=\"$unique_id\">
+                        <input type=\"hidden\" name=\"id\" value=\"$id\">
+                        <input type=\"hidden\" name=\"pro_name\" value=\"$pro_name\">
+                        <input type=\"hidden\" name=\"pro_type\" value=\"$pro_type\">
+                        <input type=\"hidden\" name=\"price\" value=\"$price\">
+                        <input type=\"hidden\" name=\"book_order\" value=\"$book_order\">
+                        <input type=\"hidden\" name=\"pro_image\" value=\"$image\">
+                        <input type=\"hidden\" name=\"type_id\" value=\"$type_id\">
+                        <input type=\"hidden\" name=\"b_id\" value=\"$b_id\">
+                        <input type=\"hidden\" name=\"available\" value=\"$available\">
+                        <input type=\"hidden\" name=\"status\" value=\"$status\">
+                        <input type=\"hidden\" name=\"dis_per\" value=\"$dis_per\">
+                        </form>
+                            <a href=\"javascript:void(0)\" class=\"btn btn1 add_to_product_cart_btn\" id=\"$id\">Add To Cart</a>
+                            <a href=\"javascript:void(0)\" class=\"btn btn1 book_mark_product_btn\" id=\"$id\"> <i class=\"fa fa-heart\" id=\"$id\"></i> </a>
+                            <a href=\"javascript:void(0)\" class=\"btn btn1 view_product_btn\" id=\"$id\"> View </a>
+                        
                         </div>
                     </div>
                 </div>

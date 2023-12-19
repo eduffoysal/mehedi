@@ -171,13 +171,27 @@
         public function design($id,$unique_id,$pro_name,$pro_details,$pro_type,$b_id,$service_id,$status,$price,$type_id,$available,$dis_per,$added_date,$book_order,$image){
 
             $code ="
-                <div class=\"box\" id=\"$id\">
+                <div class=\"box view_design_btn\" id=\"$id\">
                     <img src=\"$image\" alt=\"\">
                     <h2>$pro_name</h2>
                     <span>$pro_type</span>
                     <h3 class=\"price\">$price</h3>
-                    <i class=\"bx bxs-message-square-check\" id=\"$id\"></i>
-                    <i class=\"bx bx-heart\" id=\"$id\"></i>
+                    <form action=\"#\" role=\"form\" id=\"design_$id\">
+                    <input type=\"hidden\" name=\"unique_id\" value=\"$unique_id\">
+                    <input type=\"hidden\" name=\"id\" value=\"$id\">
+                    <input type=\"hidden\" name=\"pro_name\" value=\"$pro_name\">
+                    <input type=\"hidden\" name=\"pro_type\" value=\"$pro_type\">
+                    <input type=\"hidden\" name=\"price\" value=\"$price\">
+                    <input type=\"hidden\" name=\"book_order\" value=\"$book_order\">
+                    <input type=\"hidden\" name=\"pro_image\" value=\"$image\">
+                    <input type=\"hidden\" name=\"type_id\" value=\"$type_id\">
+                    <input type=\"hidden\" name=\"b_id\" value=\"$b_id\">
+                    <input type=\"hidden\" name=\"available\" value=\"$available\">
+                    <input type=\"hidden\" name=\"status\" value=\"$status\">
+                    <input type=\"hidden\" name=\"dis_per\" value=\"$dis_per\">
+                    <i class=\"bx bxs-message-square-check add_to_design_cart_btn\" id=\"$id\"></i>
+                    <i class=\"bx bx-heart book_mark_design_btn fw-bold fs-3\" id=\"$id\"></i>
+                    </form>
                 </div>
             ";
 

@@ -2,6 +2,16 @@
 include("../db/db.php");
 session_start();
 
+function my_autoloader($class) {
+    require $class . '.php';
+}
+spl_autoload_register(function ($class) {
+    include $class . '.php';
+});
+my_autoloader('../Modals/OrderList');
+
+
+
 if (isset($_SESSION["super_b_id"])) {
     $b_id = $_SESSION['super_b_id'];
 }else{
@@ -17,6 +27,36 @@ if (isset($_SESSION["super_b_id"])) {
     }else{
         $b_id = 0;
     }
+}
+
+if(isset($_SESSION["user"])){
+    if(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]==true){
+        $user = $_SESSION['user'];
+        $user_id = $_SESSION['user_id'];
+        $user_u_id = $_SESSION['unique_id'];
+        $user_phone = $_SESSION['user_phone'];
+        $user_b_id = $_SESSION['b_id'];
+        $user_role = $_SESSION['role'];
+        $user_logged_in = $_SESSION['logged_in'];
+    }else{
+        $user = "";
+        $user_id = "";
+        $user_u_id = "";
+        $user_phone = "";
+        $user_b_id = "";
+        $user_role = "";
+        $user_logged_in = false;
+    }
+
+
+}else{
+    $user = "";
+    $user_id = "";
+    $user_u_id = "";
+    $user_phone = "";
+    $user_b_id = "";
+    $user_role = "";
+    $user_logged_in = false;
 }
 
 if(isset($_POST['design_product'])) {
@@ -51,13 +91,27 @@ if(isset($_POST['design_product'])) {
             while($row=mysqli_fetch_assoc($result)){
                 ?>
 
-            <div class="box" id="<?=$row['id']?>">
+            <div class="box view_design_btn" id="<?=$row['id']?>">
                 <img src="<?=$row['pro_image']?>" alt="">
                 <h2><?=$row['pro_name']?></h2>
                 <span><?=$row['pro_type']?></span>
                 <h3 class="price"><?=$row['price']?>TK</h3>
-                <i class='bx bxs-message-square-check' id="<?=$row['id']?>></i>
-                <i class='bx bx-heart' id="<?=$row['id']?>></i>
+                <form action="#" role="form" id="design_<?=$row['id']?>">
+                <input type="hidden" name="unique_id" value="<?=$row['unique_id']?>">
+                <input type="hidden" name="id" value="<?=$row['id']?>">
+                <input type="hidden" name="pro_name" value="<?=$row['pro_name']?>">
+                <input type="hidden" name="pro_type" value="<?=$row['pro_type']?>">
+                <input type="hidden" name="price" value="<?=$row['price']?>">
+                <input type="hidden" name="book_order" value="<?=$row['book_order']?>">
+                <input type="hidden" name="pro_image" value="<?=$row['pro_image']?>">
+                <input type="hidden" name="type_id" value="<?=$row['type_id']?>">
+                <input type="hidden" name="b_id" value="<?=$row['b_id']?>">
+                <input type="hidden" name="available" value="<?=$row['available']?>">
+                <input type="hidden" name="status" value="<?=$row['status']?>">
+                <input type="hidden" name="dis_per" value="<?=$row['dis_per']?>">
+                <i class='bx bxs-message-square-check add_to_design_cart_btn' id="<?=$row['id']?>"></i>
+                <i class='bx bx-heart book_mark_design_btn fw-bold fs-3' id='<?=$row['id']?>'></i>
+                </form>
             </div>
 
                 <?php
@@ -105,7 +159,7 @@ if(isset($_POST['product_product'])) {
                 ?>
 
                 <div class="col-md-3 col-sm-6">
-                    <div class="product-card">
+                    <div class="product-card view_product_btn">
                         <div class="product-card-img" id="<?=$row['id']?>">
                             <label class="stock bg-success"><?=$stock?></label>
                             <img src="<?=$row['pro_image']?>" alt="<?=$row['pro_name']?>">
@@ -113,18 +167,33 @@ if(isset($_POST['product_product'])) {
                         <div class="product-card-body">
                             <p class="product-brand"><?=$row['pro_type']?></p>
                             <h5 class="product-name">
-                               <a href="#">
-                               <?=$row['pro_name']?> 
-                               </a>
+                                <a href="#">
+                                <?=$row['pro_name']?>
+                                </a>
                             </h5>
                             <div>
                                 <span class="selling-price"><?=$row['price']?> TK</span>
                                 <span class="original-price"><?=$row['price']?> TK</span>
                             </div>
                             <div class="mt-2 text-centerr">
-                                <a href="javascript:void(0)" class="btn btn1" id="<?=$row['id']?>">Add To Cart</a>
-                                <a href="javascript:void(0)" class="btn btn1" id="<?=$row['id']?>"> <i class="fa fa-heart"></i> </a>
-                                <a href="javascript:void(0)" class="btn btn1" id="<?=$row['id']?>"> View </a>
+                            <form action="#" role="form" id="product_<?=$row['id']?>">
+                            <input type="hidden" name="unique_id" value="<?=$row['unique_id']?>">
+                            <input type="hidden" name="id" value="<?=$row['id']?>">
+                            <input type="hidden" name="pro_name" value="<?=$row['pro_name']?>">
+                            <input type="hidden" name="pro_type" value="<?=$row['pro_type']?>">
+                            <input type="hidden" name="price" value="<?=$row['price']?>">
+                            <input type="hidden" name="book_order" value="<?=$row['book_order']?>">
+                            <input type="hidden" name="pro_image" value="<?=$row['pro_image']?>">
+                            <input type="hidden" name="type_id" value="<?=$row['type_id']?>">
+                            <input type="hidden" name="b_id" value="<?=$row['b_id']?>">
+                            <input type="hidden" name="available" value="<?=$row['available']?>">
+                            <input type="hidden" name="status" value="<?=$row['status']?>">
+                            <input type="hidden" name="dis_per" value="<?=$row['dis_per']?>">
+                            </form>
+                                <a href="javascript:void(0)" class="btn btn1 add_to_product_cart_btn" id="<?=$row['id']?>">Add To Cart</a>
+                                <a href="javascript:void(0)" class="btn btn1 book_mark_product_btn" id="<?=$row['id']?>"> <i class="fa fa-heart"></i> </a>
+                                <a href="javascript:void(0)" class="btn btn1 view_product_btn" id="<?=$row['id']?>"> View </a>
+                            
                             </div>
                         </div>
                     </div>
@@ -294,4 +363,161 @@ if(isset($_POST['product_pagination']) && $_POST['cat_id'] != ''){
 }
 
 
+if(isset($_POST['pro_name'])){
+
+    $id = $_POST['id'];
+    $unique_id = $_POST['unique_id'];
+    $pro_name = $_POST['pro_name'];
+    $pro_type = $_POST['pro_type'];
+    $type_id = $_POST['type_id'];
+    $available = $_POST['available'];
+    $book_order = $_POST['book_order'];
+    $status = $_POST['status'];
+    $b_id = $_POST['b_id'];
+    $price = $_POST['price'];
+    $image = $_POST['pro_image'];
+    $dis_per = $_POST['dis_per'];
+    $order_booked_id = '';
+
+    $orderList = new OrderList();
+    $orderList->productList($b_id,$user_u_id,$book_order,$id,$order_booked_id,1,$price,$pro_name,$image,$pro_type);
+    
+    if($orderList->saveToCart()){
+        echo 1;
+    }else{
+        echo 'Product did not add to cart';
+    }
+
+}
+
+
+if(isset($_POST['order_cart'])){
+
+    // unset($_SESSION['design_cart']);
+    // unset($_SESSION['product_cart']);
+
+            if(empty($_SESSION['product_cart'])){
+                $total = 0;
+                $qntotal = 0;
+            }?>
+            <?php if(isset($_SESSION['product_cart'])){
+                $total = 0;
+                $qntotal = 0;
+                foreach($_SESSION['product_cart'] as $k=> $item){
+                    $total = $total + ($item['quantity'] * $item['price']);
+                    $qntotal = $qntotal +$item['quantity'];
+                    
+                }
+
+
+                $orderList = convertSessionToObjects('product_cart');
+
+                foreach ($orderList as $list) {
+                    ?>
+
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" id="<?=$list->getProId()?>">
+                            <td class="p-4">
+                                <img src="<?=$list->getProImage()?>" class="w-16 md:w-32 max-w-full max-h-full" alt="<?=$list->getProName()?>">
+                            </td>
+                            <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+                                <?=$list->getProName()?>
+                            </td>
+                            <td class="px-6 py-4">
+                                <div class="flex items-center">
+                                    <button class="inline-flex minus_btn items-center justify-center p-1 me-3 text-sm font-medium h-6 w-6 text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" id="m_<?=$list->getProId()?>" type="button">
+                                        <span class="sr-only">Quantity button</span>
+                                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16"/>
+                                        </svg>
+                                    </button>
+                                    <div>
+                                        <input type="number" id="first_product" class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" id="product_q_<?=$list->getProId()?>" value="<?=$list->getQuantity()?>" placeholder="1" required>
+                                    </div>
+                                    <button class="inline-flex plus_btn items-center justify-center h-6 w-6 p-1 ms-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" id="p_<?=$list->getProId()?>" type="button">
+                                        <span class="sr-only">Quantity button</span>
+                                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+                            <?=$list->getPrice()?>
+                            </td>
+                            <td class="px-6 py-4">
+                                <a href="#" class="font-medium remove_product_btn text-red-600 dark:text-red-500 hover:underline" id="<?=$list->getProId()?>">Remove</a>
+                            </td>
+                        </tr>
+
+                    <?php
+                }
+
+            }
+    
+
+}
+
+if(isset($_POST['booking_cart'])){
+
+
+    if(empty($_SESSION['design_cart'])){
+        $total = 0;
+        $qntotal = 0;
+    }?>
+    <?php if(isset($_SESSION['design_cart'])){
+        $total = 0;
+        $qntotal = 0;
+        foreach($_SESSION['design_cart'] as $k=> $item){
+            $total = $total + ($item['quantity'] * $item['price']);
+            $qntotal = $qntotal +$item['quantity'];
+            
+        }
+
+
+        $orderList = convertSessionToObjects('design_cart');
+
+        foreach ($orderList as $list) {
+            ?>
+
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" id="<?=$list->getProId()?>">
+                    <td class="p-4">
+                        <img src="<?=$list->getProImage()?>" class="w-16 md:w-32 max-w-full max-h-full" alt="<?=$list->getProName()?>">
+                    </td>
+                    <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+                        <?=$list->getProName()?>
+                    </td>
+                    <td class="px-6 py-4">
+                        <div class="flex items-center">
+                            <button class="inline-flex minus_btn items-center justify-center p-1 me-3 text-sm font-medium h-6 w-6 text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" id="m_<?=$list->getProId()?>" type="button">
+                                <span class="sr-only">Quantity button</span>
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16"/>
+                                </svg>
+                            </button>
+                            <div>
+                                <input type="number" id="first_product" class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="<?=$list->getQuantity()?>" placeholder="1" id="design_q_<?=$list->getProId()?>" required>
+                            </div>
+                            <button class="inline-flex plus_btn items-center justify-center h-6 w-6 p-1 ms-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" id="p_<?=$list->getProId()?>" type="button">
+                                <span class="sr-only">Quantity button</span>
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+                    <?=$list->getPrice()?>
+                    </td>
+                    <td class="px-6 py-4">
+                        <a href="#" class="font-medium remove_design_btn text-red-600 dark:text-red-500 hover:underline" id="<?=$list->getProId()?>">Remove</a>
+                    </td>
+                </tr>
+
+            <?php
+        }
+
+    }
+
+
+}
 ?>
