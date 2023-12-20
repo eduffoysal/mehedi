@@ -250,6 +250,47 @@ class OrderList{
     }
 
 
+    public static function removeFromCart($cartKey, $index) {
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        $cart = isset($_SESSION[$cartKey]) ? $_SESSION[$cartKey] : [];
+
+        if (isset($cart[$index])) {
+            unset($cart[$index]);
+
+            $cart = array_values($cart);
+
+            $_SESSION[$cartKey] = $cart;
+
+            return true;
+        }
+
+        return false;
+    }
+
+
+}
+
+function removeFromCart($cartKey, $index) {
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    $cart = isset($_SESSION[$cartKey]) ? $_SESSION[$cartKey] : [];
+
+    if (isset($cart[$index])) {
+        unset($cart[$index]);
+
+        $cart = array_values($cart);
+
+        $_SESSION[$cartKey] = $cart;
+
+        return true;
+    }
+
+    return false;
 }
 
 function convertSessionToObjects($cartKey) {

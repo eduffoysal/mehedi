@@ -520,4 +520,30 @@ if(isset($_POST['booking_cart'])){
 
 
 }
+
+if(isset($_POST['remove_p'])){
+    $index = $_POST['p_id'];
+
+    $re = removeFromCart('product_cart', $index);
+    if($re==true){
+        echo 1;
+    }else{
+        echo "Index Not Found";
+    }
+    
+}
+
+
+if(isset($_POST['remove_d'])){
+    $index = $_POST['p_id'];
+
+    $re = removeFromCart('design_cart', $index);
+    if($re==true){
+        echo 1;
+    }else{
+        echo "Index Not Found";
+    }
+    
+}
+
 ?>

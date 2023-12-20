@@ -1906,8 +1906,7 @@ if(isset($_GET['start_p'])){
 </html>
 <script>
 
-  $(document).ready(function(){
-
+$(document).ready(function(){
 
 
     
@@ -2182,6 +2181,56 @@ $('.booking_cart').addClass('hidden');
 		$('#myalert').slideUp();
 		$('#logform')[0].reset();
 	});
+
+
+
+
+  $(document).on('click','.remove_product_btn', function(){
+
+var p_id = $(this).attr('id');
+// alert("box"+p_id);
+        
+        $.ajax({
+          url:'product/design_product.php',
+          type:'post',
+          data: {
+            p_id:p_id,
+            remove_p: true
+          },
+          success: function(response){
+              // alert(response);
+
+              orderCart();
+
+
+          }
+        });
+});
+
+
+$(document).on('click','.remove_design_btn', function(){
+
+var p_id = $(this).attr('id');
+// alert("box"+p_id);
+        
+        $.ajax({
+          url:'product/design_product.php',
+          type:'post',
+          data: {
+            p_id:p_id,
+            remove_d: true
+          },
+          success: function(response){
+              // alert(response);
+
+              bookingCart();
+
+          }
+        });
+});
+
+
+
 
 $('#order_cart_row_data').ready(function(){
 
