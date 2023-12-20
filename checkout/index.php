@@ -1,3 +1,14 @@
+<?php
+session_start();
+$_SESSION['current_page'] = 'checkout_design';
+if(!isset($_SESSION['user']) && !isset($_SESSION['b_id'])){
+   if(!isset($_SESSION['logged_in'])){
+      header('location:../login');
+   }
+}
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>

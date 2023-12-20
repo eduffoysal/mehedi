@@ -2,6 +2,7 @@
     include('db/db.php');
     // include('database/data.php');
     session_start();
+    
     function my_autoloader($class) {
       require $class . '.php';
     }
