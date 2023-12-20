@@ -494,7 +494,7 @@ if(isset($_GET['start_p'])){
 
 
 
-                  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                  <div class="relative overflow-x-auto shadow-md sm:rounded-lg" id="order_cart_row_data">
                       <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                           <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                               <tr>
@@ -515,7 +515,7 @@ if(isset($_GET['start_p'])){
                                   </th>
                               </tr>
                           </thead>
-                          <tbody id="order_cart_row_data">
+                          <tbody >
                               <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                   <td class="p-4">
                                       <img src="/docs/images/products/apple-watch.png" class="w-16 md:w-32 max-w-full max-h-full" alt="Apple Watch">
@@ -626,7 +626,7 @@ if(isset($_GET['start_p'])){
 
 
 
-                  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                  <div class="relative overflow-x-auto shadow-md sm:rounded-lg" id="booking_cart_row_data">
                       <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                           <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                               <tr>
@@ -647,7 +647,7 @@ if(isset($_GET['start_p'])){
                                   </th>
                               </tr>
                           </thead>
-                          <tbody id="booking_cart_row_data">
+                          <tbody >
                               <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                   <td class="p-4">
                                       <img src="/docs/images/products/apple-watch.png" class="w-16 md:w-32 max-w-full max-h-full" alt="Apple Watch">
@@ -2249,6 +2249,95 @@ var p_id = $(this).attr('id');
         });
 });
 
+
+$(document).on('click','.minus_p_btn', function(){
+
+var p_id = $(this).attr('id');
+// alert("box"+p_id);
+        
+        $.ajax({
+          url:'product/design_product.php',
+          type:'post',
+          data: {
+            p_id:p_id,
+            minus_p: true
+          },
+          success: function(response){
+              // alert(response);
+
+              orderCart();
+
+
+          }
+        });
+});
+
+
+$(document).on('click','.plus_p_btn', function(){
+
+var p_id = $(this).attr('id');
+// alert("box"+p_id);
+        
+        $.ajax({
+          url:'product/design_product.php',
+          type:'post',
+          data: {
+            p_id:p_id,
+            plus_p: true
+          },
+          success: function(response){
+              // alert(response);
+
+              orderCart();
+
+
+          }
+        });
+});
+
+
+$(document).on('click','.minus_d_btn', function(){
+
+var p_id = $(this).attr('id');
+// alert("box"+p_id);
+        
+        $.ajax({
+          url:'product/design_product.php',
+          type:'post',
+          data: {
+            p_id:p_id,
+            minus_d: true
+          },
+          success: function(response){
+              // alert(response);
+
+              bookingCart();
+
+          }
+        });
+});
+
+
+$(document).on('click','.plus_d_btn', function(){
+
+var p_id = $(this).attr('id');
+// alert("box"+p_id);
+        
+        $.ajax({
+          url:'product/design_product.php',
+          type:'post',
+          data: {
+            p_id:p_id,
+            plus_d: true
+          },
+          success: function(response){
+              // alert(response);
+
+              bookingCart();
+
+          }
+        });
+});
 
 
 

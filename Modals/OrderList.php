@@ -12,6 +12,7 @@ class OrderList{
     private $orderBookedId;
     private $quantity;
     private $price;
+    private $totalPrice;
 
     // Constructor without id
     public function productList($bId, $userId, $bookOrder, $proId, $orderBookedId, $quantity, $price, $proName, $proImage, $proType) {
@@ -25,6 +26,7 @@ class OrderList{
         $this->orderBookedId = $orderBookedId;
         $this->quantity = $quantity;
         $this->price = $price;
+        $this->totalPrice = $this->quantity * $this->price;
     }
 
     // Constructor with id
@@ -41,6 +43,7 @@ class OrderList{
         $this->orderBookedId = $orderBookedId;
         $this->quantity = $quantity;
         $this->price = $price;
+        $this->totalPrice = $this->quantity * $this->price;
     }
 
     public function setProName($proName) {
@@ -105,6 +108,11 @@ class OrderList{
         $this->price = $price;
     }
 
+    
+    public function setTotalPrice() {
+        $this->totalPrice = $this->quantity * $this->price;
+    }
+
     // Getter methods
     public function getId() {
         return $this->id;
@@ -141,6 +149,10 @@ class OrderList{
     public function getPrice() {
         return $this->price;
     }
+    
+    public function getTotalPrice() {
+        return $this->totalPrice;
+    }
 
     public function saveToCart() {
         if (session_status() == PHP_SESSION_NONE) {
@@ -162,6 +174,7 @@ class OrderList{
             'proType' => $this->proType,
             'orderBookedId' => $this->orderBookedId,
             'quantity' => $this->quantity,
+            'totalPrice' => $this->totalPrice,
             'price' => $this->price
         ];
 
@@ -186,6 +199,7 @@ class OrderList{
         $list->setOrderBookedId($sessionData['orderBookedId']);
         $list->setQuantity($sessionData['quantity']);
         $list->setPrice($sessionData['price']);
+        $list->setTotalPrice();
 
         return $list;
     }
@@ -211,6 +225,7 @@ class OrderList{
             'proType' => $this->proType,
             'orderBookedId' => $this->orderBookedId,
             'quantity' => $this->quantity,
+            'totalPrice' => $this->totalPrice,
             'price' => $this->price
         ];
 
@@ -240,6 +255,7 @@ class OrderList{
             'proType' => $this->proType,
             'orderBookedId' => $this->orderBookedId,
             'quantity' => $this->quantity,
+            'totalPrice' => $this->totalPrice,
             'price' => $this->price
         ];
 
@@ -269,6 +285,85 @@ class OrderList{
 
         return false;
     }
+
+
+    public static function calculateTotalPrice($cartKey) {
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        $cart = isset($_SESSION[$cartKey]) ? $_SESSION[$cartKey] : [];
+
+        $totalPrice = 0;
+        foreach ($cart as $item) {
+            $totalPrice += $item['price'] * $item['quantity'];
+        }
+
+        return $totalPrice;
+    }
+
+    public static function calculateTotalQuantity($cartKey) {
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        $cart = isset($_SESSION[$cartKey]) ? $_SESSION[$cartKey] : [];
+
+        $totalQuantity = 0;
+        foreach ($cart as $item) {
+            $totalQuantity += $item['quantity'];
+        }
+
+        return $totalQuantity;
+    }
+
+
+    public static function increaseQuantity($cartKey, $index) {
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        $cart = isset($_SESSION[$cartKey]) ? $_SESSION[$cartKey] : [];
+
+        if (isset($cart[$index])) {
+            $cart[$index]['quantity']++;
+
+            $cart[$index]['totalPrice'] = $cart[$index]['price'] * $cart[$index]['quantity'];
+
+            $_SESSION[$cartKey] = $cart;
+
+            return true;
+        }
+
+        return false;
+    }
+
+    public static function decreaseQuantity($cartKey, $index) {
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        $cart = isset($_SESSION[$cartKey]) ? $_SESSION[$cartKey] : [];
+
+        if (isset($cart[$index])) {
+
+            if ($cart[$index]['quantity'] > 1) {
+
+                $cart[$index]['quantity']--;
+
+                $cart[$index]['totalPrice'] = $cart[$index]['price'] * $cart[$index]['quantity'];
+
+                $_SESSION[$cartKey] = $cart;
+
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
+
 
 
 }
@@ -309,5 +404,89 @@ function convertSessionToObjects($cartKey) {
 
     return $listObjects;
 }
+
+
+
+
+function calculateTotalPrice($cartKey) {
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    $cart = isset($_SESSION[$cartKey]) ? $_SESSION[$cartKey] : [];
+
+    $totalPrice = 0;
+    foreach ($cart as $item) {
+        $totalPrice += $item['price'] * $item['quantity'];
+    }
+
+    return $totalPrice;
+}
+
+    function calculateTotalQuantity($cartKey) {
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    $cart = isset($_SESSION[$cartKey]) ? $_SESSION[$cartKey] : [];
+
+    $totalQuantity = 0;
+    foreach ($cart as $item) {
+        $totalQuantity += $item['quantity'];
+    }
+
+    return $totalQuantity;
+}
+
+
+
+function increaseQuantity($cartKey, $index) {
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    $cart = isset($_SESSION[$cartKey]) ? $_SESSION[$cartKey] : [];
+
+    if (isset($cart[$index])) {
+        $cart[$index]['quantity']++;
+
+        $cart[$index]['totalPrice'] = $cart[$index]['price'] * $cart[$index]['quantity'];
+
+        $_SESSION[$cartKey] = $cart;
+
+        return true;
+    }
+
+    return false;
+}
+
+function decreaseQuantity($cartKey, $index) {
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    $cart = isset($_SESSION[$cartKey]) ? $_SESSION[$cartKey] : [];
+
+    if (isset($cart[$index])) {
+
+        if ($cart[$index]['quantity'] > 1) {
+
+            $cart[$index]['quantity']--;
+
+            $cart[$index]['totalPrice'] = $cart[$index]['price'] * $cart[$index]['quantity'];
+
+            $_SESSION[$cartKey] = $cart;
+
+            return true;
+        }
+    }
+
+    return false;
+}
+
+
+
+
+
 
 ?>
