@@ -29,7 +29,7 @@ if (isset($_SESSION["super_b_id"])) {
     }
 }
 
-if(isset($_SESSION["user"])){
+if(isset($_SESSION["user"]) && isset($_SESSION['b_id'])){
     if(isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]==true){
         $user = $_SESSION['user'];
         $user_id = $_SESSION['user_id'];
