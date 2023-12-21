@@ -167,7 +167,7 @@
 
         }
 
-        public function product($id,$unique_id,$pro_name,$pro_details,$pro_type,$b_id,$service_id,$status,$price,$type_id,$available,$dis_per,$added_date,$book_order,$image){
+        public function product($id,$unique_id,$pro_name,$pro_details,$pro_type,$b_id,$service_id,$status,$price,$type_id,$available,$dis_per,$added_date,$book_order,$image,$design,$side,$per){
             if($available==0){
                 $stock = "Stock Out";
             }else{
@@ -206,6 +206,9 @@
                         <input type=\"hidden\" name=\"available\" value=\"$available\">
                         <input type=\"hidden\" name=\"status\" value=\"$status\">
                         <input type=\"hidden\" name=\"dis_per\" value=\"$dis_per\">
+                        <input type=\"hidden\" name=\"design\" value=\"$design\">
+                        <input type=\"hidden\" name=\"side\" value=\"$side\">
+                        <input type=\"hidden\" name=\"per_side_per\" value=\"$per\">
                         </form>
                             <a href=\"javascript:void(0)\" class=\"btn btn1 add_to_product_cart_btn\" id=\"$id\">Add To Cart</a>
                             <a href=\"javascript:void(0)\" class=\"btn btn1 book_mark_product_btn\" id=\"$id\"> <i class=\"fa fa-heart\" id=\"$id\"></i> </a>

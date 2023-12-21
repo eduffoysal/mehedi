@@ -13,9 +13,12 @@ class OrderList{
     private $quantity;
     private $price;
     private $totalPrice;
+    private $design;
+    private $side = 1;
+    private $per;
 
     // Constructor without id
-    public function productList($bId, $userId, $bookOrder, $proId, $orderBookedId, $quantity, $price, $proName, $proImage, $proType) {
+    public function productList($bId, $userId, $bookOrder, $proId, $orderBookedId, $quantity, $price, $proName, $proImage, $proType,$design,$side,$per) {
         $this->bId = $bId;
         $this->userId = $userId;
         $this->bookOrder = $bookOrder;
@@ -27,10 +30,24 @@ class OrderList{
         $this->quantity = $quantity;
         $this->price = $price;
         $this->totalPrice = $this->quantity * $this->price;
+        $this->design = $design;
+        $this->side = $side;
+        $this->per = $per;
+
+        if($this->side==2){
+            $this->totalPrice=$this->totalPrice * ($this->side * ($this->per / 100));
+        }elseif($this->side==3){
+            $this->totalPrice=$this->totalPrice * ($this->side * ($this->per / 100));
+        }elseif($this->side==4){
+            $this->totalPrice=$this->totalPrice * ($this->side * ($this->per / 100));
+        }elseif($this->side==0){
+            $this->totalPrice=$this->totalPrice * (1 * ($this->per / 100));
+        }
+
     }
 
     // Constructor with id
-    public function orderList($id, $uniqueId, $bId, $userId, $bookOrder, $proId, $orderBookedId, $quantity, $price, $proName, $proImage, $proType) {
+    public function orderList($id, $uniqueId, $bId, $userId, $bookOrder, $proId, $orderBookedId, $quantity, $price, $proName, $proImage, $proType,$design,$side,$per) {
         $this->id = $id;
         $this->uniqueId = $uniqueId;
         $this->bId = $bId;
@@ -44,6 +61,48 @@ class OrderList{
         $this->quantity = $quantity;
         $this->price = $price;
         $this->totalPrice = $this->quantity * $this->price;
+        $this->design = $design;
+        $this->side = $side;
+        $this->per = $per;
+
+        if($this->side==2){
+            $this->totalPrice=$this->totalPrice * ($this->side * ($this->per / 100));
+        }elseif($this->side==3){
+            $this->totalPrice=$this->totalPrice * ($this->side * ($this->per / 100));
+        }elseif($this->side==4){
+            $this->totalPrice=$this->totalPrice * ($this->side * ($this->per / 100));
+        }elseif($this->side==0){
+            $this->totalPrice=$this->totalPrice * (1 * ($this->per / 100));
+        }
+    }
+
+    public function setDesign($design) {
+        $this->design = $design;
+    }
+
+    // Getter for $design
+    public function getDesign() {
+        return $this->design;
+    }
+
+    // Setter for $side
+    public function setSide($side) {
+        $this->side = $side;
+    }
+
+    // Getter for $side
+    public function getSide() {
+        return $this->side;
+    }
+
+    // Setter for $per
+    public function setPer($per) {
+        $this->per = $per;
+    }
+
+    // Getter for $per
+    public function getPer() {
+        return $this->per;
     }
 
     public function setProName($proName) {
@@ -111,6 +170,17 @@ class OrderList{
     
     public function setTotalPrice() {
         $this->totalPrice = $this->quantity * $this->price;
+
+        if($this->side==2){
+            $this->totalPrice=$this->totalPrice * ($this->side * ($this->per / 100));
+        }elseif($this->side==3){
+            $this->totalPrice=$this->totalPrice * ($this->side * ($this->per / 100));
+        }elseif($this->side==4){
+            $this->totalPrice=$this->totalPrice * ($this->side * ($this->per / 100));
+        }elseif($this->side==0){
+            $this->totalPrice=$this->totalPrice * (1 * ($this->per / 100));
+        }
+
     }
 
     // Getter methods
@@ -175,7 +245,10 @@ class OrderList{
             'orderBookedId' => $this->orderBookedId,
             'quantity' => $this->quantity,
             'totalPrice' => $this->totalPrice,
-            'price' => $this->price
+            'price' => $this->price,
+            'design' => $this->design,
+            'side' => $this->side,
+            'per' => $this->per
         ];
 
         $cart[] = $listData;
@@ -199,6 +272,9 @@ class OrderList{
         $list->setOrderBookedId($sessionData['orderBookedId']);
         $list->setQuantity($sessionData['quantity']);
         $list->setPrice($sessionData['price']);
+        $list->setDesign($sessionData['design']);
+        $list->setSide($sessionData['side']);
+        $list->setPer($sessionData['per']);
         $list->setTotalPrice();
 
         return $list;
@@ -226,7 +302,10 @@ class OrderList{
             'orderBookedId' => $this->orderBookedId,
             'quantity' => $this->quantity,
             'totalPrice' => $this->totalPrice,
-            'price' => $this->price
+            'price' => $this->price,
+            'design' => $this->design,
+            'side' => $this->side,
+            'per' => $this->per
         ];
 
         $cart[] = $listData;
@@ -256,7 +335,10 @@ class OrderList{
             'orderBookedId' => $this->orderBookedId,
             'quantity' => $this->quantity,
             'totalPrice' => $this->totalPrice,
-            'price' => $this->price
+            'price' => $this->price,
+            'design' => $this->design,
+            'side' => $this->side,
+            'per' => $this->per
         ];
 
         $cart[] = $listData;
@@ -287,7 +369,7 @@ class OrderList{
     }
 
 
-    public static function calculateTotalPrice($cartKey) {
+    public static function calculatePrice($cartKey) {
         if (session_status() == PHP_SESSION_NONE) {
             session_start();
         }
@@ -301,6 +383,22 @@ class OrderList{
 
         return $totalPrice;
     }
+
+    
+public static function calculateTotalPrice($cartKey) {
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    $cart = isset($_SESSION[$cartKey]) ? $_SESSION[$cartKey] : [];
+
+    $totalPrice = 0;
+    foreach ($cart as $item) {
+        $totalPrice += $item['totalPrice'];
+    }
+
+    return $totalPrice;
+}
 
     public static function calculateTotalQuantity($cartKey) {
         if (session_status() == PHP_SESSION_NONE) {
@@ -363,6 +461,39 @@ class OrderList{
     }
 
 
+    public static function setDesignSide($cartKey, $index, $side) {
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+    
+        if (!is_int($side)) {
+            $side = intval($side);    
+        }
+    
+        $cart = isset($_SESSION[$cartKey]) ? $_SESSION[$cartKey] : [];
+    
+        if (isset($cart[$index])) {
+            $cart[$index]['side'] = $side;
+    
+            if($side==2){
+                $cart[$index]['totalPrice']=$cart[$index]['price'] * $cart[$index]['quantity'] * ($side * ($cart[$index]['per'] / 100));
+            }elseif($side==3){
+                $cart[$index]['totalPrice']=$cart[$index]['price'] * $cart[$index]['quantity'] * ($side * ($cart[$index]['per'] / 100));
+            }elseif($side==4){
+                $cart[$index]['totalPrice']=$cart[$index]['price'] * $cart[$index]['quantity'] * ($side * ($cart[$index]['per'] / 100));
+            }elseif($side==0){
+                $cart[$index]['totalPrice']=$cart[$index]['price'] * $cart[$index]['quantity'] * (1 * ($cart[$index]['per'] / 100));
+            }else{
+                $cart[$index]['totalPrice']=$cart[$index]['price'] * $cart[$index]['quantity'];
+            }
+    
+            $_SESSION[$cartKey] = $cart;
+    
+            return true;
+        }
+    
+        return false;
+    }
 
 
 
@@ -408,7 +539,7 @@ function convertSessionToObjects($cartKey) {
 
 
 
-function calculateTotalPrice($cartKey) {
+function calculatePrice($cartKey) {
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
@@ -418,6 +549,22 @@ function calculateTotalPrice($cartKey) {
     $totalPrice = 0;
     foreach ($cart as $item) {
         $totalPrice += $item['price'] * $item['quantity'];
+    }
+
+    return $totalPrice;
+}
+
+
+function calculateTotalPrice($cartKey) {
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    $cart = isset($_SESSION[$cartKey]) ? $_SESSION[$cartKey] : [];
+
+    $totalPrice = 0;
+    foreach ($cart as $item) {
+        $totalPrice += $item['totalPrice'];
     }
 
     return $totalPrice;
@@ -487,6 +634,70 @@ function decreaseQuantity($cartKey, $index) {
 
 
 
+function convertSessionToObject($sessionData) {
+    $list = new OrderList();
+    
+    $list->setId($sessionData['id']);
+    $list->setUniqueId($sessionData['uniqueId']);
+    $list->setBId($sessionData['bId']);
+    $list->setUserId($sessionData['userId']);
+    $list->setBookOrder($sessionData['bookOrder']);
+    $list->setProId($sessionData['proId']);
+    $list->setProName($sessionData['proName']);
+    $list->setProImage($sessionData['proImage']);
+    $list->setProType($sessionData['proType']);
+    $list->setOrderBookedId($sessionData['orderBookedId']);
+    $list->setQuantity($sessionData['quantity']);
+    $list->setPrice($sessionData['price']);
+    $list->setDesign($sessionData['design']);
+    $list->setSide($sessionData['side']);
+    $list->setPer($sessionData['per']);
+    $list->setTotalPrice();
 
+    return $list;
+}
+
+function setDesignSide($cartKey, $index, $side) {
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    if (!is_int($side)) {
+        $side = intval($side);    
+    }
+
+    $cart = isset($_SESSION[$cartKey]) ? $_SESSION[$cartKey] : [];
+
+    if (isset($cart[$index])) {
+        $cart[$index]['side'] = $side;
+
+        // if($side==2){
+        //     $cart[$index]['totalPrice']=$cart[$index]['price'] * $cart[$index]['quantity'] * ($side * ($cart[$index]['per'] / 100));
+        // }elseif($side==3){
+        //     $cart[$index]['totalPrice']=$cart[$index]['price'] * $cart[$index]['quantity'] * ($side * ($cart[$index]['per'] / 100));
+        // }elseif($side==4){
+        //     $cart[$index]['totalPrice']=$cart[$index]['price'] * $cart[$index]['quantity'] * ($side * ($cart[$index]['per'] / 100));
+        // }elseif($side==0){
+        //     $cart[$index]['totalPrice']=$cart[$index]['price'] * $cart[$index]['quantity'] * (1 * ($cart[$index]['per'] / 100));
+        // }else{
+        //     $cart[$index]['totalPrice']=$cart[$index]['price'] * $cart[$index]['quantity'];
+        // }
+        $cart[$index]['totalPrice']=$cart[$index]['price'] * $cart[$index]['quantity'];
+        if($side!=1){
+
+            $multiplier = ($side == 2 || $side == 3 || $side == 4) ? $side : 1;
+            $cart[$index]['totalPrice'] = $cart[$index]['totalPrice'] * ($multiplier * ($cart[$index]['per'] / 100));
+    
+        }elseif($side==0){
+            $cart[$index]['totalPrice']=$cart[$index]['price'] * $cart[$index]['quantity'] * (1 * ($cart[$index]['per'] / 100));
+        }
+
+        $_SESSION[$cartKey] = $cart;
+
+        return true;
+    }
+
+    return false;
+}
 
 ?>

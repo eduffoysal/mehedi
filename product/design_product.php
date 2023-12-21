@@ -109,6 +109,9 @@ if(isset($_POST['design_product'])) {
                 <input type="hidden" name="available" value="<?=$row['available']?>">
                 <input type="hidden" name="status" value="<?=$row['status']?>">
                 <input type="hidden" name="dis_per" value="<?=$row['dis_per']?>">
+                <input type="hidden" name="design" value="<?=$row['design']?>">
+                <input type="hidden" name="side" value="<?=$row['side']?>">
+                <input type="hidden" name="per_side_per" value="<?=$row['per_side_per']?>">
                 <i class='bx bxs-message-square-check add_to_design_cart_btn' id="<?=$row['id']?>"></i>
                 <i class='bx bx-heart book_mark_design_btn fw-bold fs-3' id='<?=$row['id']?>'></i>
                 </form>
@@ -189,6 +192,9 @@ if(isset($_POST['product_product'])) {
                             <input type="hidden" name="available" value="<?=$row['available']?>">
                             <input type="hidden" name="status" value="<?=$row['status']?>">
                             <input type="hidden" name="dis_per" value="<?=$row['dis_per']?>">
+                            <input type="hidden" name="design" value="<?=$row['design']?>">
+                            <input type="hidden" name="side" value="<?=$row['side']?>">
+                            <input type="hidden" name="per_side_per" value="<?=$row['per_side_per']?>">
                             </form>
                                 <a href="javascript:void(0)" class="btn btn1 add_to_product_cart_btn" id="<?=$row['id']?>">Add To Cart</a>
                                 <a href="javascript:void(0)" class="btn btn1 book_mark_product_btn" id="<?=$row['id']?>"> <i class="fa fa-heart"></i> </a>
@@ -372,15 +378,18 @@ if(isset($_POST['pro_name'])){
     $type_id = $_POST['type_id'];
     $available = $_POST['available'];
     $book_order = $_POST['book_order'];
-    $status = $_POST['status'];
+    $status = intval($_POST['status']);
     $b_id = $_POST['b_id'];
-    $price = $_POST['price'];
+    $price = floatval($_POST['price']);
     $image = $_POST['pro_image'];
-    $dis_per = $_POST['dis_per'];
+    $dis_per = floatval($_POST['dis_per']);
+    $design = $_POST['design'];
+    $side = intval($_POST['side']);
+    $per = floatval($_POST['per_side_per']);
     $order_booked_id = '';
 
     $orderList = new OrderList();
-    $orderList->productList($b_id,$user_u_id,$book_order,$id,$order_booked_id,1,$price,$pro_name,$image,$pro_type);
+    $orderList->productList($b_id,$user_u_id,$book_order,$id,$order_booked_id,1,$price,$pro_name,$image,$pro_type,$design,$side,$per);
     
     if($orderList->saveToCart()){
         echo 1;
@@ -585,6 +594,17 @@ if(isset($_POST['order_cart'])){
                           </tbody>
                         </table>
 
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="mt-3 w-full">
+            <a href="checkout/p" class="text-decoration-none decoration-none">
+            <button type="button" class="btn btn-outline-info pickDate" id="pickDate">Checkout With <?=calculateTotalPrice('product_cart')?> BDT</button>
+            </a>
+        </div>
+    </div>
+</div>                        
+
 <?php
 
 }
@@ -781,6 +801,240 @@ if(isset($_POST['booking_cart'])){
 </tbody>
 </table>
 
+<div class="container-fluid">
+    <div class="row">
+        
+        <div class="mt-3 w-full">
+            <a href="appoinment" class="text-decoration-none decoration-none">
+            <button type="button" class="btn btn-info pickDate" id="pickDate">Pick A Date to Checkout With <?=calculateTotalPrice('design_cart')?> BDT</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+<?php
+
+
+}
+
+
+if(isset($_POST['booking_cart_2'])){
+
+    
+    ?>
+
+                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                              <tr>
+                                  <th scope="col" class="px-16 py-3">
+                                      <span class="sr-only">Image</span>
+                                  </th>
+                                  <th scope="col" class="px-6 py-3">
+                                      Product
+                                  </th>
+                                  <th scope="col" class="px-6 py-3">
+                                      Qty
+                                  </th>
+                                  <th scope="col" class="px-6 py-3">
+                                      Side(Min)
+                                  </th>
+                                  <th scope="col" class="px-6 py-3">
+                                      Price
+                                  </th>
+                                  <th scope="col" class="px-6 py-3">
+                                      Action
+                                  </th>
+                              </tr>
+                          </thead>
+                          <tbody >
+
+
+    <?php
+
+    if(empty($_SESSION['design_cart'])){
+        $total = 0;
+        $qntotal = 0;
+    }?>
+    <?php if(isset($_SESSION['design_cart'])){
+        $total = 0;
+        $qntotal = 0;
+        foreach($_SESSION['design_cart'] as $k=> $item){
+            $total = $total + ($item['quantity'] * $item['price']);
+            $qntotal = $qntotal +$item['quantity'];
+            
+        }
+
+
+        $orderList = convertSessionToObjects('design_cart');
+
+        foreach ($orderList as $index => $list) {
+            ?>
+
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" id="<?=$index?>">
+                    <td class="p-4">
+                        <img src="<?=$list->getProImage()?>" class="w-16 md:w-32 max-w-full max-h-full" alt="<?=$list->getProName()?>">
+                    </td>
+                    <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+                        <?=$list->getProName()?>
+                    </td>
+                    <td class="px-6 py-4">
+                        <div class="flex items-center">
+                            <button class="inline-flex plus_d_btn items-center justify-center p-1 me-3 text-sm font-medium h-6 w-6 text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" id="<?=$index?>" type="button">
+                                <span class="sr-only">Quantity button</span>
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16"/>
+                                </svg>
+                            </button>
+                            <div>
+                                <input type="number" class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="<?=$list->getQuantity()?>" placeholder="1" id="design_q_<?=$index?>" required>
+                            </div>
+                            <button class="inline-flex minus_d_btn items-center justify-center h-6 w-6 p-1 ms-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" id="<?=$index?>" type="button">
+                                <span class="sr-only">Quantity button</span>
+                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+                    <select class="design_side_selection" name="design_side" id="<?=$index?>" required>
+                        <option value='no'><?=$list->getSide()?> Side</option>
+                        <option value='1'>Single Side</option>
+                        <option value='2'>Double Side</option>
+                        <option value='3'>Three Side</option>
+                        <option value='4'>Four Side</option>
+                        <option value='0'>More 1</option>
+                        <option value='5'>More 2</option>
+                    </select>
+                    </td>
+                    <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+                    <?=$list->getTotalPrice()?>
+                    </td>
+                    <td class="px-6 py-4">
+                        <a href="#" class="font-medium remove_design_btn text-red-600 dark:text-red-500 hover:underline" id="<?=$index?>">Remove</a>
+                    </td>
+                </tr>
+
+            <?php
+        }
+
+    }
+
+    ?>
+<!-- 
+    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+      <td class="p-4">
+          <img src="/docs/images/products/apple-watch.png" class="w-16 md:w-32 max-w-full max-h-full" alt="Apple Watch">
+      </td>
+      <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+          Apple Watch
+      </td>
+      <td class="px-6 py-4">
+          <div class="flex items-center">
+              <button class="inline-flex items-center justify-center p-1 me-3 text-sm font-medium h-6 w-6 text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" type="button">
+                  <span class="sr-only">Quantity button</span>
+                  <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16"/>
+                  </svg>
+              </button>
+              <div>
+                  <input type="number" id="first_product" class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="1" required>
+              </div>
+              <button class="inline-flex items-center justify-center h-6 w-6 p-1 ms-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" type="button">
+                  <span class="sr-only">Quantity button</span>
+                  <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
+                  </svg>
+              </button>
+          </div>
+      </td>
+      <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+          $599
+      </td>
+      <td class="px-6 py-4">
+          <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
+      </td>
+  </tr>
+  <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+      <td class="p-4">
+          <img src="/docs/images/products/imac.png" class="w-16 md:w-32 max-w-full max-h-full" alt="Apple iMac">
+      </td>
+      <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+          iMac 27"
+      </td>
+      <td class="px-6 py-4">
+          <div class="flex items-center">
+              <button class="inline-flex items-center justify-center p-1 text-sm font-medium h-6 w-6 text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" type="button">
+                  <span class="sr-only">Quantity button</span>
+                  <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16"/>
+                  </svg>
+              </button>
+              <div class="ms-3">
+                  <input type="number" id="first_product" class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="1" required>
+              </div>
+              <button class="inline-flex items-center justify-center h-6 w-6 p-1 ms-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" type="button">
+                  <span class="sr-only">Quantity button</span>
+                  <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
+                  </svg>
+              </button>
+          </div>
+      </td>
+      <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+          $2499
+      </td>
+      <td class="px-6 py-4">
+          <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
+      </td>
+  </tr>
+  <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+      <td class="p-4">
+          <img src="/docs/images/products/iphone-12.png" class="w-16 md:w-32 max-w-full max-h-full" alt="iPhone 12">
+      </td>
+      <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+          IPhone 12 
+      </td>
+      <td class="px-6 py-4">
+          <div class="flex items-center">
+              <button class="inline-flex items-center justify-center p-1 text-sm font-medium h-6 w-6 text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" type="button">
+                  <span class="sr-only">Quantity button</span>
+                  <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16"/>
+                  </svg>
+              </button>
+              <div class="ms-3">
+                  <input type="number" id="first_product" class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="1" required>
+              </div>
+              <button class="inline-flex items-center justify-center h-6 w-6 p-1 ms-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" type="button">
+                  <span class="sr-only">Quantity button</span>
+                  <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
+                  </svg>
+              </button>
+          </div>
+      </td>
+      <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+          $999
+      </td>
+      <td class="px-6 py-4">
+          <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
+      </td>
+  </tr> -->
+</tbody>
+</table>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="mt-3 w-full">
+            <a href="../checkout" class="text-decoration-none decoration-none">
+            <button type="button" class="btn btn-info pickDate" id="pickDate">Checkout With <?=calculateTotalPrice('design_cart')?> BDT</button>
+            </a>
+        </div>
+    </div>
+</div>
+
 <?php
 
 
@@ -843,6 +1097,23 @@ if(isset($_POST['plus_d'])){
 
     if ($returnValue === true) {
         echo "Quantity decreased successfully!";
+    } else {
+        echo "Failed to decrease quantity.";
+    }
+
+}
+
+
+if(isset($_POST['side_set'])){
+    $index = intval($_POST['p_id']);
+    $side = $_POST['side'];
+    if (!is_int($side)) {
+        $side = intval($side);    
+    }
+    $returnValue = setDesignSide('design_cart', $index, $side);
+
+    if ($returnValue === true) {
+        echo 1;
     } else {
         echo "Failed to decrease quantity.";
     }

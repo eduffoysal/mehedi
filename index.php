@@ -1289,7 +1289,7 @@ if(isset($_GET['start_p'])){
                   // echo $design->current_page;
                   if($data!=null){
                     while($row = mysqli_fetch_assoc($data)){
-                      $code = $design->design($row['id'],$row['unique_id'],$row['pro_name'],$row['pro_details'],$row['pro_type'],$row['b_id'],$row['service_id'],$row['status'],$row['price'],$row['type_id'],$row['available'],$row['dis_per'],$row['added_date'],$row['book_order'],$row['pro_image']);
+                      $code = $design->design($row['id'],$row['unique_id'],$row['pro_name'],$row['pro_details'],$row['pro_type'],$row['b_id'],$row['service_id'],$row['status'],$row['price'],$row['type_id'],$row['available'],$row['dis_per'],$row['added_date'],$row['book_order'],$row['pro_image'],$row['design'],$row['side'],$row['per_side_per']);
   
                       echo $code;
                     }
@@ -1501,7 +1501,7 @@ if(isset($_GET['start_p'])){
 
                     if($data!=null){
                       while($row = mysqli_fetch_assoc($data)){
-                        $code = $product->product($row['id'],$row['unique_id'],$row['pro_name'],$row['pro_details'],$row['pro_type'],$row['b_id'],$row['service_id'],$row['status'],$row['price'],$row['type_id'],$row['available'],$row['dis_per'],$row['added_date'],$row['book_order'],$row['pro_image']);
+                        $code = $product->product($row['id'],$row['unique_id'],$row['pro_name'],$row['pro_details'],$row['pro_type'],$row['b_id'],$row['service_id'],$row['status'],$row['price'],$row['type_id'],$row['available'],$row['dis_per'],$row['added_date'],$row['book_order'],$row['pro_image'],$row['design'],$row['side'],$row['per_side_per']);
 
                         echo $code;
                       }

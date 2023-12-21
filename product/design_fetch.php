@@ -168,7 +168,7 @@
 
         }
 
-        public function design($id,$unique_id,$pro_name,$pro_details,$pro_type,$b_id,$service_id,$status,$price,$type_id,$available,$dis_per,$added_date,$book_order,$image){
+        public function design($id,$unique_id,$pro_name,$pro_details,$pro_type,$b_id,$service_id,$status,$price,$type_id,$available,$dis_per,$added_date,$book_order,$image,$design,$side,$per){
 
             $code ="
                 <div class=\"box view_design_btn\" id=\"$id\">
@@ -189,6 +189,9 @@
                     <input type=\"hidden\" name=\"available\" value=\"$available\">
                     <input type=\"hidden\" name=\"status\" value=\"$status\">
                     <input type=\"hidden\" name=\"dis_per\" value=\"$dis_per\">
+                    <input type=\"hidden\" name=\"design\" value=\"$design\">
+                    <input type=\"hidden\" name=\"side\" value=\"$side\">
+                    <input type=\"hidden\" name=\"per_side_per\" value=\"$per\">
                     <i class=\"bx bxs-message-square-check add_to_design_cart_btn\" id=\"$id\"></i>
                     <i class=\"bx bx-heart book_mark_design_btn fw-bold fs-3\" id=\"$id\"></i>
                     </form>
