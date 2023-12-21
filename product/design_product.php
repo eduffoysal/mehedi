@@ -805,7 +805,7 @@ if(isset($_POST['booking_cart'])){
     <div class="row">
         
         <div class="mt-3 w-full">
-            <a href="appoinment" class="text-decoration-none decoration-none">
+            <a href="date" class="text-decoration-none decoration-none">
             <button type="button" class="btn btn-info pickDate" id="pickDate">Pick A Date to Checkout With <?=calculateTotalPrice('design_cart')?> BDT</button>
             </a>
         </div>
