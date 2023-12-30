@@ -1133,4 +1133,12 @@ if(isset($_POST['plus_p'])){
     }
 
 }
+
+if(isset($_POST["cart_count"])){
+    $pro_count = calculateTotalQuantity("product_cart");
+    $de_count = calculateTotalQuantity("design_cart");
+
+    $sum_count = $pro_count + $de_count;
+    echo $sum_count;
+}
 ?>
