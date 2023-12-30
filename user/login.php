@@ -144,7 +144,7 @@ if(isset($_POST['mesignup'])){
 
 			if($con->query($sql)){
 
-				$p_sql = "INSERT INTO users_profile (user_phone, uId, unique_id, user_type, user_email) values ('$phone', '$number', '$unique_id', '$user_type', '$email')";
+				$p_sql = "INSERT INTO user_profile (user_phone, uId, unique_id, user_type, user_email) values ('$phone', '$number', '$unique_id', '$user_type', '$email')";
 
 				if($con->query($p_sql)){
 					echo $phoneId.' <br> <code>'.$referr.' এই নম্বরটি মনে রাখুন~ধন্যবাদ</code> <br>';
