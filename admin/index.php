@@ -326,7 +326,7 @@ if(!isset($_SESSION['user'])){
 									 <span class="material-icons">settings</span>
 									 Settings
 									 </a></li>
-									 <li><a href="#">
+									 <li><a href="../out">
 									 <span class="material-icons">logout</span>
 									 Logout
 									 </a></li>

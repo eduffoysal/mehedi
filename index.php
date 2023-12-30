@@ -32,6 +32,7 @@
     // $router->listen();
 
 $b_id = "7AABE1-1700896475-1188728145-806933517";
+$header_name = "CMAByRaisa";
 
 if (!isset($_SESSION["super_b_id"])) {
     $super_sql = "SELECT super_b_id as b_id FROM super_admin WHERE unique_id='1'";
@@ -49,6 +50,14 @@ if (!isset($_SESSION["super_b_id"])) {
   $b_id = $_SESSION['super_b_id'];
 }
 
+
+$sql = "SELECT * FROM business_profile WHERE unique_id='$b_id' ";
+$result = mysqli_query($con, $sql);
+$num_row = mysqli_num_rows($result);
+if ($num_row == 1) {
+  $row = mysqli_fetch_assoc($result);
+  $header_name = $row['b_name'];
+}
 
 
 
@@ -153,6 +162,20 @@ if(isset($_GET['start_p'])){
   $product->product_set_session($start_p,$cat_p);
 }
 
+function shortForm($name){
+  $words = explode(' ', $name);
+  // $name = $words[0];
+  $shortForm = '';
+  foreach($words as $word){
+    // $shortForm .= ''.$word.'';
+    if(!empty($word)){
+      $shortForm .= strtoupper($word[0]);
+    }
+  }
+
+  return $shortForm;
+
+}
 
 ?>
 <!DOCTYPE html>
@@ -160,7 +183,7 @@ if(isset($_GET['start_p'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Mehedi Art By <?php echo "Raisa"?></title>
+    <title>Creative Mehedi Art By <?=$header_name?></title>
      <!-- Link Swiper's CSS -->
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -259,8 +282,8 @@ if(isset($_GET['start_p'])){
     <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
         <img src="https://images.unsplash.com/profile-1695058559381-08958c381f32image?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff" class="h-8" alt="CMABR Logo">
 
-        <a style="font-size: 20px; font-weight: 600;" href="#" class="md:hidden text-amber-800 logo text-decoration-none">CMAByRaisa</a>
-        <a style="font-size: 20px; font-weight: 600;" href="#" class="hidden md:block logo text-amber-800 text-decoration-none">Creative Mehedi Art By Raisa</a>
+        <a style="font-size: 20px; font-weight: 600;" href="#" class="md:hidden text-amber-800 logo text-decoration-none"><?php shortForm($header_name)?></a>
+        <a style="font-size: 20px; font-weight: 600;" href="#" class="hidden md:block logo text-amber-800 text-decoration-none"><?=$header_name?></a>
 
     </a>
     <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
