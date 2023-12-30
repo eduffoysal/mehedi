@@ -147,7 +147,7 @@ if(!isset($_SESSION['user'])){
 	 
 	 <div id="sidebar">
 	    <div class="sidebar-header">
-		   <h3><img src="img/logo.png" class="img-fluid"/><span>CMAByRaisa</span></h3>
+		   <h3><img src="img/logo.png" class="img-fluid"/><span><a href="../">CMAByRaisa</a></span></h3>
 		</div>
 		<ul class="list-unstyled component m-0">
 		  <li class="active">

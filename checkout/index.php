@@ -160,7 +160,8 @@ if(isset($_SESSION["user"]) && isset($_SESSION['b_id'])){
             <label for="fname">Accepted Payment Method</label>
             <div class="input-field form-control form-floating w-full">
                 <select name="pay_method" id="pay_method" required>
-                    <option value='bkash'>Bkash</option>
+                <option value='cash'>Cash</option>    
+                <option value='bkash'>Bkash</option>
                     <option value='nagad'>Nagad</option>
                     <option value='dbbl'>DBBL</option>
                     <option value='islami'>Islami Bank</option>
