@@ -177,6 +177,17 @@ function shortForm($name){
 
 }
 
+function shortForm2($name){
+  $words = explode(' ', $name);
+  $shortForm = '';
+  foreach($words as $word){
+    if(!empty($word)){
+      $shortForm .= strtoupper($word[0]);
+    }
+  }
+  return $shortForm;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
