@@ -670,6 +670,28 @@ $.ajax({
 			alert('Please input Phone fields to Login');
 		}
 	});
+
+
+
+  $(document).on('click', '.checkout_btn', function(){
+
+
+      Swal.fire({
+              type: 'success',
+              title: "Your Added Cart Designs are Successfully Booked!",
+              text: "Thank you ",
+              icon: "success",
+              button: false,
+              dangerMode: true,
+              timer: 3000,
+          
+          });
+      setTimeout(function(){
+        window.location.href = '../';
+      }, 3000);
+
+});
+
 });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
