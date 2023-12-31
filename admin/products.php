@@ -191,19 +191,76 @@ if (isset($_SESSION['b_id'])) {
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 		<div class="modal-header">
-			<h5 class="modal-title">Add Design Category</h5>
+			<h5 class="modal-title">Add Product</h5>
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 			<span aria-hidden="true">&times;</span>
 			</button>
 		</div>
 		<div class="modal-body">
+		<form action="#" class="add_product_form" role="form" id="add_product_form" method="POST" enctype="multipart/form-data">
+
 			<div class="form-group">
-				<label>Category Name</label>
-				<input type="text" class="form-control" required>
+				<label>Product Title</label>
+				<input type="text" class="form-control" name='product_name' required>
 			</div>
 			<div class="form-group">
-				<label>Category Details</label>
-				<textarea class="form-control" required></textarea>
+				<label>Product Details</label>
+				<textarea class="form-control" name='product_details' required></textarea>
+				<input type="hidden" name='product_add'>
+			</div>
+			<div class="form-group">
+				<label>Select Product Category</label>
+
+                <select name="category" id="category" required>
+
+				
+                <?php
+                    $sql = "SELECT * FROM product_type WHERE b_id='$b_id' AND book_order='0' ORDER BY category ASC";
+
+
+                    ?>
+                    <option value="0" disabled selected>Select Product Category</option>
+                    <?php
+
+                    $result = mysqli_query($con, $sql);
+                    if(mysqli_num_rows($result)> 0){
+
+                    while($row = mysqli_fetch_assoc($result)){
+                    ?>
+                    <option value='<?=$row['id']?>' id="<?=$row['unique_id']?>"><?=$row['category']?></option>
+                    <?php
+                    }
+
+                    }else{
+                    ?>
+                    <option value="0" disabled selected>Not Found Category</option>
+                    <?php
+                    }
+                ?>
+                <option disabled selected>Select Category</option>
+
+                </select>
+
+			</div>
+			<div class="form-group">
+				<label>Price</label>
+				<input type="number" class="form-control" name='price' required>
+			</div>
+			<div class="form-group">
+				<label>Design</label>
+				<input type="text" class="form-control" name='design' required>
+			</div>
+			<div class="form-group">
+				<label>Initialize Side Type</label>
+				<input type="number" class="form-control" name='side' required>
+			</div>
+			<div class="form-group">
+				<label>Price % for Per Side</label>
+				<input type="number" class="form-control" name='per_side_per' required>
+			</div>
+			<div class="form-group">
+				<label>Discount</label>
+				<input type="number" class="form-control" name='discount' required>
 			</div>
 			<div class="form-group">
 			<span>Upload Category Image</span>
@@ -223,8 +280,9 @@ if (isset($_SESSION['b_id'])) {
 		</div>
 		<div class="modal-footer">
 			<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-			<button type="button" class="btn btn-success">Add</button>
+			<button type="button" class="btn btn-success p_addbutton" id="p_addbutton">Add</button>
 		</div>
+		</form>
 		</div>
 	</div>
 	</div>

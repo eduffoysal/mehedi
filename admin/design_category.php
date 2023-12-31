@@ -197,13 +197,15 @@ if (isset($_SESSION['b_id'])) {
 			</button>
 		</div>
 		<div class="modal-body">
+		<form action="#" class="add_d_category" role="form" id="add_d_category_form" method="POST" enctype="multipart/form-data">
 			<div class="form-group">
 				<label>Category Name</label>
-				<input type="text" class="form-control" required>
+				<input type="text" class="form-control" name="cat_name" id="cat_name" required>
 			</div>
 			<div class="form-group">
 				<label>Category Details</label>
-				<textarea class="form-control" required></textarea>
+				<textarea class="form-control" name="cat_details" id="cat_details" required></textarea>
+				<input type="hidden" name="d_cat">
 			</div>
 			<div class="form-group">
 			<span>Upload Category Image</span>
@@ -223,8 +225,9 @@ if (isset($_SESSION['b_id'])) {
 		</div>
 		<div class="modal-footer">
 			<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-			<button type="button" class="btn btn-success">Add</button>
+			<button type="button" class="btn btn-success add_d_cat_btn" id="cat_d_addbutton">Add</button>
 		</div>
+		</form>
 		</div>
 	</div>
 	</div>

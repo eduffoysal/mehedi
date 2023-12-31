@@ -191,19 +191,21 @@ if (isset($_SESSION['b_id'])) {
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 		<div class="modal-header">
-			<h5 class="modal-title">Add Design Category</h5>
+			<h5 class="modal-title">Add Product Category</h5>
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 			<span aria-hidden="true">&times;</span>
 			</button>
 		</div>
 		<div class="modal-body">
+		<form action="#" class="add_p_category" role="form" id="add_p_category_form" method="POST" enctype="multipart/form-data">
 			<div class="form-group">
 				<label>Category Name</label>
-				<input type="text" class="form-control" required>
+				<input type="text" class="form-control" name="cat_name" id="cat_name" required>
 			</div>
 			<div class="form-group">
 				<label>Category Details</label>
-				<textarea class="form-control" required></textarea>
+				<textarea class="form-control" name="cat_details" id="cat_details" required></textarea>
+				<input type="hidden" name="p_cat">
 			</div>
 			<div class="form-group">
 			<span>Upload Category Image</span>
@@ -223,8 +225,9 @@ if (isset($_SESSION['b_id'])) {
 		</div>
 		<div class="modal-footer">
 			<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-			<button type="button" class="btn btn-success">Add</button>
+			<button type="button" class="btn btn-success add_p_cat_btn" id="cat_p_addbutton">Add</button>
 		</div>
+		</form>
 		</div>
 	</div>
 	</div>

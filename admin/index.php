@@ -541,5 +541,266 @@ if ($action == 'homeAction') {
 </body>
     
 
+<script>
+    $(document).ready(function(){
 
+        $(document).on('click', '#cat_d_addbutton', function(){
+		if($('#cat_name').val()!=''){
+            // alert("hi");
+			$('#cat_d_addbutton').val('Sending! Please Wait 1 Second...');
+			$('#myalert').slideUp();
+			var signform = $('#add_d_category_form').serialize();
+
+            var po_textvcc1 = $('#imgup22').val();
+            var po_formpic1 = new FormData($('#add_d_category_form')[0]);
+
+            if($.trim(po_textvcc1).length == 0){
+            error_msgpic1 = "Please add a new image for update ";
+            alert(error_msgpic1);
+            $('#error_status_pic1').text(error_msgpic1);
+            }else{
+            error_msgpic1 = "";
+            $('#error_status_pic1').text(error_msgpic1);
+            }
+            if(error_msgpic1 != ''){
+            return false;
+            }else{
+                $.ajax({
+				method: 'POST',
+				url: './admin.php',
+				data: po_formpic1,
+                async: false,
+                cache: false,
+                contentType: false,
+                enctype: 'multipart/form-data',
+                processData: false,
+				success:function(data){
+                    Swal.fire({
+                                type: 'success',
+                                title: "Category Added!",
+                                text: "Thank you! "+data,
+                                icon: "success",
+                                button: false,
+                                dangerMode: true,
+                                timer: 3000,
+                            
+                            });
+                            
+					setTimeout(function(){
+					$('#myalert').slideDown();
+					$('#alerttext').html(data);
+					$('#cat_d_addbutton').val('Submit');
+					$('#add_d_category_form')[0].reset();
+                        
+					}, 2000);
+                    setTimeout(function(){
+                        $('#myalert').slideUp();
+                        alert(data);
+                }, 3000);
+				}
+			});
+            }
+
+		}
+		else{
+			alert('Please input all fields to Sign Up');
+		}
+	});
+
+	$(document).on('click', '#cat_p_addbutton', function(){
+		if($('#cat_name').val()!=''){
+            // alert("hi");
+			$('#cat_p_addbutton').val('Sending! Please Wait 1 Second...');
+			$('#myalert').slideUp();
+			var signform = $('#add_p_category_form').serialize();
+
+            var po_textvcc1 = $('#imgup22').val();
+            var po_formpic1 = new FormData($('#add_p_category_form')[0]);
+
+            if($.trim(po_textvcc1).length == 0){
+            error_msgpic1 = "Please add a new image for update ";
+            alert(error_msgpic1);
+            $('#error_status_pic1').text(error_msgpic1);
+            }else{
+            error_msgpic1 = "";
+            $('#error_status_pic1').text(error_msgpic1);
+            }
+            if(error_msgpic1 != ''){
+            return false;
+            }else{
+                $.ajax({
+				method: 'POST',
+				url: './admin.php',
+				data: po_formpic1,
+                async: false,
+                cache: false,
+                contentType: false,
+                enctype: 'multipart/form-data',
+                processData: false,
+				success:function(data){
+                    Swal.fire({
+                                type: 'success',
+                                title: "Category Added!",
+                                text: "Thank you! "+data,
+                                icon: "success",
+                                button: false,
+                                dangerMode: true,
+                                timer: 3000,
+                            
+                            });
+                            
+					setTimeout(function(){
+					$('#myalert').slideDown();
+					$('#alerttext').html(data);
+					$('#cat_p_addbutton').val('Submit');
+					$('#add_p_category_form')[0].reset();
+                        
+					}, 2000);
+                    setTimeout(function(){
+                        $('#myalert').slideUp();
+                        alert(data);
+                }, 3000);
+				}
+			});
+            }
+
+		}
+		else{
+			alert('Please input all fields to Sign Up');
+		}
+	});
+
+	$(document).on('click', '#p_addbutton', function(){
+		if($('#product_name').val()!=''){
+            // alert("hi");
+			$('#p_addbutton').val('Sending! Please Wait 1 Second...');
+			$('#myalert').slideUp();
+			var signform = $('#add_product_form').serialize();
+
+            var po_textvcc1 = $('#imgup22').val();
+            var po_formpic1 = new FormData($('#add_product_form')[0]);
+
+            if($.trim(po_textvcc1).length == 0){
+            error_msgpic1 = "Please add a new image for update ";
+            alert(error_msgpic1);
+            $('#error_status_pic1').text(error_msgpic1);
+            }else{
+            error_msgpic1 = "";
+            $('#error_status_pic1').text(error_msgpic1);
+            }
+            if(error_msgpic1 != ''){
+            return false;
+            }else{
+                $.ajax({
+				method: 'POST',
+				url: './admin.php',
+				data: po_formpic1,
+                async: false,
+                cache: false,
+                contentType: false,
+                enctype: 'multipart/form-data',
+                processData: false,
+				success:function(data){
+                    Swal.fire({
+                                type: 'success',
+                                title: "Product Added!",
+                                text: "Thank you! "+data,
+                                icon: "success",
+                                button: false,
+                                dangerMode: true,
+                                timer: 3000,
+                            
+                            });
+                            
+					setTimeout(function(){
+					$('#myalert').slideDown();
+					$('#alerttext').html(data);
+					$('#p_addbutton').val('Submit');
+					$('#add_product_form')[0].reset();
+                        
+					}, 2000);
+                    setTimeout(function(){
+                        $('#myalert').slideUp();
+                        alert(data);
+                }, 3000);
+				}
+			});
+            }
+
+		}
+		else{
+			alert('Please input all fields to Sign Up');
+		}
+	});
+
+	$(document).on('click', '#d_addbutton', function(){
+		if($('#product_name').val()!=''){
+            // alert("hi");
+			$('#d_addbutton').val('Sending! Please Wait 1 Second...');
+			$('#myalert').slideUp();
+			var signform = $('#add_design_form').serialize();
+
+            var po_textvcc1 = $('#imgup22').val();
+            var po_formpic1 = new FormData($('#add_design_form')[0]);
+
+            if($.trim(po_textvcc1).length == 0){
+            error_msgpic1 = "Please add a new image for update ";
+            alert(error_msgpic1);
+            $('#error_status_pic1').text(error_msgpic1);
+            }else{
+            error_msgpic1 = "";
+            $('#error_status_pic1').text(error_msgpic1);
+            }
+            if(error_msgpic1 != ''){
+            return false;
+            }else{
+                $.ajax({
+				method: 'POST',
+				url: './admin.php',
+				data: po_formpic1,
+                async: false,
+                cache: false,
+                contentType: false,
+                enctype: 'multipart/form-data',
+                processData: false,
+				success:function(data){
+                    Swal.fire({
+                                type: 'success',
+                                title: "Design Added!",
+                                text: "Thank you! "+data,
+                                icon: "success",
+                                button: false,
+                                dangerMode: true,
+                                timer: 3000,
+                            
+                            });
+                            
+					setTimeout(function(){
+					$('#myalert').slideDown();
+					$('#alerttext').html(data);
+					$('#d_addbutton').val('Submit');
+					$('#add_design_form')[0].reset();
+                        
+					}, 2000);
+                    setTimeout(function(){
+                        $('#myalert').slideUp();
+                        alert(data);
+                }, 3000);
+				}
+			});
+            }
+
+		}
+		else{
+			alert('Please input all fields to Sign Up');
+		}
+	});
+
+    });
+</script>
+<script src="../js/jquery-3.5.1.min.js"></script>
+
+<script src="../dist/js/mess_sign.js"></script>
+<script src="../js/sweetalert.min.js"></script>
+<script src="../js/sweetalert2.all.min.js"></script>
 </html>
