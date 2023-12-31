@@ -1,6 +1,6 @@
 <?php
-include('../db/db.php');
 session_start();
+include('../db/db.php');
 require '../Router/Router.php';
 $router = new Router();
 
@@ -164,9 +164,10 @@ if(!isset($_SESSION['user'])){
 		  <i class="material-icons">aspect_ratio</i>Category
 		  </a>
 		  <ul class="collapse list-unstyled menu" id="homeSubmenu1">
-		     <li><a href="<?php echo $router->url('/edu_mehedi/design'); ?>">Design Category</a></li>
-			 <li><a href="<?php echo $router->url('/product'); ?>">Product Category</a></li>
-			 <li><a href="<?php echo $router->url('/service'); ?>">Service Category</a></li>
+		  	<li><a href="<?php echo $router->url('/', ['route' => 'design']); ?>">Design Category</a></li>
+			<li><a href="<?php echo $router->url('/', ['route' => 'product']); ?>">Product Category</a></li>
+			<li><a href="<?php echo $router->url('/', ['route' => 'service']); ?>">Service Category</a></li>
+
 		  </ul>
 		  </li>
 		  
@@ -174,12 +175,12 @@ if(!isset($_SESSION['user'])){
 		   <li class="dropdown">
 		  <a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false" 
 		  class="dropdown-toggle">
-		  <i class="material-icons">apps</i>widgets
+		  <i class="material-icons">apps</i>Design&Product
 		  </a>
 		  <ul class="collapse list-unstyled menu" id="homeSubmenu2">
-		     <li><a href="#">Apps 1</a></li>
-			 <li><a href="#">Apps 2</a></li>
-			 <li><a href="#">Apps 3</a></li>
+		  <li><a href="<?php echo $router->url('/', ['route' => 'designs']); ?>">Design</a></li>
+			<li><a href="<?php echo $router->url('/', ['route' => 'products']); ?>">Product</a></li>
+			<li><a href="<?php echo $router->url('/', ['route' => 'services']); ?>">Service</a></li>
 		  </ul>
 		  </li>
 		  
@@ -199,7 +200,7 @@ if(!isset($_SESSION['user'])){
 		   <li class="dropdown">
 		  <a href="#homeSubmenu4" data-toggle="collapse" aria-expanded="false" 
 		  class="dropdown-toggle">
-		  <i class="material-icons">extension</i>UI Element
+		  <i class="material-icons">extension</i>Coupons
 		  </a>
 		  <ul class="collapse list-unstyled menu" id="homeSubmenu4">
 		     <li><a href="#">Pages 1</a></li>
@@ -360,28 +361,33 @@ if(!isset($_SESSION['user'])){
 		  
 <?php
 
+$route = isset($_GET['route']) ? $_GET['route'] : 'home';
 
-$router->addRoute('GET', '/', function () {
-    include 'home.php';
-});
+$routes = [
+    'home' => 'homeAction',
+    'design' => 'designAction',
+    'product' => 'productAction',
+	'designs' => 'designs',
+    'products' => 'products',
 
-$router->addRoute('GET', '/about', function () {
-    include 'about.php';
-});
+];
 
-$router->addRoute('GET', '/contact', function () {
-    include 'contact.php';
-});
+$action = isset($routes[$route]) ? $routes[$route] : 'notFoundAction';
 
-$router->addRoute('GET', '/product', function () {
-    include 'product_category.php';
-});
+if ($action == 'homeAction') {
+    echo 'Welcome to the Home Page!';
+}else if ($action == 'designAction') {
+    include('design_category.php');
+}else if ($action == 'productAction') {
+    include('product_category.php');
+}else if ($action == 'designs') {
+    include('designs.php');
+}else if ($action == 'products') {
+    include('products.php');
+} else {
+    echo '404 Not Found';
+}
 
-$router->addRoute('GET', '/design', function () {
-    include 'design_category.php';
-});
-
-$router->run();
 ?>
 
 	  

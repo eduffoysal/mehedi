@@ -19,12 +19,12 @@ if (isset($_SESSION['b_id'])) {
 						<div class="table-title">
 							<div class="row">
 								<div class="col-sm-6 p-0 flex justify-content-lg-start justify-content-center">
-									<h2 class="ml-lg-2">Design Categories</h2>
+									<h2 class="ml-lg-2">Products</h2>
 								</div>
 								<div class="col-sm-6 p-0 flex justify-content-lg-end justify-content-center">
 								<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal">
 								<i class="material-icons">&#xE147;</i>
-								<span>Add Design Category</span>
+								<span>Add Product</span>
 								</a>
 								<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal">
 								<i class="material-icons">&#xE15C;</i>
@@ -40,9 +40,9 @@ if (isset($_SESSION['b_id'])) {
 								<th><span class="custom-checkbox">
 								<input type="checkbox" id="selectAll">
 								<label for="selectAll"></label></th>
-								<th>Category</th>
-								<th>Details</th>
-								<th>No of D</th>
+								<th>Product</th>
+								<th>Type</th>
+								<th>Price</th>
 								<th>Actions</th>
 								</tr>
 							</thead>
@@ -51,7 +51,7 @@ if (isset($_SESSION['b_id'])) {
 
 
 									<?php
-										$de_sql = "SELECT * FROM product_type WHERE b_id='$b_id' AND book_order='1' ";
+										$de_sql = "SELECT * FROM product WHERE b_id='$b_id' AND book_order='1' ";
 										$de_result = mysqli_query($con,$de_sql);
 										$de_num = mysqli_num_rows($de_result);
 										if($de_num != 0){
@@ -63,9 +63,9 @@ if (isset($_SESSION['b_id'])) {
 												<th><span class="custom-checkbox">
 												<input type="checkbox" id="checkbox1" name="option[]" value="<?=$i++?>">
 												<label for="checkbox1"></label></th>
-												<th><?=$de_row['category']?></th>
-												<th><?=$de_row['details']?></th>
-												<th><?=$de_row['pro_count']?></th>
+												<th><?=$de_row['pro_name']?></th>
+												<th><?=$de_row['pro_type']?></th>
+												<th><?=$de_row['price']?></th>
 												<th>
 													<a href="#editEmployeeModal" class="edit" data-toggle="modal">
 												<i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>

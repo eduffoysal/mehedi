@@ -29,11 +29,29 @@ class Router
         $pattern = '#^' . str_replace('/', '\/', $pattern) . '$#';
         return preg_match($pattern, $uri);
     }
-    public function url($path)
+    public function url($path, $params = [])
     {
-        // Assuming that the application is running at the root level
-        return $path;
+        // Determine the base path dynamically
+        $basePath = str_replace('/index.php', '', $_SERVER['SCRIPT_NAME']);
+        
+        $url = $basePath . $path;
+    
+        // Get the existing query parameters
+        $currentParams = $_GET;
+    
+        // Merge the existing and new query parameters
+        $allParams = array_merge($currentParams, $params);
+    
+        if (!empty($allParams)) {
+            // Determine if the URL already contains a query string
+            $url .= (strpos($url, '?') === false) ? '?' : '&';
+    
+            $url .= http_build_query($allParams);
+        }
+    
+        return $url;
     }
+    
     public function run()
     {
         $method = $_SERVER['REQUEST_METHOD'];
@@ -48,6 +66,7 @@ class Router
             http_response_code(404);
             echo '404 - Not Found';
         }
+        // echo $route;
     }
 }
 
