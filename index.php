@@ -413,9 +413,9 @@ function shortForm2($name){
                 </svg></button>
                             <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                                 <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
-                                <li>
+                                <!-- <li>
                                     <a href="#" class="block text-decoration-none px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
-                                </li>
+                                </li> -->
                                 <li aria-labelledby="dropdownNavbarLink">
                                     <button id="doubleDropdownButton" data-dropdown-toggle="doubleDropdown" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dropdown<svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
@@ -438,13 +438,13 @@ function shortForm2($name){
                         </ul>
                     </div>
                   </li>
-                  <li>
+                  <!-- <li>
                     <a href="#" class="block px-4 py-2 text-decoration-none hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
-                  </li>
+                  </li> -->
                 </ul>
-                <div class="py-1">
+                <!-- <div class="py-1">
                   <a href="#" class="block px-4 py-2 text-decoration-none text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Sign out</a>
-                </div>
+                </div> -->
             </div>
 
 

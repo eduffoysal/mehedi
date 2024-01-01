@@ -127,9 +127,9 @@ if(isset($_SESSION["user"]) && isset($_SESSION['b_id'])){
             <label for="email"><i class="fa fa-envelope"></i> Email</label>
             <input type="text" id="email" name="email" placeholder="email@gmail.com">
             <label for="adr"><i class="fa fa-address-card-o"></i> Full Address</label>
-            <input type="text" id="adr" name="address" placeholder="islampur, coxsbazar, N1 Road">
+            <input type="text" id="adr" name="address" placeholder="chandgaon, chittagong, N1 Road">
             <label for="city"><i class="fa fa-institution"></i> City/Thana</label>
-            <input type="text" id="city" name="city" placeholder="CoxsBazar/sadar">
+            <input type="text" id="city" name="city" placeholder="chittagong/sadar">
 
 
             <div class="row">
