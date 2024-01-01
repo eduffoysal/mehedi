@@ -179,7 +179,7 @@
                 <div class=\"product-card view_product_btn\">
                     <div class=\"product-card-img\">
                         <label class=\"stock bg-success\">$stock</label>
-                        <img src=\"$image\" alt=\"$pro_name\">
+                        <img src=\"image/$image\" alt=\"$pro_name\">
                     </div>
                     <div class=\"product-card-body\">
                         <p class=\"product-brand\">$pro_type</p>

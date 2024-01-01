@@ -165,7 +165,7 @@ if(isset($_POST['product_product'])) {
                     <div class="product-card view_product_btn">
                         <div class="product-card-img" id="<?=$row['id']?>">
                             <label class="stock bg-success"><?=$stock?></label>
-                            <img src="<?=$row['pro_image']?>" alt="<?=$row['pro_name']?>">
+                            <img src="image/<?=$row['pro_image']?>" alt="<?=$row['pro_name']?>">
                         </div>
                         <div class="product-card-body">
                             <p class="product-brand"><?=$row['pro_type']?></p>

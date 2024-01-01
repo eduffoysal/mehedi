@@ -700,10 +700,10 @@ setTimeout(function(){
 </script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js'></script>
-  <script src="../dist/js/scriptc.js"></script>
-  <script src="../page.js"></script>
-  <script src="dist/js/scriptp.js"></script>
+  <script src="../../dist/js/scriptc.js"></script>
+  <script src="../../page.js"></script>
+  <script src="../../dist/js/scriptp.js"></script>
   <script type="text/javascript" src="../dist/js/script_p_c.js"></script>
-  <script src="../dist/js/service_c.js"></script>
-  <script src="../js/sweetalert.min.js"></script>
-<script src="../js/sweetalert2.all.min.js"></script>
+  <script src="../../dist/js/service_c.js"></script>
+  <script src="../../js/sweetalert.min.js"></script>
+<script src="../../js/sweetalert2.all.min.js"></script>

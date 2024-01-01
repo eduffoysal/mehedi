@@ -172,7 +172,7 @@
 
             $code ="
                 <div class=\"box view_design_btn\" id=\"$id\">
-                    <img src=\"$image\" alt=\"\">
+                    <img src=\"image/$image\" alt=\"\">
                     <h2>$pro_name</h2>
                     <span>$pro_type</span>
                     <h3 class=\"price\">$price</h3>

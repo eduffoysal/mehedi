@@ -33,7 +33,7 @@
             while ($cat = mysqli_fetch_assoc($cat_query)) {
                 ?>
                     <div class="box design_category_box box<?=$i++?>" id="<?=$cat['id']?>">
-                          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
+                          <img src="image/<?=$cat['type_image']?>" alt="">
                           <h2><?=$cat['category']?></h2>
                           <span><?=$cat['num']?> Types</span>
                           <i class='bx bx-right-arrow-alt'></i>

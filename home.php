@@ -39,7 +39,7 @@
       }
     }
     
-    $b_id = "7AABE1-1700896475-1188728145-806933517";
+    $b_id = "0C1DE3-1704135332-1900634433-681074496";
     $header_name = "CMAByRaisa";
 
 
@@ -395,6 +395,9 @@ function shortForm2($name){
               </li>
               <li>
                 <a href="admin/" data-toggle="modall" data-target="#exampleModalCenterr" class="block text-decoration-none px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Admin</a>
+              </li>
+              <li>
+                <a href="out" class="block px-4 py-2 text-decoration-none text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Sign out</a>
               </li>
           </ul>
         </div>

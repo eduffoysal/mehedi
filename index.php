@@ -31,15 +31,7 @@
 
     // $router->listen();
 
-$user_name = "User Name";
-
-if (isset($_SESSION['logged_in'])) {
-  if ($_SESSION['logged_in']==true) {
-    $user_name = $_SESSION['row']['u_name'];
-  }
-}
-
-$b_id = "7AABE1-1700896475-1188728145-806933517";
+$b_id = "0C1DE3-1704135332-1900634433-681074496";
 $header_name = "CMAByRaisa";
 
 if (!isset($_SESSION["super_b_id"])) {
@@ -57,7 +49,6 @@ if (!isset($_SESSION["super_b_id"])) {
 }else{
   $b_id = $_SESSION['super_b_id'];
 }
-
 
 $sql = "SELECT * FROM business_profile WHERE unique_id='$b_id' ";
 $result = mysqli_query($con, $sql);
@@ -176,22 +167,13 @@ function shortForm($name){
   $shortForm = '';
   foreach($words as $word){
     // $shortForm .= ''.$word.'';
-
+    if(!empty($word)){
       $shortForm .= strtoupper($word[0]);
-
+    }
   }
 
   return $shortForm;
 
-}
-
-function shortForm2($name){
-  $words = explode(' ', $name);
-  $shortForm = '';
-  foreach($words as $word){
-      $shortForm .= strtoupper($word[0]);
-  }
-  return $shortForm;
 }
 
 ?>
@@ -299,7 +281,7 @@ function shortForm2($name){
     <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
         <img src="https://images.unsplash.com/profile-1695058559381-08958c381f32image?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff" class="h-8" alt="CMABR Logo">
 
-        <a style="font-size: 20px; font-weight: 600;" href="#" class="md:hidden text-amber-800 logo text-decoration-none">CMAByRaisa<?php shortForm($header_name)?></a>
+        <a style="font-size: 20px; font-weight: 600;" href="#" class="md:hidden text-amber-800 logo text-decoration-none"><?php shortForm($header_name)?></a>
         <a style="font-size: 20px; font-weight: 600;" href="#" class="hidden md:block logo text-amber-800 text-decoration-none"><?=$header_name?></a>
 
     </a>
@@ -324,7 +306,7 @@ function shortForm2($name){
 
         <div class="htc__shopping__cart mr-2 md:mr-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                                         <a class="cart__menu" href="#"><i class="bi bi-cart icons"></i></a>
-                                        <a href="#"><span class="htc__qua" id="cart_count">0</span></a>
+                                        <a href="#"><span class="htc__qua">2</span></a>
         </div>
 
         <button type="button" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
@@ -339,7 +321,7 @@ function shortForm2($name){
           
             <div class="profile">
                 <img src="https://images.unsplash.com/profile-1695058559381-08958c381f32image?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff" alt="">
-                <span>@<?=$user_name?></span>
+                <span>@Tasnim Islam Raisa</span>
                 <i class='bx bx-caret-down'></i>
             </div>
           
@@ -1319,9 +1301,6 @@ function shortForm2($name){
         </div> 
         <!-- price -->
         <div class="details-container" id="design_product">
-
-
-
                 <?php
                   
                   $data = $design->design_fetch($design->start,$cat);
@@ -2242,7 +2221,7 @@ var p_id = $(this).attr('id');
               // alert(response);
 
               orderCart();
-              cart_count();
+
 
           }
         });
@@ -2265,7 +2244,6 @@ var p_id = $(this).attr('id');
               // alert(response);
 
               bookingCart();
-              cart_count();
 
           }
         });
@@ -2288,7 +2266,7 @@ var p_id = $(this).attr('id');
               // alert(response);
 
               orderCart();
-              cart_count();
+
 
           }
         });
@@ -2311,7 +2289,7 @@ var p_id = $(this).attr('id');
               // alert(response);
 
               orderCart();
-              cart_count();
+
 
           }
         });
@@ -2334,7 +2312,7 @@ var p_id = $(this).attr('id');
               // alert(response);
 
               bookingCart();
-              cart_count();
+
           }
         });
 });
@@ -2356,7 +2334,7 @@ var p_id = $(this).attr('id');
               // alert(response);
 
               bookingCart();
-              cart_count();
+
           }
         });
 });
@@ -2388,20 +2366,6 @@ $('#order_cart_row_data').ready(function(){
   });
 
 });  
-cart_count();
-function cart_count(){
-  $.ajax({
-    url:'product/design_product.php',
-    type:'post',
-    data: {
-      cart_count: true
-    },
-    success: function(response){
-      $('#cart_count').html(response);
-
-    }
-  });
-}
 
 function orderCart(){
   $.ajax({
@@ -2487,7 +2451,6 @@ function book_order_cart(){
                         $('#class_add_btn').val('Save Class');
                         $('#class_form_data')[0].reset();
                         }, 2000);
-                        cart_count();
                         setTimeout(function(){
                           book_order_cart();
                         }, 3000);
@@ -2546,7 +2509,6 @@ $.ajax({
                   $('#myalert').slideDown();
                   $('#alerttext').html("Design Successfully Added to Cart!");
                   }, 2000);
-                  cart_count();
                   setTimeout(function(){
                     book_order_cart()
                   }, 3000);

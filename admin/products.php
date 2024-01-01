@@ -51,7 +51,7 @@ if (isset($_SESSION['b_id'])) {
 
 
 									<?php
-										$de_sql = "SELECT * FROM product WHERE b_id='$b_id' AND book_order='1' ";
+										$de_sql = "SELECT * FROM product WHERE b_id='$b_id' AND book_order='0' ";
 										$de_result = mysqli_query($con,$de_sql);
 										$de_num = mysqli_num_rows($de_result);
 										if($de_num != 0){
