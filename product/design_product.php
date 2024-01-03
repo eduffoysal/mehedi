@@ -92,7 +92,7 @@ if(isset($_POST['design_product'])) {
                 ?>
 
             <div class="box view_design_btn" id="<?=$row['id']?>">
-                <img src="<?=$row['pro_image']?>" alt="">
+                <img src="image/<?=$row['pro_image']?>" alt="">
                 <h2><?=$row['pro_name']?></h2>
                 <span><?=$row['pro_type']?></span>
                 <h3 class="price"><?=$row['price']?>TK</h3>
@@ -454,7 +454,7 @@ if(isset($_POST['order_cart'])){
 
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" id="<?=$index?>">
                             <td class="p-4">
-                                <img src="<?=$list->getProImage()?>" class="w-16 md:w-32 max-w-full max-h-full" alt="<?=$list->getProName()?>">
+                                <img src="image/<?=$list->getProImage()?>" class="w-16 md:w-32 max-w-full max-h-full" alt="<?=$list->getProName()?>">
                             </td>
                             <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
                                 <?=$list->getProName()?>
@@ -660,7 +660,7 @@ if(isset($_POST['booking_cart'])){
 
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" id="<?=$index?>">
                     <td class="p-4">
-                        <img src="<?=$list->getProImage()?>" class="w-16 md:w-32 max-w-full max-h-full" alt="<?=$list->getProName()?>">
+                        <img src="image/<?=$list->getProImage()?>" class="w-16 md:w-32 max-w-full max-h-full" alt="<?=$list->getProName()?>">
                     </td>
                     <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
                         <?=$list->getProName()?>
@@ -872,7 +872,7 @@ if(isset($_POST['booking_cart_2'])){
 
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" id="<?=$index?>">
                     <td class="p-4">
-                        <img src="<?=$list->getProImage()?>" class="w-16 md:w-32 max-w-full max-h-full" alt="<?=$list->getProName()?>">
+                        <img src="../image/<?=$list->getProImage()?>" class="w-16 md:w-32 max-w-full max-h-full" alt="<?=$list->getProName()?>">
                     </td>
                     <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
                         <?=$list->getProName()?>

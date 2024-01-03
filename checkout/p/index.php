@@ -682,7 +682,7 @@ $.ajax({
 
 Swal.fire({
         type: 'success',
-        title: "Your Added Cart Designs are Successfully Booked!",
+        title: "Your Products are Successfully Booked!",
         text: "Thank you ",
         icon: "success",
         button: false,

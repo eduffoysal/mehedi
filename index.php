@@ -40,7 +40,7 @@ if (isset($_SESSION['logged_in'])) {
 }
 
 $b_id = "0C1DE3-1704135332-1900634433-681074496";
-$header_name = "CMAByRaisa";
+$header_name = "Raisa";
 
 if (!isset($_SESSION["super_b_id"])) {
     $super_sql = "SELECT super_b_id as b_id FROM super_admin WHERE unique_id='1'";
@@ -1022,13 +1022,13 @@ function shortForm2($name){
       <div class="px-3 py-5 bg-neutral-100 lg:py-10">
     <div class="grid lg:grid-cols-2 items-center justify-items-center gap-5">
         <div class="order-2 lg:order-1 flex flex-col justify-center items-center">
-        <p class="text-4xl font-bold md:text-7xl text-orange-600">25% OFF</p>
-        <p class="text-4xl font-bold md:text-7xl">SUMMER SALE</p>
-        <p class="mt-2 text-sm md:text-lg">For limited time only!</p>
+        <p class="text-4xl font-bold md:text-7xl text-orange-600">Creative</p>
+        <p class="text-4xl font-bold md:text-7xl">Mehedi Art By Rsisa</p>
+        <!-- <p class="mt-2 text-sm md:text-lg">For limited time only!</p> -->
         <button class="text-lg md:text-2xl bg-black text-white py-2 px-5 mt-10 hover:bg-zinc-800">Shop Now</button>
         </div>
         <div class="order-1 lg:order-2">
-        <img class="h-80 w-80 object-cover lg:w-[500px] lg:h-[500px]" src="https://images.unsplash.com/photo-1615397349754-cfa2066a298e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80" alt="">
+        <img class="h-80 w-80 object-cover lg:w-[500px] lg:h-[500px]" src="https://images.unsplash.com/photo-1704257558044-daea2ad3f484?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MTB8fHxlbnwwfHx8fHw%3D" alt="">
         </div>
     </div>
       </div>
@@ -1039,9 +1039,9 @@ function shortForm2($name){
       <div class="px-3 py-5 bg-neutral-100 lg:py-10">
     <div class="grid lg:grid-cols-2 items-center justify-items-center gap-5">
         <div class="order-2 lg:order-1 flex flex-col justify-center items-center">
-        <p class="text-4xl font-bold md:text-7xl text-orange-600">25% OFF</p>
-        <p class="text-4xl font-bold md:text-7xl">SUMMER SALE</p>
-        <p class="mt-2 text-sm md:text-lg">For limited time only!</p>
+        <p class="text-4xl font-bold md:text-7xl text-orange-600">Creative</p>
+        <p class="text-4xl font-bold md:text-7xl">Mehedi Art By Rsisa</p>
+        <!-- <p class="mt-2 text-sm md:text-lg">For limited time only!</p> -->
         <button class="text-lg md:text-2xl bg-black text-white py-2 px-5 mt-10 hover:bg-zinc-800">Shop Now</button>
         </div>
         <div class="order-1 lg:order-2">
@@ -1056,9 +1056,9 @@ function shortForm2($name){
       <div class="px-3 py-5 bg-neutral-100 lg:py-10">
     <div class="grid lg:grid-cols-2 items-center justify-items-center gap-5">
         <div class="order-2 lg:order-1 flex flex-col justify-center items-center">
-        <p class="text-4xl font-bold md:text-7xl text-orange-600">25% OFF</p>
-        <p class="text-4xl font-bold md:text-7xl">SUMMER SALE</p>
-        <p class="mt-2 text-sm md:text-lg">For limited time only!</p>
+        <p class="text-4xl font-bold md:text-7xl text-orange-600">Creative</p>
+        <p class="text-4xl font-bold md:text-7xl">Mehedi Art By Rsisa</p>
+        <!-- <p class="mt-2 text-sm md:text-lg">For limited time only!</p> -->
         <button class="text-lg md:text-2xl bg-black text-white py-2 px-5 mt-10 hover:bg-zinc-800">Shop Now</button>
         </div>
         <div class="order-1 lg:order-2">
@@ -1074,9 +1074,9 @@ function shortForm2($name){
       <div class="px-3 py-5 bg-neutral-100 lg:py-10">
     <div class="grid lg:grid-cols-2 items-center justify-items-center gap-5">
         <div class="order-2 lg:order-1 flex flex-col justify-center items-center">
-        <p class="text-4xl font-bold md:text-7xl text-orange-600">25% OFF</p>
-        <p class="text-4xl font-bold md:text-7xl">SUMMER SALE</p>
-        <p class="mt-2 text-sm md:text-lg">For limited time only!</p>
+        <p class="text-4xl font-bold md:text-7xl text-orange-600">Creative</p>
+        <p class="text-4xl font-bold md:text-7xl">Mehedi Art By Rsisa</p>
+        <!-- <p class="mt-2 text-sm md:text-lg">For limited time only!</p> -->
         <button class="text-lg md:text-2xl bg-black text-white py-2 px-5 mt-10 hover:bg-zinc-800">Shop Now</button>
         </div>
         <div class="order-1 lg:order-2">
@@ -1092,9 +1092,9 @@ function shortForm2($name){
       <div class="px-3 py-5 bg-neutral-100 lg:py-10">
     <div class="grid lg:grid-cols-2 items-center justify-items-center gap-5">
         <div class="order-2 lg:order-1 flex flex-col justify-center items-center">
-        <p class="text-4xl font-bold md:text-7xl text-orange-600">25% OFF</p>
-        <p class="text-4xl font-bold md:text-7xl">SUMMER SALE</p>
-        <p class="mt-2 text-sm md:text-lg">For limited time only!</p>
+        <p class="text-4xl font-bold md:text-7xl text-orange-600">Creative</p>
+        <p class="text-4xl font-bold md:text-7xl">Mehedi Art By Rsisa</p>
+        <!-- <p class="mt-2 text-sm md:text-lg">For limited time only!</p> -->
         <button class="text-lg md:text-2xl bg-black text-white py-2 px-5 mt-10 hover:bg-zinc-800">Shop Now</button>
         </div>
         <div class="order-1 lg:order-2">
@@ -1111,9 +1111,9 @@ function shortForm2($name){
       <div class="px-3 py-5 bg-neutral-100 lg:py-10">
     <div class="grid lg:grid-cols-2 items-center justify-items-center gap-5">
         <div class="order-2 lg:order-1 flex flex-col justify-center items-center">
-        <p class="text-4xl font-bold md:text-7xl text-orange-600">25% OFF</p>
-        <p class="text-4xl font-bold md:text-7xl">SUMMER SALE</p>
-        <p class="mt-2 text-sm md:text-lg">For limited time only!</p>
+        <p class="text-4xl font-bold md:text-7xl text-orange-600">Creative</p>
+        <p class="text-4xl font-bold md:text-7xl">Mehedi Art By Rsisa</p>
+        <!-- <p class="mt-2 text-sm md:text-lg">For limited time only!</p> -->
         <button class="text-lg md:text-2xl bg-black text-white py-2 px-5 mt-10 hover:bg-zinc-800">Shop Now</button>
         </div>
         <div class="order-1 lg:order-2">

@@ -151,7 +151,7 @@ if(!isset($_SESSION['user'])){
 	 
 	 <div id="sidebar">
 	    <div class="sidebar-header">
-		   <h3><img src="img/logo.png" class="img-fluid"/><span>CMAByRaisa</span></h3>
+		   <h3><img src="https://images.unsplash.com/profile-1695058559381-08958c381f32image?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff" class="img-fluid"/><span>CMAByRaisa</span></h3>
 		</div>
 		<ul class="list-unstyled component m-0">
 		  <li class="active">
@@ -317,7 +317,7 @@ if(!isset($_SESSION['user'])){
 							   
 							   <li class="dropdown nav-item">
 							     <a class="nav-link" href="#" data-toggle="dropdown">
-								  <img src="img/user.jpg" style="width:40px; border-radius:50%;"/>
+								  <img src="https://images.unsplash.com/profile-1695058559381-08958c381f32image?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff" style="width:40px; border-radius:50%;"/>
 								  <span class="xp-user-live"></span>
 								 </a>
 								  <ul class="dropdown-menu small-menu">
@@ -398,7 +398,7 @@ if ($action == 'homeAction') {
 		 <footer class="footer">
 		    <div class="container-fluid">
 			   <div class="footer-in">
-			      <p class="mb-0">&copy 2021 Creative Mehedi Art By Raisa . All Rights Reserved.</p>
+			      <p class="mb-0">&copy 2024 Creative Mehedi Art By Raisa . All Rights Reserved.</p>
 			   </div>
 			</div>
 		 </footer>

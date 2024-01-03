@@ -267,7 +267,7 @@ if(isset($_SESSION["user"]) && isset($_SESSION['b_id'])){
 
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" id="<?=$index?>">
                     <td class="p-4">
-                        <img src="<?=$list->getProImage()?>" class="w-16 md:w-32 max-w-full max-h-full" alt="<?=$list->getProName()?>">
+                        <img src="../image/<?=$list->getProImage()?>" class="w-16 md:w-32 max-w-full max-h-full" alt="<?=$list->getProName()?>">
                     </td>
                     <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
                         <?=$list->getProName()?>
