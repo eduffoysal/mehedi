@@ -202,7 +202,7 @@ if(!isset($_SESSION['user'])){
                 Swal.fire({
                   type: 'success',
                   title: "Business Form Successfully added!",
-                  text: "THank you admin saheb!",
+                  text: "THank you !",
                   icon: "success",
                   button: false,
                   dangerMode: true,

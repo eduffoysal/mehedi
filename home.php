@@ -367,10 +367,10 @@ function shortForm2($name){
                 <i class='bx bx-caret-down'></i>
             </div>
           
-            <div class="px-4 py-3">
+            <!-- <div class="px-4 py-3">
             <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
             <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
-          </div>
+          </div> -->
 
 
           <ul class="py-2" aria-labelledby="user-menu-button">
@@ -1046,13 +1046,13 @@ function shortForm2($name){
       <div class="px-3 py-5 bg-neutral-100 lg:py-10">
     <div class="grid lg:grid-cols-2 items-center justify-items-center gap-5">
         <div class="order-2 lg:order-1 flex flex-col justify-center items-center">
-        <p class="text-4xl font-bold md:text-7xl text-orange-600">Creative</p>
-        <p class="text-4xl font-bold md:text-7xl">Mehedi Art By Rsisa</p>
+        <p class="text-4xl font-bold md:text-6xl text-black" style="color:black">Creative</p>
+        <p class="text-4xl font-bold md:text-6xl" style="color:black">Mehedi Art By Raisa</p>
         <!-- <p class="mt-2 text-sm md:text-lg">For limited time only!</p> -->
         <button class="text-lg md:text-2xl bg-black text-white py-2 px-5 mt-10 hover:bg-zinc-800">Shop Now</button>
         </div>
         <div class="order-1 lg:order-2">
-        <img class="h-80 w-80 object-cover lg:w-[500px] lg:h-[500px]" src="https://images.unsplash.com/photo-1615397349754-cfa2066a298e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80" alt="">
+        <img class="h-80 w-80 object-cover lg:w-[500px] lg:h-[500px]" src="https://images.unsplash.com/photo-1704257558044-daea2ad3f484?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MTB8fHxlbnwwfHx8fHw%3D" alt="">
         </div>
     </div>
       </div>
@@ -1063,13 +1063,13 @@ function shortForm2($name){
       <div class="px-3 py-5 bg-neutral-100 lg:py-10">
     <div class="grid lg:grid-cols-2 items-center justify-items-center gap-5">
         <div class="order-2 lg:order-1 flex flex-col justify-center items-center">
-        <p class="text-4xl font-bold md:text-7xl text-orange-600">Creative</p>
-        <p class="text-4xl font-bold md:text-7xl">Mehedi Art By Rsisa</p>
+        <p class="text-4xl font-bold md:text-6xl text-black" style="color:black">Creative</p>
+        <p class="text-4xl font-bold md:text-6xl" style="color:black">Mehedi Art By Raisa</p>
         <!-- <p class="mt-2 text-sm md:text-lg">For limited time only!</p> -->
         <button class="text-lg md:text-2xl bg-black text-white py-2 px-5 mt-10 hover:bg-zinc-800">Shop Now</button>
         </div>
         <div class="order-1 lg:order-2">
-        <img class="h-80 w-80 object-cover lg:w-[500px] lg:h-[500px]" src="https://images.unsplash.com/photo-1615397349754-cfa2066a298e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80" alt="">
+        <img class="h-80 w-80 object-cover lg:w-[500px] lg:h-[500px]" src="https://images.unsplash.com/photo-1704257558044-daea2ad3f484?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MTB8fHxlbnwwfHx8fHw%3D" alt="">
         </div>
     </div>
       </div>
@@ -1080,13 +1080,13 @@ function shortForm2($name){
       <div class="px-3 py-5 bg-neutral-100 lg:py-10">
     <div class="grid lg:grid-cols-2 items-center justify-items-center gap-5">
         <div class="order-2 lg:order-1 flex flex-col justify-center items-center">
-        <p class="text-4xl font-bold md:text-7xl text-orange-600">Creative</p>
-        <p class="text-4xl font-bold md:text-7xl">Mehedi Art By Rsisa</p>
+        <p class="text-4xl font-bold md:text-6xl text-black" style="color:black">Creative</p>
+        <p class="text-4xl font-bold md:text-6xl" style="color:black">Mehedi Art By Raisa</p>
         <!-- <p class="mt-2 text-sm md:text-lg">For limited time only!</p> -->
         <button class="text-lg md:text-2xl bg-black text-white py-2 px-5 mt-10 hover:bg-zinc-800">Shop Now</button>
         </div>
         <div class="order-1 lg:order-2">
-        <img class="h-80 w-80 object-cover lg:w-[500px] lg:h-[500px]" src="https://images.unsplash.com/photo-1615397349754-cfa2066a298e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80" alt="">
+        <img class="h-80 w-80 object-cover lg:w-[500px] lg:h-[500px]" src="https://images.unsplash.com/photo-1704257558044-daea2ad3f484?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MTB8fHxlbnwwfHx8fHw%3D" alt="">
         </div>
     </div>
       </div>
@@ -1098,13 +1098,13 @@ function shortForm2($name){
       <div class="px-3 py-5 bg-neutral-100 lg:py-10">
     <div class="grid lg:grid-cols-2 items-center justify-items-center gap-5">
         <div class="order-2 lg:order-1 flex flex-col justify-center items-center">
-        <p class="text-4xl font-bold md:text-7xl text-orange-600">Creative</p>
-        <p class="text-4xl font-bold md:text-7xl">Mehedi Art By Rsisa</p>
+        <p class="text-4xl font-bold md:text-6xl text-black" style="color:black">Creative</p>
+        <p class="text-4xl font-bold md:text-6xl" style="color:black">Mehedi Art By Raisa</p>
         <!-- <p class="mt-2 text-sm md:text-lg">For limited time only!</p> -->
         <button class="text-lg md:text-2xl bg-black text-white py-2 px-5 mt-10 hover:bg-zinc-800">Shop Now</button>
         </div>
         <div class="order-1 lg:order-2">
-        <img class="h-80 w-80 object-cover lg:w-[500px] lg:h-[500px]" src="https://images.unsplash.com/photo-1615397349754-cfa2066a298e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80" alt="">
+        <img class="h-80 w-80 object-cover lg:w-[500px] lg:h-[500px]" src="https://images.unsplash.com/photo-1704257558044-daea2ad3f484?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MTB8fHxlbnwwfHx8fHw%3D" alt="">
         </div>
     </div>
       </div>
@@ -1116,13 +1116,13 @@ function shortForm2($name){
       <div class="px-3 py-5 bg-neutral-100 lg:py-10">
     <div class="grid lg:grid-cols-2 items-center justify-items-center gap-5">
         <div class="order-2 lg:order-1 flex flex-col justify-center items-center">
-        <p class="text-4xl font-bold md:text-7xl text-orange-600">Creative</p>
-        <p class="text-4xl font-bold md:text-7xl">Mehedi Art By Rsisa</p>
+        <p class="text-4xl font-bold md:text-6xl text-black" style="color:black">Creative</p>
+        <p class="text-4xl font-bold md:text-6xl" style="color:black">Mehedi Art By Raisa</p>
         <!-- <p class="mt-2 text-sm md:text-lg">For limited time only!</p> -->
         <button class="text-lg md:text-2xl bg-black text-white py-2 px-5 mt-10 hover:bg-zinc-800">Shop Now</button>
         </div>
         <div class="order-1 lg:order-2">
-        <img class="h-80 w-80 object-cover lg:w-[500px] lg:h-[500px]" src="https://images.unsplash.com/photo-1615397349754-cfa2066a298e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80" alt="">
+        <img class="h-80 w-80 object-cover lg:w-[500px] lg:h-[500px]" src="https://images.unsplash.com/photo-1704257558044-daea2ad3f484?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MTB8fHxlbnwwfHx8fHw%3D" alt="">
         </div>
     </div>
       </div>
@@ -1135,13 +1135,13 @@ function shortForm2($name){
       <div class="px-3 py-5 bg-neutral-100 lg:py-10">
     <div class="grid lg:grid-cols-2 items-center justify-items-center gap-5">
         <div class="order-2 lg:order-1 flex flex-col justify-center items-center">
-        <p class="text-4xl font-bold md:text-7xl text-orange-600">Creative</p>
-        <p class="text-4xl font-bold md:text-7xl">Mehedi Art By Rsisa</p>
+        <p class="text-4xl font-bold md:text-6xl text-black" style="color:black">Creative</p>
+        <p class="text-4xl font-bold md:text-6xl" style="color:black">Mehedi Art By Raisa</p>
         <!-- <p class="mt-2 text-sm md:text-lg">For limited time only!</p> -->
         <button class="text-lg md:text-2xl bg-black text-white py-2 px-5 mt-10 hover:bg-zinc-800">Shop Now</button>
         </div>
         <div class="order-1 lg:order-2">
-        <img class="h-80 w-80 object-cover lg:w-[500px] lg:h-[500px]" src="https://images.unsplash.com/photo-1615397349754-cfa2066a298e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80" alt="">
+        <img class="h-80 w-80 object-cover lg:w-[500px] lg:h-[500px]" src="https://images.unsplash.com/photo-1704257558044-daea2ad3f484?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MTB8fHxlbnwwfHx8fHw%3D" alt="">
         </div>
     </div>
       </div>      
@@ -1826,7 +1826,7 @@ function shortForm2($name){
 
     <!-- About -->
     <section class="about" id="about">
-        <img src="https://scontent.fcgp7-1.fna.fbcdn.net/v/t39.30808-6/265267077_101779855696513_1761739230786580597_n.jpg?stp=c438.0.1173.1173a_dst-jpg_s851x315&_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGDUshTWcFCNfkJlWcQN10DjckzmklLdQ2NyTOaSUt1Dd_meBzEAw3TWHNMOqJTFd6j1xbK7-OcQzIqvzOymNOi&_nc_ohc=uCm5MuXXf3EAX-v2zkM&_nc_ht=scontent.fcgp7-1.fna&oh=00_AfDsew3iGL3TWy3KCgH9UJvdVLNuOhm5m0t9V7mUo32Viw&oe=6545752B" alt="">
+        <img src="https://images.unsplash.com/profile-1695058559381-08958c381f32image?bg=fff&crop=faces&dpr=2&h=32&w=32&auto=format&fit=crop&q=60&ixlib=rb-4.0.3" alt="">
         <div class="about-text">
             <span>About Us</span>
             <p>Assalamualaikum Everyone.I'm Tasnim Islam Raisa. I'm a henna artist.<br>We all love henna. I will be really happy if I can make you happy with my henna works. To beautify your hands with the color of henna for your special moments you are requested to check my designs and to contact me at my website.<br>I am not giving any home service. You have to come to my house for applying henna (Chittagong) . I hope you guys will love my work. THANK YOU. For any kind of information you can mail me.</p>

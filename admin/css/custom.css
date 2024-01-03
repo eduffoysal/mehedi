@@ -265,7 +265,7 @@ overflow:auto;
 		  z-index:9;
 		  position:relative;
 		  padding:15px 30px;
-		  background-color:#353b48;
+		  background-color:#5a0a0a;
 	 }
 	 
 	 .xd-topbar{
@@ -274,7 +274,7 @@ overflow:auto;
 	 }
 	 
 	 input[type="search"]{
-		 background-color:#4a5263;
+		 background-color:#5a0a0a;
 		 color:#fff;
 		 padding-left:20px;
 		 border:none;
@@ -287,7 +287,7 @@ overflow:auto;
 	 
 	 
 	.xp-searchbar .btn{
-		 background-color:#4a5263;
+		 background-color:#5a0a0a;
 		 color:#fff;
 		 font-weight:600;
 		 font-size:16px;
@@ -328,7 +328,7 @@ overflow:auto;
 	   }
 	   
 	   .navbar{
-		   background-color:#353B48;
+		   background-color:#5a0a0a;
 		   color:#fff;
 	   }
 	   
@@ -485,7 +485,7 @@ background-color:rgba(0,0,0,0.09);
 }
 	   
 	   .table-title{
-		   background:#353b48;
+		   background:#5a0a0a;
 		   color:#fff;
 		   position:sticky;
 		   top:0;
@@ -746,7 +746,7 @@ background-color:rgba(0,0,0,0.09);
 		   
 		      /*-------footer design start------*/
 			  footer{
-		       background-color:#353b48;
+		       background-color:#5a0a0a;
 			   color:#fff;
 			   text-align:center;
 			   padding:10px 30px;
