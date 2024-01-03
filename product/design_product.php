@@ -597,9 +597,12 @@ if(isset($_POST['order_cart'])){
 
 <div class="container-fluid">
     <div class="row">
+        <p>Total : <?=calculateTotalPrice('product_cart')?> BDT</p>
+    </div>
+    <div class="row">
         <div class="mt-3 w-full">
             <a href="checkout/p" class="text-decoration-none decoration-none">
-            <button type="button" class="btn btn-outline-info pickDate" id="pickDate">Checkout With <?=calculateTotalPrice('product_cart')?> BDT</button>
+            <button type="button" class="btn btn-outline-info pickDate" id="pickDate">Checkout </button>
             </a>
         </div>
     </div>
@@ -802,11 +805,14 @@ if(isset($_POST['booking_cart'])){
 </table>
 
 <div class="container-fluid">
+<div class="row">
+        <p>Total : <?=calculateTotalPrice('design_cart')?> BDT</p>
+    </div>
     <div class="row">
         
         <div class="mt-3 w-full">
             <a href="date" class="text-decoration-none decoration-none">
-            <button type="button" class="btn btn-info pickDate" id="pickDate">Pick A Date to Checkout With <?=calculateTotalPrice('design_cart')?> BDT</button>
+            <button type="button" class="btn btn-info pickDate" id="pickDate">Pick A Date </button>
             </a>
         </div>
     </div>
