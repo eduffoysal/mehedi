@@ -1045,7 +1045,7 @@ function shortForm2($name){
         <button class="text-lg md:text-2xl bg-black text-white py-2 px-5 mt-10 hover:bg-zinc-800">Shop Now</button>
         </div>
         <div class="order-1 lg:order-2">
-        <img class="h-80 w-80 object-cover lg:w-[500px] lg:h-[500px]" src="https://images.unsplash.com/photo-1704257558044-daea2ad3f484?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MTB8fHxlbnwwfHx8fHw%3D" alt="">
+        <img class="h-80 w-80 object-cover lg:w-[500px] lg:h-[500px]" src="https://scontent.fcgp2-1.fna.fbcdn.net/v/t39.30808-6/262116739_101779572363208_803259062128933498_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=efb6e6&_nc_eui2=AeFgaWzHoZrMGKW52Wd-yqtfowvgv_EGtPWjC-C_8Qa09Vjb7a0H8sjIfZwAQwGhqOLRHmoVLpJMNdiYB-m0rEVK&_nc_ohc=-MChP8C4rDsAX-8ajWL&_nc_ht=scontent.fcgp2-1.fna&oh=00_AfCAtFNtaGimi_Ab2S35FxtowBO7_T20k3wQcDnbnhWadQ&oe=659AA7BE" alt="">
         </div>
     </div>
       </div>
